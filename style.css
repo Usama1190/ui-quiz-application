@@ -1,0 +1,13 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.app_wrapper {
+    border: 1px solid black;
+}
+
+.app_nav_wrapper {
+    border: 1px solid black;
+    height: 90px;
+}
