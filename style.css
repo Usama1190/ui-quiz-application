@@ -6,8 +6,3 @@ body {
 .app_wrapper {
     border: 1px solid black;
 }
-
-.app_nav_wrapper {
-    border: 1px solid black;
-    height: 90px;
-}
