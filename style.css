@@ -6,3 +6,82 @@ body {
 .app_wrapper {
     border: 1px solid black;
 }
+
+.app_wrapper .homepage_wrapper {
+    border: 1px solid grap;
+}
+
+.form_wrapper {
+    display: none;
+}
+
+#signupForm {
+    width: 35%;
+    height: 30vh;
+    border: 1px solid black;
+    margin: auto;
+}
+
+
+
+
+/* key wrapper start */
+
+.key_wrapper {
+    display: none;
+    height: 100vh;
+    width: 100%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* border: 1px solid black; */
+    background-color: rgb(198, 255, 255);
+}
+
+.key_wrapper .keyinput_wrapper {
+    text-align: center;
+    /* border: 1px solid black; */
+}
+
+.key_wrapper .keyinput_wrapper .keyinput {
+    width: 60vw;
+    padding: 6px;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: rgb(198, 255, 255);
+}
+
+.key_wrapper .keyinput_wrapper .keyinput:focus {
+    outline: none;
+}
+
+/* key wrapper end */
+
+
+
+/* userinfo_wrapper start */
+
+.userinfo_wrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    background-color: rgb(202, 135, 135);
+}
+
+
+
+
+#userPenal {
+    display: none;
+}
+
+.topnav_wrapper {
+    border: 1px solid black;
+    width: 97%;
+    padding: 13px;
+    position: absolute;
+    top: 0;
+}

@@ -3,26 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OIT - Quiz Application</title>
+    <title>UIT - Quiz Application</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="app_wrapper">
-        <form action="" id="signupForm">
-            <h2>OIT Quiz Application</h2>
-            <label for="email">
-                <input type="email" name="email" id="email" placeholder="Enter your email">
-            </label><br><br>
+        <div class="homepage_wrapper">
+            <div class="topnav_wrapper">
+                <a href="#"><img src="" alt="">Usama Info Tech</a>
+                <h2>Welcome to the UIT App Protal</h2>
+            </div>
 
-            <label for="password">
-                <input type="password" name="password" id="password" placeholder="Enter your password">
-            </label><br><br>
+            <div class="quizresultshowcase_wrapper">
+                <div class="quizdashboard_wrapper">
+                    <div class="quizinfo_wrapper">
+                        <div class="userinfo_wrapper">
+                            <div class="key_wrapper">
+                                <div class="form_wrapper">
+                                    <form action="" class="signupForm" id="signupForm">
+                                        <h2>UIT Quiz Application</h2>
+                                        <label for="email">
+                                            <input type="email" name="email" id="email" placeholder="Enter your email">
+                                        </label><br><br>
 
-            <input type="submit" id="signup" value="signup">
+                                        <label for="password">
+                                            <input type="password" name="password" id="password" placeholder="Enter your password">
+                                        </label><br><br>
 
-            <p id="demo">Warning!</p>
-        </form>
+                                        <input type="submit" id="signup" value="signup">
+
+                                        <p id="demo"></p>
+                                    </form>
+                                </div>
+
+                                <div class="keyinput_wrapper">
+                                    <input type="text" placeholder="key" class="keyinput">
+                                    <input type="submit" value="Submit">
+                                </div>
+                            </div>
+
+                            <div class="userinfoinput_wrapper">
+                                <input type="text" placeholder="Enter your name">
+                                <input type="number" placeholder="Enter your roll number">
+                                <input type="submit" value="Enter">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="app.js"></script>

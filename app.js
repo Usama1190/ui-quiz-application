@@ -11,10 +11,9 @@ const admin = {
 sessionStorage.setItem('admin', JSON.stringify(admin));
 
 let emailAlreadyExits = JSON.parse(sessionStorage.getItem('user'));
-
-console.log(emailAlreadyExits);
-
 let warning = document.getElementById('demo');
+let userPenal = document.getElementById('userPenal');
+let signupForm = document.getElementById('signupForm');
 
 const signup = document.getElementById('signup');
 
@@ -28,13 +27,16 @@ signup.addEventListener('click', (e) => {
     if(user.email === emailAlreadyExits.email) {
         warning.innerHTML = 'This email address already exits';
     }
-    else if(user.email === admin.email) {}
-    
+    else if(user.email === admin.email) {
+        signupForm.style.display = 'none';
+        userPenal.style.display = 'block';
+    }
     else {
         warning.innerHTML = 'This email address is not registered';
         sessionStorage.setItem('user', JSON.stringify(user));
 
-        document.getElementById('signupForm').style.display = 'none';
+        signupForm.style.display = 'none';
+        userPenal.style.display = 'block';
         console.log(emailAlreadyExits);
     }
 });
