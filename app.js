@@ -23,15 +23,19 @@ let key_wrapper = document.getElementById('key_wrapper');
 let heading1 = document.getElementById('heading1');
 let heading2 = document.getElementById('heading2');
 
+const quizguide_wrapper = document.getElementById('quizguide_wrapper');
+
 let keyset = 'js321';
 let inputkey;
 
 const signup = document.getElementById('signup');
 const keysubmit = document.getElementById('keysubmit');
 const enteruserdetails = document.getElementById('enteruserdetails');
+const typescript = document.getElementById('typescript');
 
 
 let userinfo_wrapper = document.getElementById('userinfo_wrapper');
+let quizinfo_wrapper = document.getElementById('quizinfo_wrapper');
 
 
 signup.addEventListener('click', (e) => {
@@ -79,7 +83,8 @@ keysubmit.addEventListener('click', (e) => {
 });
 
 
-
+let warning3 = document.getElementById('demo2');
+let heading3 = document.getElementById('heading3');
 
 enteruserdetails.addEventListener('click', (e) => {
     e.preventDefault();
@@ -87,5 +92,29 @@ enteruserdetails.addEventListener('click', (e) => {
     user.name = document.getElementById('name').value
     user.rollno = parseInt(document.getElementById('rollno').value);
 
-    console.log(user.name, user.rollno);
+    if(user.name.trim() === '') {
+        warning3.innerHTML = 'Please enter your name';
+    }
+    else {
+        sessionStorage.setItem('user', JSON.stringify(user));
+
+        userinfo_wrapper.style.display = 'none';
+        heading1.style.display = 'none';
+        quizinfo_wrapper.style.display = 'block';
+
+        let namefirstletter = user.name[0].toUpperCase();
+        let nameremainingletters = user.name.slice(1).toLowerCase();
+
+        console.log(namefirstletter);
+        console.log(nameremainingletters);
+
+        heading3.innerHTML = `Hi, ${namefirstletter + nameremainingletters}`;
+    }
+});
+
+typescript.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    quizinfo_wrapper.style.display = 'none';
+    quizguide_wrapper.style.display = 'block';
 })

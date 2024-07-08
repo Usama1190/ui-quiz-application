@@ -28,9 +28,9 @@ body {
     padding: 8px;
     border: none;
     cursor: pointer;
-    color: #fff;
     border-radius: 6px;
     /* font-size: 13px; */
+    color: var(--colorwhite--);
     transition: all 0.3s;
     background-color: var(--bgcolor--);
     font-family: 'Arsenal SC', sans-serif;
@@ -53,6 +53,10 @@ body {
 
 .warningcolor {
     color: red;
+}
+
+.opacity {
+    opacity: 0.5;
 }
 
 
@@ -166,10 +170,69 @@ body {
 
 /* userinfo_wrapper start */
 
-.userinfo_wrapper {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+.course_wrapper {
     /* border: 1px solid black; */
-    /* background-color: rgb(202, 135, 135); */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.course {
+    width: 30%;
+    height: 30vh;
+    margin: 10px;
+    border: 1px solid var(--bordercolor--);
+}
+
+.btn1 {
+    border: 1px solid var(--bgcolor--);
+    background-color: transparent;
+    color: var(--bgcolor--);
+    width: 80px;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Arsenal SC', sans-serif;
+}
+
+.btn1:hover {
+    color: var(--colorwhite--);
+    background-color: rgb(3, 20, 34);
+    scale: 1.03;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.quizguide_wrapper {
+}
+
+ 
+
+.quizguide_wrapper table {
+    margin-left: 20px;
+    border-collapse: collapse;
+    width: 80%;
+}
+  
+.quizguide_wrapper td, th {
+    border-bottom: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.quizguide_wrapper tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+/* .table {
+    border-collapse: collapse;
+}
+
+.table > tr {
+    border-bottom: 1px solid var(--bordercolor--);
+    padding: 10px;
+} */
+
+@media (max-width: 760px) {
+    .course {
+        width: 90%;
+    }
 }
