@@ -6,53 +6,76 @@
     <title>UIT - Quiz Application</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="app_wrapper">
         <div class="homepage_wrapper">
             <div class="topnav_wrapper">
-                <a href="#"><img src="" alt="">Usama Info Tech</a>
-                <h2>Welcome to the UIT App Protal</h2>
+                <a href="#"><img src="assets/Usama.png" class="usamaimage" alt="usama image"></a>
+                <a href="#"><span class="fletter">U</span>sama <span class="fletter">I</span>nfo <span class="fletter">T</span>ech</a>
+            </div>
+            <h2 class="heading1 hidden" id="heading1">Welcome to the UIT Quiz App Protal</h2>
+            <h1 class="heading1 hidden" id="heading2">UIT Quiz Application</h1>
+            
+            <div class="form_wrapper">
+                <form action="" class="signupForm" id="signupForm">
+                    <h1>UIT Quiz Application</h1>
+                    <label for="email">
+                        <input type="email" name="email" class="inputStyle" id="email" placeholder="email">
+                    </label><br><br>
+
+                    <label for="password">
+                        <input type="password" name="password" class="inputStyle" id="password" placeholder="password">
+                    </label><br><br>
+
+                    <input type="submit" id="signup" class="btn" value="signup">
+
+                    <p id="demo" class="warningcolor"></p>
+                </form>
+            </div>
+
+            <div class="hidden key_wrapper" id="key_wrapper">
+                <div class="keyinput_wrapper">
+                    <input type="text" placeholder="key" id="inputkey" class="keyinput">
+                    <input type="submit" value="Submit" id="keysubmit" class="btn">
+                    <p id="demo1" class="warningcolor"></p>
+                </div>
+            </div>
+
+            <div class="userinfo_wrapper hidden" id="userinfo_wrapper">
+                <div class="userinfoinput_wrapper">
+                    <input type="text" class="inputStyle" placeholder="Enter your name" id="name"><br><br>
+                    <input type="number" class="inputStyle" placeholder="Enter your roll number" id="rollno"><br><br>
+                    <input type="submit" value="Enter" id="enteruserdetails" class="btn">
+
+                    <p id="demo2" class="warningcolor"></p>
+                </div>
+            </div>
+
+            <div class="quizinfo_wrapper">
+                
             </div>
 
             <div class="quizresultshowcase_wrapper">
                 <div class="quizdashboard_wrapper">
-                    <div class="quizinfo_wrapper">
-                        <div class="userinfo_wrapper">
-                            <div class="key_wrapper">
-                                <div class="form_wrapper">
-                                    <form action="" class="signupForm" id="signupForm">
-                                        <h2>UIT Quiz Application</h2>
-                                        <label for="email">
-                                            <input type="email" name="email" id="email" placeholder="Enter your email">
-                                        </label><br><br>
-
-                                        <label for="password">
-                                            <input type="password" name="password" id="password" placeholder="Enter your password">
-                                        </label><br><br>
-
-                                        <input type="submit" id="signup" value="signup">
-
-                                        <p id="demo"></p>
-                                    </form>
-                                </div>
-
-                                <div class="keyinput_wrapper">
-                                    <input type="text" placeholder="key" class="keyinput">
-                                    <input type="submit" value="Submit">
-                                </div>
-                            </div>
-
-                            <div class="userinfoinput_wrapper">
-                                <input type="text" placeholder="Enter your name">
-                                <input type="number" placeholder="Enter your roll number">
-                                <input type="submit" value="Enter">
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
+
+        <marquee behavior="initial-scale" direction="lang" style="position: absolute; bottom: 20px;">
+            <span class="marquee" id="marquee">Usama Info Tech</span>
+            <span class="marquee" id="marquee">Usama Info Tech</span>
+            <span class="marquee" id="marquee">Usama Info Tech</span>
+            <span class="marquee" id="marquee">Usama Info Tech</span>
+            <span class="marquee" id="marquee">Usama Info Tech</span>
+            <span class="marquee" id="marquee">Usama Info Tech</span>
+        </marquee>
     </div>
 
     <script src="app.js"></script>
