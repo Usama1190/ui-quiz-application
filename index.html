@@ -112,11 +112,26 @@
                 quizdashboard_wrapper
                 <div class="timer" id="timer">timer</div>
 
-                <button type="button" class="btn">Next</button>
+                <div id="questions_wrapper"></div>
+
+                <div class="options_wrapper" id="options_wrapper">
+                    <p id="option1" class="options active"></p>
+                    <p id="option2" class="options"></p>
+                    <p id="option3" class="options"></p>
+                    <p id="option4" class="options"></p>
+                </div>
+
+                <button type="button" class="btn btnNext" id="next">Next</button>
+            </div>
+
+            <div class="quizresultdashboard_wrapper hidden" id="quizresultdashboard_wrapper">
+                <h1 class="heading3">Result</h1>
+                <h3 id="resultshow"></h3>
+                <p>correct answer : <strong id="correctAnswer"></strong></p>
             </div>
         </div>
 
-        <marquee behavior="initial-scale" direction="lang" style="margin-top: 20px;">
+        <marquee behavior="initial-scale" direction="lang" id="marquee" style="margin-top: 20px;">
             <span class="marquee" id="marquee">Usama Info Tech</span>
             <span class="marquee" id="marquee">Usama Info Tech</span>
             <span class="marquee" id="marquee">Usama Info Tech</span>
