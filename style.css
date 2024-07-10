@@ -271,9 +271,15 @@ body {
     background-color: var(--bordercolor--);
 }
 
-/* quizdashboard_wrapper start */
-
-
+/* quizresultdashboard_wrapper start */
+ 
+.quizresultdashboard_wrapper {
+    border: 1px solid var(--bordercolor--);
+    width: 50%;
+    margin: auto;
+    /* border-top: 1px solid var(--bordercolor--); */
+    /* border-bottom: 1px solid var(--bordercolor--); */
+}
 
 
 
@@ -284,5 +290,9 @@ body {
 @media (max-width: 760px) {
     .course {
         width: 90%;
+    }
+
+    #signupForm {
+        width: 80%;
     }
 }

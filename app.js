@@ -44,7 +44,10 @@ signup.addEventListener('click', (e) => {
     user.email = document.getElementById('email').value;
     user.password = document.getElementById('password').value;
     
-    if(user.email === emailAlreadyExits.email) {
+    if(user.email.trim() === '') {
+        warning.innerHTML = 'Please fill out the input field';
+    }
+    else if(user.email === emailAlreadyExits.email) {
         warning.innerHTML = 'This email address already exits';
     }
     else if(user.email === admin.email) {
@@ -53,7 +56,7 @@ signup.addEventListener('click', (e) => {
         heading2.style.display = 'block';
     }
     else {
-        warning.innerHTML = 'This email address is not registered';
+        // warning.innerHTML = 'This email address is not registered';
         sessionStorage.setItem('user', JSON.stringify(user));
         
         signupForm.classList.add('hidden');
@@ -329,6 +332,32 @@ start.addEventListener('click', (e) => {
     quizguide_wrapper.style.display = 'none';
     marquee.style.display = 'none';
     quizdashboard_wrapper.style.display = 'block';
+
+    // Set the date we're counting down to
+    let countDownDate = new Date("Jan 5, 2030 15:27:25").getTime();
+
+    // Update the count down every 1 second
+    let x = setInterval(function() {
+
+        // Get today's date and time
+        let now = new Date().getTime();
+            
+        // Find the distance between now and the count down date
+        let distance = countDownDate - now;
+            
+        // Time calculations for days, hours, minutes and seconds
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+        // Output the result in an element with id="demo"
+        document.getElementById("timer").innerHTML = minutes + "m " + seconds + "s ";
+            
+        // If the count down is over, write some text 
+        if (distance < 0) {
+            clearInterval(x);
+            quizdashboard_wrapper.style.display = 'none';
+        }
+    }, 1000);
 });
 
 let quizresultdashboard_wrapper = document.getElementById('quizresultdashboard_wrapper');
@@ -355,6 +384,10 @@ nextBtn.addEventListener('click', function(e) {
 
 let score = 0;
 let count2 = 0;
+let correctAnswerShow = document.getElementById('correctAnswer');
+let resultshow = document.getElementById('resultshow');
+let percentageDiv = document.getElementById('percentage');
+let percentage;
 
 // Add active class to the current button (highlight it)
 let options_wrapper = document.getElementById("options_wrapper");
@@ -367,27 +400,47 @@ for (let i = 0; i < optionsPic.length; i++) {
         this.className += " active";
 
         let currentOption = optionsPic[i].innerHTML;
-        console.log(currentOption, 'before loop');
+        // console.log(currentOption, 'before loop');
 
         if(currentOption === correctOptions[count2]) {
             score++;
-            count2++;
-            document.getElementById('correctAnswer').innerHTML = score;
+            // count2++;
             
-            console.log(currentOption, 'currentOption after loop success');
-            console.log(correctOptions[i], 'correctOptions after loop success');
-            console.log(score, 'score');
+            // console.log(currentOption, 'currentOption after loop success');
+            // console.log(correctOptions[i], 'correctOptions after loop success');
+            // console.log(score, 'score');
         }
         else {
             console.log('error!');
-            count2++;
-            document.getElementById('correctAnswer').innerHTML = score;
+            // document.getElementById('correctAnswer').innerHTML = score;
+            
+            // console.log(count2, 'count2');
+            // console.log(correctOptions[count2], 'correctOptions after loop');
+            // console.log(currentOption, 'currentOption after loop');
+        }
+        count2++;
+        correctAnswerShow.innerHTML = score;
 
-            console.log(count2, 'count2');
-            console.log(correctOptions[count2], 'correctOptions after loop');
-            console.log(currentOption, 'currentOption after loop');
+        percentage = (score / 25) * 100;
+        percentageDiv.innerHTML = percentage + '%';
+
+        if(percentage > 70) {
+            resultshow.innerHTML = 'Congratulations you passed';
+            resultshow.style.color = 'rgb(24, 56, 83)';
+        }
+        else {
+            resultshow.innerHTML = 'Sorry you failed';
+            resultshow.style.color = 'red';
         }
     });
 }
+
+let backToHome = document.getElementById('backToHome');
+
+backToHome.addEventListener('click', (e) => {
+    e.preventDefault();
+    quizresultdashboard_wrapper.style.display = 'none';
+    signupForm.classList.remove('hidden');
+})
 
 // console.log(count, '<= count', questionDiv, '<= questionDiv', nextBtn, '<= nextBtn', "Before click next!");
