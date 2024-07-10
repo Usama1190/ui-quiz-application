@@ -419,7 +419,6 @@ let options_wrapper = document.getElementById("options_wrapper");
 let optionsPic = options_wrapper.getElementsByClassName("options");
 
 // console.log(optionsPic[0].innerHTML);
-console.log(score, 'score');
 
 for (let i = 0; i < optionsPic.length; i++) {
     optionsPic[i].addEventListener("click", function() {
@@ -429,14 +428,19 @@ for (let i = 0; i < optionsPic.length; i++) {
 
         if(currentOption === correctOptions[count2]) {
             score++;
+            // count2++;
             
-            console.log('success!');
+            // console.log(currentOption, 'currentOption after loop success');
+            // console.log(correctOptions[i], 'correctOptions after loop success');
             console.log(score, 'score');
         }
         else {
             console.log('error!');
+            // document.getElementById('correctAnswer').innerHTML = score;
             
             console.log(count2, 'count2');
+            // console.log(correctOptions[count2], 'correctOptions after loop');
+            // console.log(currentOption, 'currentOption after loop');
         }
         count2++;
         correctAnswerShow.innerHTML = score;

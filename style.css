@@ -61,7 +61,7 @@ body {
 
 .questions {
     border: 1px solid var(--bordercolor--);
-    width: 70%;
+    width: 95%;
     height: 60%;
     font-size: 22px;
     color: var(--bgcolor--);
@@ -234,7 +234,6 @@ body {
 
 
 
-
 /* quizdashboard_wrapper start */
 
 .quizdashboard_wrapper {
@@ -312,6 +311,14 @@ body {
 
     #signupForm {
         width: 80%;
+    }
+
+    .quizdashboard_wrapper {
+        width: 95%;
+    }
+
+    #questions_wrapper {
+        width: 95%;
     }
 
     .quizresultdashboard_wrapper {
