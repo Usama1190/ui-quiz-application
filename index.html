@@ -16,7 +16,7 @@
     <div class="app_wrapper">
         <div class="homepage_wrapper">
             <div class="topnav_wrapper">
-                <a href="#"><img src="assets/Usama.png" class="usamaimage" alt="usama image"></a>
+                <a href="#"><img src="assets/uit.png" class="usamaimage" alt="usama image"></a>
                 <a href="#"><span class="fletter">U</span>sama <span class="fletter">I</span>nfo <span class="fletter">T</span>ech</a>
             </div>
             <h2 class="heading1 hidden" id="heading1">Welcome to the UIT Quiz App Protal</h2>
@@ -109,22 +109,30 @@
             </div>
 
             <div class="quizdashboard_wrapper hidden" id="quizdashboard_wrapper">
-                quizdashboard_wrapper
-                <div class="timer" id="timer">timer</div>
+                <div class="timer" id="timer"></div>
 
                 <div id="questions_wrapper"></div>
 
                 <div class="options_wrapper" id="options_wrapper">
-                    <p id="option1" class="options active"></p>
-                    <p id="option2" class="options"></p>
-                    <p id="option3" class="options"></p>
-                    <p id="option4" class="options"></p>
+                    <input type="radio" name="option" class="optionsRadio" id="option1" value="">
+                    <label for="option1" class="options" id="option1Show"></label><br><br>
+
+                    <input type="radio" name="option" class="optionsRadio" id="option2" value="">
+                    <label for="option2" class="options" id="option2Show"></label><br><br>
+
+                    <input type="radio" name="option" class="optionsRadio" id="option3" value="">
+                    <label for="option3" class="options" id="option3Show"></label><br><br>
+                    
+                    <input type="radio" name="option" class="optionsRadio" id="option4" value="">
+                    <label for="option4" class="options" id="option4Show"></label>
                 </div>
 
                 <button type="button" class="btn btnNext" id="next">Next</button>
             </div>
 
             <div class="quizresultdashboard_wrapper hidden" id="quizresultdashboard_wrapper">
+                <a href="#"><img src="assets/uit.png" class="usamaimage2" alt="usama image"></a>
+                <a href="#" class="anchor"><span class="fletter">U</span>sama <span class="fletter">I</span>nfo <span class="fletter">T</span>ech</a>
                 <h1 class="heading1">TypeScript Quiz</h1>
                 <h2 id="resultshow"></h2>
                 <p><strong>Total Questions :</strong> <strong id="">25</strong></p>

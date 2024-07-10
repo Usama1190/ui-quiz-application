@@ -311,15 +311,40 @@ questions_wrapper.appendChild(questionDiv);
 
 let nextBtn = document.getElementById('next');
 
-let option1 = document.getElementById('option1');
-let option2 = document.getElementById('option2');
-let option3 = document.getElementById('option3');
-let option4 = document.getElementById('option4');
+let option1 = document.getElementById('option1').attributes.value;
+let option2 = document.getElementById('option2').attributes.value;
+let option3 = document.getElementById('option3').attributes.value;
+let option4 = document.getElementById('option4').attributes.value;
 
-option1.innerHTML = options[0].a;
-option2.innerHTML = options[0].b;
-option3.innerHTML = options[0].c;
-option4.innerHTML = options[0].d;
+
+// console.log(option1, 'option1 1st');
+
+option1 = options[0].a;
+option2 = options[0].b;
+option3 = options[0].c;
+option4 = options[0].d;
+
+// console.log(option1, 'option1 2nd');
+
+let option1Show = document.getElementById('option1Show');
+let option2Show = document.getElementById('option2Show');
+let option3Show = document.getElementById('option3Show');
+let option4Show = document.getElementById('option4Show');
+
+// option1Show.for = options[0].a;
+// option2Show.for = options[0].b;
+// option3Show.for = options[0].c;
+// option4Show.for = options[0].d;
+
+// console.log(option1Show.for = options[0].a);
+
+
+option1Show.innerHTML = options[0].a;
+option2Show.innerHTML = options[0].b;
+option3Show.innerHTML = options[0].c;
+option4Show.innerHTML = options[0].d;
+
+// console.log(option1Show, 'option1Show');
 
 
 let marquee = document.getElementById('marquee');
@@ -374,10 +399,10 @@ nextBtn.addEventListener('click', function(e) {
         questionDiv.innerHTML = quizQuestions[++count];
         questions_wrapper.appendChild(questionDiv);
 
-        option1.innerHTML = options[count].a;
-        option2.innerHTML = options[count].b;
-        option3.innerHTML = options[count].c;
-        option4.innerHTML = options[count].d;
+        option1Show.innerHTML = options[count].a;
+        option2Show.innerHTML = options[count].b;
+        option3Show.innerHTML = options[count].c;
+        option4Show.innerHTML = options[count].d;
     }
 });
 
@@ -393,30 +418,25 @@ let percentage;
 let options_wrapper = document.getElementById("options_wrapper");
 let optionsPic = options_wrapper.getElementsByClassName("options");
 
+// console.log(optionsPic[0].innerHTML);
+console.log(score, 'score');
+
 for (let i = 0; i < optionsPic.length; i++) {
     optionsPic[i].addEventListener("click", function() {
-        let current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
 
         let currentOption = optionsPic[i].innerHTML;
         // console.log(currentOption, 'before loop');
 
         if(currentOption === correctOptions[count2]) {
             score++;
-            // count2++;
             
-            // console.log(currentOption, 'currentOption after loop success');
-            // console.log(correctOptions[i], 'correctOptions after loop success');
-            // console.log(score, 'score');
+            console.log('success!');
+            console.log(score, 'score');
         }
         else {
             console.log('error!');
-            // document.getElementById('correctAnswer').innerHTML = score;
             
-            // console.log(count2, 'count2');
-            // console.log(correctOptions[count2], 'correctOptions after loop');
-            // console.log(currentOption, 'currentOption after loop');
+            console.log(count2, 'count2');
         }
         count2++;
         correctAnswerShow.innerHTML = score;
@@ -425,7 +445,7 @@ for (let i = 0; i < optionsPic.length; i++) {
         percentageDiv.innerHTML = percentage + '%';
 
         if(percentage > 70) {
-            resultshow.innerHTML = 'Congratulations you passed';
+            resultshow.innerHTML = `Congratulations ${user.name}, you passed`;
             resultshow.style.color = 'rgb(24, 56, 83)';
         }
         else {
