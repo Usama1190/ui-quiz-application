@@ -281,6 +281,22 @@ body {
 
 
 
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: var(--bgcolor--);
+    color: var(--colorwhite--);
+}
+
+.footer a {
+    text-decoration: none;
+    color: var(--bordercolor--);
+}
+
+
 
 
 

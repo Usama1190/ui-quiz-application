@@ -39,10 +39,6 @@ let quizinfo_wrapper = document.getElementById('quizinfo_wrapper');
 
 
 let updateKey = document.getElementById('updateKey');   // button
-let editKey;
-
-console.log(keyset);
-console.log(editKey,'editKey');
 
 
 
@@ -70,15 +66,8 @@ signup.addEventListener('click', (e) => {
 
         updateKey.addEventListener('click', (e) => {
             e.preventDefault();
-            editKey = document.getElementById('editKey').value;
-
-            keyset == editKey;
-            console.log(keyset, 'keyset');
-
-            console.log(editKey, 'editKey');
-        })
-
-        console.log(keyset, 'keyset');
+            keyset = document.getElementById('editKey').value;
+        });
     }
     else {
         // warning.innerHTML = 'This email address is not registered';
