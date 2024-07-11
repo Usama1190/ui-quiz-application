@@ -333,43 +333,58 @@ option3Show.innerHTML = options[0].c;
 option4Show.innerHTML = options[0].d;
 
 
-
 let marquee = document.getElementById('marquee');
+
+let minutes = 19;
+let seconds = 10;
+
+let x = setInterval(function() {
+    seconds--;
+
+    if(seconds === 0) {
+        minutes--;
+        seconds = 10;
+    }
+
+    console.log(minutes, seconds);
+}, 1000);
+
+
+
+
+
 
 
 
 start.addEventListener('click', (e) => {
     e.preventDefault();
-
+    
     quizguide_wrapper.style.display = 'none';
     marquee.style.display = 'none';
     quizdashboard_wrapper.style.display = 'block';
+    
+    
+
+    // let time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+    // console.log(time);
 
     // Set the date we're counting down to
-    let countDownDate = new Date("Jan 5, 2030 15:27:25").getTime();
+    // let countDownDate = new Date("Jan 5, 2030 15:27:25").getTime();
 
     // Update the count down every 1 second
-    let x = setInterval(function() {
 
-        // Get today's date and time
-        let now = new Date().getTime();
-            
-        // Find the distance between now and the count down date
-        let distance = countDownDate - now;
+    // let minutes = 19;
+    // let seconds = 60;
 
-        // Time calculations for days, hours, minutes and seconds
-        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-        // Output the result in an element with id="demo";
-        document.getElementById("timer").innerHTML = minutes + "m " + seconds + "s ";
-            
-        // If the count down is over, write some text 
-        if (distance < 0) {
-            clearInterval(x);
-            quizdashboard_wrapper.style.display = 'none';
-        }
-    }, 1000);
+    // let x = setInterval(function() {
+    //     seconds--;
+
+    //     if(seconds === 0) {
+    //         minutes--;
+    //     }
+
+    //     console.log(minutes, seconds);
+    // }, 1000);
 });
 
 let quizresultdashboard_wrapper = document.getElementById('quizresultdashboard_wrapper');
