@@ -28,10 +28,11 @@ const quizguide_wrapper = document.getElementById('quizguide_wrapper');
 let keyset = 'js321';
 let inputkey;
 
+
 const signup = document.getElementById('signup');
 const keysubmit = document.getElementById('keysubmit');
 const enteruserdetails = document.getElementById('enteruserdetails');
-const typescript = document.getElementById('typescript');
+const javascript = document.getElementById('javascript');
 
 
 let userinfo_wrapper = document.getElementById('userinfo_wrapper');
@@ -67,6 +68,8 @@ signup.addEventListener('click', (e) => {
         updateKey.addEventListener('click', (e) => {
             e.preventDefault();
             keyset = document.getElementById('editKey').value;
+
+            sessionStorage.setItem('keyset', JSON.stringify(keyset));
         });
     }
     else {
@@ -88,9 +91,10 @@ keysubmit.addEventListener('click', (e) => {
 
     inputkey = document.getElementById('inputkey').value;
 
-    if(inputkey === keyset) {
-        heading1.style.display = 'block';
-        heading2.style.display = 'none';
+    if(inputkey === (JSON.parse(sessionStorage.getItem('keyset')) || keyset)) {
+        // heading1.style.display = 'block';
+        // heading2.style.display = 'none';
+        // heading3.style.display = 'none';
         key_wrapper.style.display = 'none';
         userinfo_wrapper.style.display = 'block';
     }
@@ -120,6 +124,8 @@ enteruserdetails.addEventListener('click', (e) => {
 
         userinfo_wrapper.style.display = 'none';
         heading1.style.display = 'none';
+        heading3.style.display = 'block';
+
         quizinfo_wrapper.style.display = 'block';
 
         let namefirstletter = user.name[0].toUpperCase();
@@ -129,7 +135,7 @@ enteruserdetails.addEventListener('click', (e) => {
     }
 });
 
-typescript.addEventListener('click', (e) => {
+javascript.addEventListener('click', (e) => {
     e.preventDefault();
 
     quizinfo_wrapper.style.display = 'none';
@@ -141,174 +147,178 @@ const start = document.getElementById('start');
 let questions_wrapper = document.getElementById('questions_wrapper');
 
 let quizQuestions = [
-    "1. What are the three main 'simple types' in TypeScript?",
-    "2. What type of assignment is this variable, `const fullName: string = 'Dylan Israel';`?",
-    "3. True or False: TypeScript can always correctly infer a variables type.",
-    "4. You can disable implicit variable type assignment by enabling the compiler option:",
-    "5. You can enable 'undefined' and 'null' types to be accounted for by enabling the compiler property:",
-    "6. ______ is similar to 'any', but a safer alternative when uncertain about the type.",
-    "7. What is the inherited type for the variable example in `const example = ['Dylan']`?",
-    "8. What does the 'readonly' access modifier do for an array variable assignment like: `const codeNames: readonly string[] = ['Coding', 'God']`?",
-    "9. True or False: TypeScript will always correctly infer the type of an array.",
-    "10. True or False: a Tuple and an Array are the same thing when discussing types",
-    "11. Which is a successful example of this tuple `[number, string]`?",
-    "12. Type Aliases are mostly used with ______.",
-    "13. True or False: Interfaces are similar to type aliases, but only for object types?",
-    "14. ________ an interface will have the same properties as that interface.",
-    "15. What are the two types of enums?",
-    "16. Numeric enums first value is defaulted to what?",
-    "17. True or False: 'keyof' can be used with index signatures to extract the index type.",
-    "18. True or False: Generics can not be assigned default values.",
-    "19. Definitely Typed is...",
-    "20. What is the type of the parameter: `function ex(param1?: string){}`?",
-    "21. _____ is a return type for when nothing is returned.",
-    "22. Access modifiers control the ______ of properties and methods.",
-    "23. True or False: public modifiers allow access to the class members from anywhere.",
-    "24. True or False: protected modifiers only are allowed in the inherited class.",
-    "25. When a class extends another class and replaces the members of its parent it is called what?"
+    "1. Inside which HTML element do we put the JavaScript?",
+    "2. What is the correct JavaScript syntax to change the content of the HTML element below? <p id='demo'>This is a demonstration.</p>",
+    "3. Where is the correct place to insert a JavaScript?",
+    "4. What is the correct syntax for referring to an external script called 'xxx.js'?'",
+    "5. The external JavaScript file must contain the <script> tag.",
+    "6. How do you write 'Hello World' in an alert box?",
+    "7. How do you create a function in JavaScript?",
+    "8. How do you call a function named 'myFunction'?",
+    "9. How to write an IF statement in JavaScript?",
+    "10. How to write an IF statement for executing some code if 'i' is NOT equal to 5?",
+    "11. How does a WHILE loop start?",
+    "12. How does a FOR loop start?",
+    "13. How can you add a comment in a JavaScript?",
+    "14. How to insert a comment that has more than one line?",
+    "15. What is the correct way to write a JavaScript array?",
+    "16. How do you round the number 7.25, to the nearest integer?",
+    "17. How do you find the number with the highest value of x and y?",
+    "18. What is the correct JavaScript syntax for opening a new window called 'w2' ?",
+    "19. JavaScript is the same as Java.",
+    "20. How can you detect the client's browser name?",
+    "21. Which event occurs when the user clicks on an HTML element?",
+    "22. How do you declare a JavaScript variable?",
+    "23. Which operator is used to assign a value to a variable?",
+    "24. What will the following code return: Boolean(10 > 9)",
+    "25. Is JavaScript case-sensitive?"
 ];
 
 
 let options = [{
-    a: 'Boolean, Number, String',
-    b: 'Object, Array, Symbol',
-    c: 'Array, Object, Boolean',
-    d: 'Object, String, Number'
+    a: '&lt;scripting&gt;',
+    b: '&lt;js&gt;',
+    c: '&lt;script&gt;',
+    d: '&lt;javascript&gt;'
 },
 {
-    a: 'Explicit',
-    b: 'Implicit'
+    a: 'document.getElementByName("p").innerHTML = "Hello World!"',
+    b: 'document.getElementById("p").innerHTML = "Hello World!"',
+    c: 'document.getElement("p").innerHTML = "Hello World!"',
+    d: '#demo.innerHTML = "Hello World!"'
 },
 {
-    a: 'True',
-    b: 'False'
+    a: 'Both the &lt;head&gt; section and the &lt;body&gt; section are correct',
+    b: 'The &lt;head&gt; section',
+    c: 'The &lt;body&gt; section'
 },
 {
-    a: 'autoTypeAssignment = FALSE',
-    b: 'implicit = FALSE',
-    c: 'noAutoType',
-    d: 'noImplicitAny'
-},
-{
-    a: 'strictNullChecks',
-    b: 'strictChecksRequired',
-    c: 'noFalseyInits',
-    d: 'noAutoType',
-},
-{
-    a: 'unknown',
-    b: 'similer',
-    c: 'never'
-},
-{
-    a: 'string[]',
-    b: 'unknown[]',
-    c: 'any[]',
-    d: 'string',
-},
-{
-    a: 'Makes it private and can only be used in the file its created',
-    b: 'Makes you read it for bette clean code',
-    c: 'Allows no changes and is there simply to be read from and not modified',
-    d: 'Allows only adding but not deleting elements in the array',
-},
-{
-    a: 'false',
-    b: 'true'
+    a: '&lt;script href="xxx.js"&gt;',
+    b: '&lt;script src="xxx.js"&gt;',
+    c: '&lt;script name="xxx.js"&gt;'
 },
 {
     a: 'true',
-    b: 'false'
-},
-{
-    a: 'cosnt ourTuple = [101, "Coding God"]',
-    b: 'cosnt ourTuple = [101, 101, "Coding God", "Coding God"]',
-    c: 'cosnt ourTuple = ["Coding God", 101]',
-    d: 'cosnt ourTuple = [101]',
-},
-{
-    a: 'Number',
-    b: 'Boolean',
-    c: 'String'
-},
-{
-    a: 'false',
-    b: 'true'
-},
-{
-    a: 'Idolizing',
-    b: 'Duplicating',
-    c: 'Improving',
-    d: 'Extending',
-},
-{
-    a: 'Number and Number Array',
-    b: 'String and Number',
-    c: 'Number and Boolean',
-    d: 'String and Boolean',
-},
-{
-    a: '0',
-    b: '5',
-    c: '1',
-    d: '10',
-},
-{
-    a: 'True',
     b: 'False'
 },
 {
+    a: 'msgBox("Hello World");',
+    b: 'msg("Hello World");',
+    c: 'alertBox("Hello World");',
+    d: 'alert("Hello World");'
+},
+{
+    a: 'function myFunction()',
+    b: 'function = myFunction()',
+    c: 'function:myFunction()'
+},
+{
+    a: 'myFunction()',
+    b: 'call function myFunction()',
+    c: 'call myFunction()'
+},
+{
+    a: 'if i = 5 then',
+    b: 'if i == 5 then',
+    c: 'if i = 5',
+    d: 'if(i == 5)'
+},
+{
+    a: 'if i != 5 then',
+    b: 'if <> 5',
+    c: 'if(i != 5)',
+    d: 'if (i <> 5)'
+},
+{
+    a: 'while (i &lt;= 10; i++)',
+    b: 'while (i &lt;= 10)',
+    c: 'while i = 1 to 10'
+},
+{
+    a: 'for(i = 0; i <= 5)',
+    b: 'for i = 1 to 5',
+    c: 'for(i <= 5; i++)',
+    d: 'for(i = 0; i &lt;= 5; i++)'
+},
+{
+    a: '`This is a comment',
+    b: '&lt;!-- This is a comment --&gt;',
+    c: '//This is a comment'
+},
+{
+    a: '/* This comment has more than one line */',
+    b: '&lt;!-- This comment has more than one line --&gt;',
+    c: '// This comment has more than one line'
+},
+{
+    a: 'var colors = [1:"red", 2:"green", 3: "blue"]',
+    b: 'var colors = ["red","green","blue"]',
+    c: 'var colors = "red","green","blue"',
+    d: 'var colors = 1 = ("red"), 2 = ("green"), 3 = ("blue")',
+},
+{
+    a: 'round(7.25)',
+    b: 'Math.round(7.25)',
+    c: 'rnd(7.25)',
+    d: 'Math.rnd(7.25)',
+},
+{
+    a: 'top(x,y)',
+    b: 'ceil(x,y)',
+    c: 'Math.max(x,y)',
+    d: 'Math.ceil(x,y)'
+},
+{
+    a: 'w2 = window.new("http://www.w3schools.com")',
+    b: 'w2 = window.open("http://www.w3schools.com")'
+},
+{
     a: 'False',
-    b: 'True'
+    b: 'Ture'
 },
 {
-    a: 'a project whose goal is to make types dynamic',
-    b: 'a project that provides a central repositary of TypeScript definitions for NPM packages which do not have types.',
-    c: 'a superset of TypeScript',
-    d: 'the official name of TypeScript',
+    a: 'browser.name',
+    b: 'navigator.appName',
+    c: 'client.navName'
 },
 {
-    a: 'string | undefined',
-    b: 'unknown',
-    c: 'string',
-    d: 'string | null',
+    a: 'onchange',
+    b: 'onclick',
+    c: 'onmouseover',
+    d: 'onmouseclick',
 },
 {
-    a: 'any[]',
-    b: 'unknown',
-    c: 'void',
-    d: 'any',
+    a: 'v carName;',
+    b: 'var carName;',
+    c: 'variable carName;'
 },
 {
-    a: 'mocking',
-    b: 'inhritance',
-    c: 'visiblity',
-    d: 'Type',
+    a: '-',
+    b: '=',
+    c: 'x',
+    d: '*'
 },
 {
-    a: 'False',
-    b: 'True'
+    a: 'true',
+    b: 'false',
+    c: 'NaN'
 },
 {
-    a: 'False',
-    b: 'True'
-},
-{
-    a: 'inheriting',
-    b: 'overload',
-    c: 'extending',
-    d: 'override',
+    a: 'No',
+    b: 'Yes'
 }];
 
 
 let correctOptions = [
-    'Boolean, Number, String', 'Explicit', 'False', 'noImplicitAny', 
-    'strictNullChecks', 'unknown', 'string[]', 
-    'Allows no changes and is there simply to be read from and not modified', 
-    'false', 'false', 'cosnt ourTuple = [101, "Coding God"]', 'String', 'true', 
-    'Extending', 'String and Number', '0', 'True', 'False', 
-    'a project that provides a central repositary of TypeScript definitions for NPM packages which do not have types.',
-    'string | undefined', 'void', 'Type', 'True', 'False', 'override'
+    '&lt;script&gt;', 'document.getElementById("p").innerHTML = "Hello World!"', 
+    'Both the &lt;head&gt; section and the &lt;body&gt; section are correct', 
+    '&lt;script src="xxx.js"&gt;', 'False', 'alert("Hello World");', 
+    'function myFunction()', 'myFunction()', 'if(i == 5)', 'if(i != 5)', 
+    'while (i &lt;= 10)', 'for(i = 0; i &lt;= 5; i++)', '//This is a comment', 
+    '/* This comment has more than one line */', 
+    'var colors = ["red","green","blue"]', 'Math.round(7.25)', 'Math.max(x,y)', 
+    'w2 = window.open("http://www.w3schools.com")', 'False', 'navigator.appName',
+    'onclick', 'var carName;', '=', 'true', 'Yes'
 ];
 
 
@@ -334,6 +344,8 @@ option2 = options[0].b;
 option3 = options[0].c;
 option4 = options[0].d;
 
+console.log(options[0].a);
+
 
 let option1Show = document.getElementById('option1Show');
 let option2Show = document.getElementById('option2Show');
@@ -345,6 +357,8 @@ option1Show.innerHTML = options[0].a;
 option2Show.innerHTML = options[0].b;
 option3Show.innerHTML = options[0].c;
 option4Show.innerHTML = options[0].d;
+
+console.log(option1Show.innerHTML);
 
 
 let marquee = document.getElementById('marquee');
@@ -424,8 +438,11 @@ for (let i = 0; i < optionsPic.length; i++) {
 
         let currentOption = optionsPic[i].innerHTML;
 
+        console.log(currentOption);
+
         if(currentOption === correctOptions[count2]) {
-            score++;            
+            score++;  
+            console.log(score);          
         }
         else {
             console.log('error!');

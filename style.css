@@ -77,6 +77,12 @@ body {
 
 /* home section start */
 
+.app_wrapper {
+    height: 620px;
+}
+
+
+
 .app_wrapper .homepage_wrapper {
     /* border: 1px solid gray; */
     /* background-color: rgb(0, 75, 75); */
@@ -273,7 +279,7 @@ body {
 .quizresultdashboard_wrapper {
     border: 1px solid var(--bordercolor--);
     width: 50%;
-    padding-top: -20px;
+    /* padding-top: -20px; */
     margin: auto;
     /* border-top: 1px solid var(--bordercolor--); */
     /* border-bottom: 1px solid var(--bordercolor--); */
@@ -302,6 +308,12 @@ body {
 
 
 @media (max-width: 760px) {
+
+    .app_wrapper {
+        height: 900px;
+    }
+
+
     .course {
         width: 90%;
     }
@@ -313,6 +325,7 @@ body {
 
     .quizdashboard_wrapper {
         width: 95%;
+        margin-top: -100px;
     }
 
     #questions_wrapper {
@@ -321,5 +334,9 @@ body {
 
     .quizresultdashboard_wrapper {
         width: 80%;
+    }
+
+    .quizresultdashboard_wrapper {
+        margin-top: -150px;
     }
 }
