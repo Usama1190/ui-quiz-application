@@ -6,13 +6,13 @@ const user = {
 }
 
 const admin = {
-    email: 'usamaisrar1189@gmail.com',
-    password: 'usama1189'
+    email: 'usamaisrar1190@gmail.com',
+    password: 'usama1190'
 }
 
 const firstAttempt = user.email === 'abc@gmail.com';
 
-sessionStorage.setItem('admin', JSON.stringify(admin));
+// sessionStorage.setItem('admin', JSON.stringify(admin));
 
 
 let emailAlreadyExits = JSON.parse(sessionStorage.getItem('user')) || firstAttempt;
@@ -38,6 +38,14 @@ let userinfo_wrapper = document.getElementById('userinfo_wrapper');
 let quizinfo_wrapper = document.getElementById('quizinfo_wrapper');
 
 
+let updateKey = document.getElementById('updateKey');   // button
+let editKey;
+
+console.log(keyset);
+console.log(editKey,'editKey');
+
+
+
 signup.addEventListener('click', (e) => {
     e.preventDefault();
     
@@ -50,10 +58,27 @@ signup.addEventListener('click', (e) => {
     else if(user.email === emailAlreadyExits.email) {
         warning.innerHTML = 'This email address already exits';
     }
-    else if(user.email === admin.email) {
+    else if(user.email === admin.email && user.password === admin.password) {
         signupForm.classList.add('hidden');
         key_wrapper.style.display = 'block';
-        heading2.style.display = 'block';
+
+        let heading5 = document.getElementById('heading5');
+        heading5.style.display = 'block';
+
+        let adminKeyWrapper = document.getElementById('adminKeyWrapper');
+        adminKeyWrapper.classList.remove('hidden');
+
+        updateKey.addEventListener('click', (e) => {
+            e.preventDefault();
+            editKey = document.getElementById('editKey').value;
+
+            keyset == editKey;
+            console.log(keyset, 'keyset');
+
+            console.log(editKey, 'editKey');
+        })
+
+        console.log(keyset, 'keyset');
     }
     else {
         // warning.innerHTML = 'This email address is not registered';
@@ -335,19 +360,18 @@ option4Show.innerHTML = options[0].d;
 
 let marquee = document.getElementById('marquee');
 
-let minutes = 19;
-let seconds = 10;
+let quizresultdashboard_wrapper = document.getElementById('quizresultdashboard_wrapper');
 
-let x = setInterval(function() {
-    seconds--;
+let score = 0;
+let count2 = 0;
+let correctAnswerShow = document.getElementById('correctAnswer');
+let resultshow = document.getElementById('resultshow');
+let percentageDiv = document.getElementById('percentage');
+let percentage;
 
-    if(seconds === 0) {
-        minutes--;
-        seconds = 10;
-    }
-
-    console.log(minutes, seconds);
-}, 1000);
+// Add active class to the current button (highlight it)
+let options_wrapper = document.getElementById("options_wrapper");
+let optionsPic = options_wrapper.getElementsByClassName("options");
 
 
 
@@ -362,32 +386,27 @@ start.addEventListener('click', (e) => {
     quizguide_wrapper.style.display = 'none';
     marquee.style.display = 'none';
     quizdashboard_wrapper.style.display = 'block';
-    
-    
 
-    // let time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-    // console.log(time);
+    let minutes = 19;
+    let seconds = 59;
 
-    // Set the date we're counting down to
-    // let countDownDate = new Date("Jan 5, 2030 15:27:25").getTime();
+    let x = setInterval(function() {
+        seconds--;
 
-    // Update the count down every 1 second
+        if(seconds === -1) {
+            minutes--;
+            seconds = 59;
+        }
 
-    // let minutes = 19;
-    // let seconds = 60;
+        if(minutes === 0 && seconds === 0) {
+            quizdashboard_wrapper.style.display = 'none';
+            quizresultdashboard_wrapper.style.display = 'block';
+        }
 
-    // let x = setInterval(function() {
-    //     seconds--;
-
-    //     if(seconds === 0) {
-    //         minutes--;
-    //     }
-
-    //     console.log(minutes, seconds);
-    // }, 1000);
+        document.getElementById('timer').innerHTML = `${minutes}:${seconds}`;
+    }, 1000);
 });
 
-let quizresultdashboard_wrapper = document.getElementById('quizresultdashboard_wrapper');
 
 
 nextBtn.addEventListener('click', function(e) {
@@ -409,40 +428,18 @@ nextBtn.addEventListener('click', function(e) {
 });
 
 
-let score = 0;
-let count2 = 0;
-let correctAnswerShow = document.getElementById('correctAnswer');
-let resultshow = document.getElementById('resultshow');
-let percentageDiv = document.getElementById('percentage');
-let percentage;
 
-// Add active class to the current button (highlight it)
-let options_wrapper = document.getElementById("options_wrapper");
-let optionsPic = options_wrapper.getElementsByClassName("options");
-
-// console.log(optionsPic[0].innerHTML);
 
 for (let i = 0; i < optionsPic.length; i++) {
     optionsPic[i].addEventListener("click", function() {
 
         let currentOption = optionsPic[i].innerHTML;
-        // console.log(currentOption, 'before loop');
 
         if(currentOption === correctOptions[count2]) {
-            score++;
-            // count2++;
-            
-            // console.log(currentOption, 'currentOption after loop success');
-            // console.log(correctOptions[i], 'correctOptions after loop success');
-            console.log(score, 'score');
+            score++;            
         }
         else {
             console.log('error!');
-            // document.getElementById('correctAnswer').innerHTML = score;
-            
-            console.log(count2, 'count2');
-            // console.log(correctOptions[count2], 'correctOptions after loop');
-            // console.log(currentOption, 'currentOption after loop');
         }
         count2++;
         correctAnswerShow.innerHTML = score;

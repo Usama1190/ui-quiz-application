@@ -1,0 +1,16 @@
+:root {
+    --bordercolor--: #e0e0e0;
+    --bgcolor--:  rgb(24, 56, 83);
+    --bgcolor2--:  rgb(125, 197, 255);
+    --colorwhite--: #fff;
+    --colorblack--: #000;
+}
+
+
+
+
+.adminKeyWrapper {
+    border: 1px solid var(--bordercolor--);
+    width: 80%;
+    margin: auto;
+}
