@@ -44,8 +44,8 @@ signup.addEventListener('click', (e) => {
     user.email = document.getElementById('email').value;
     user.password = document.getElementById('password').value;
     
-    if(user.email.trim() === '') {
-        warning.innerHTML = 'Please fill out the input field';
+    if(user.email.trim() === '' || user.password.length <= 3) {
+        warning.innerHTML = 'input field is not valid';
     }
     else if(user.email === emailAlreadyExits.email) {
         warning.innerHTML = 'This email address already exits';
@@ -93,10 +93,13 @@ enteruserdetails.addEventListener('click', (e) => {
     e.preventDefault();
 
     user.name = document.getElementById('name').value
-    user.rollno = parseInt(document.getElementById('rollno').value);
+    user.rollno = document.getElementById('rollno').value;
 
-    if(user.name.trim() === '') {
-        warning3.innerHTML = 'Please enter your name';
+    console.log(user.rollno);
+    console.log(user.rollno.length);
+
+    if(user.name.trim() === '' || user.rollno.length <= 3) {
+        warning3.innerHTML = 'input field is not valid';
     }
     else {
         sessionStorage.setItem('user', JSON.stringify(user));
@@ -107,9 +110,6 @@ enteruserdetails.addEventListener('click', (e) => {
 
         let namefirstletter = user.name[0].toUpperCase();
         let nameremainingletters = user.name.slice(1).toLowerCase();
-
-        // console.log(namefirstletter);
-        // console.log(nameremainingletters);
 
         heading3.innerHTML = `Hi, ${namefirstletter + nameremainingletters}`;
     }
@@ -297,9 +297,6 @@ let correctOptions = [
     'string | undefined', 'void', 'Type', 'True', 'False', 'override'
 ];
 
-// console.log(correctOptions[0]);
-
-
 
 
 let count = 0;
@@ -317,26 +314,17 @@ let option3 = document.getElementById('option3').attributes.value;
 let option4 = document.getElementById('option4').attributes.value;
 
 
-// console.log(option1, 'option1 1st');
 
 option1 = options[0].a;
 option2 = options[0].b;
 option3 = options[0].c;
 option4 = options[0].d;
 
-// console.log(option1, 'option1 2nd');
 
 let option1Show = document.getElementById('option1Show');
 let option2Show = document.getElementById('option2Show');
 let option3Show = document.getElementById('option3Show');
 let option4Show = document.getElementById('option4Show');
-
-// option1Show.for = options[0].a;
-// option2Show.for = options[0].b;
-// option3Show.for = options[0].c;
-// option4Show.for = options[0].d;
-
-// console.log(option1Show.for = options[0].a);
 
 
 option1Show.innerHTML = options[0].a;
@@ -344,7 +332,6 @@ option2Show.innerHTML = options[0].b;
 option3Show.innerHTML = options[0].c;
 option4Show.innerHTML = options[0].d;
 
-// console.log(option1Show, 'option1Show');
 
 
 let marquee = document.getElementById('marquee');
@@ -369,7 +356,7 @@ start.addEventListener('click', (e) => {
             
         // Find the distance between now and the count down date
         let distance = countDownDate - now;
-            
+
         // Time calculations for days, hours, minutes and seconds
         let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         let seconds = Math.floor((distance % (1000 * 60)) / 1000);

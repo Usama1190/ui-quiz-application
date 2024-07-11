@@ -1,6 +1,7 @@
 :root {
     --bordercolor--: #e0e0e0;
     --bgcolor--:  rgb(24, 56, 83);
+    --bgcolor2--:  rgb(125, 197, 255);
     --colorwhite--: #fff;
     --colorblack--: #000;
 }
@@ -60,7 +61,7 @@ body {
 }
 
 .questions {
-    border: 1px solid var(--bordercolor--);
+    /* border: 1px solid var(--bordercolor--); */
     width: 95%;
     height: 60%;
     font-size: 22px;
@@ -68,14 +69,9 @@ body {
     margin: auto;
 }
 
-
-
-
-.app_wrapper {
-    /* border: 1px solid black; */
+.heading4 {
+    margin-top: 20px;
 }
-
-
 
 
 
@@ -144,19 +140,8 @@ body {
 
 /* key wrapper start */
 
-.key_wrapper {
-    /* height: 100vh; */
-    /* width: 100%; */
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    /* border: 1px solid black; */
-    /* background-color: rgb(198, 255, 255); */
-}
-
 .key_wrapper .keyinput_wrapper {
     text-align: center;
-    /* border: 1px solid black; */
 }
 
 .key_wrapper .keyinput_wrapper .keyinput {
@@ -164,7 +149,6 @@ body {
     padding: 6px;
     border: none;
     border-bottom: 1px solid black;
-    /* background-color: rgb(198, 255, 255); */
 }
 
 .key_wrapper .keyinput_wrapper .keyinput:focus {
@@ -178,7 +162,6 @@ body {
 /* userinfo_wrapper start */
 
 .course_wrapper {
-    /* border: 1px solid black; */
     display: flex;
     flex-wrap: wrap;
 }
@@ -206,9 +189,6 @@ body {
     background-color: rgb(3, 20, 34);
     scale: 1.03;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.quizguide_wrapper {
 }
 
  
@@ -251,6 +231,7 @@ body {
     width: 80%;
     border: 1px solid var(--bordercolor--);
     margin: auto;
+    background-color: var(--bordercolor--);
 }
 
 .options {
@@ -310,7 +291,8 @@ body {
     }
 
     #signupForm {
-        width: 80%;
+        width: 70%;
+        height: 40vh;
     }
 
     .quizdashboard_wrapper {
