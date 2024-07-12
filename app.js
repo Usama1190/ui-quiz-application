@@ -151,7 +151,7 @@ let quizQuestions = [
     "2. What is the correct JavaScript syntax to change the content of the HTML element below? <p id='demo'>This is a demonstration.</p>",
     "3. Where is the correct place to insert a JavaScript?",
     "4. What is the correct syntax for referring to an external script called 'xxx.js'?'",
-    "5. The external JavaScript file must contain the <script> tag.",
+    "5. The external JavaScript file must contain the &lt;script&gt; tag.",
     "6. How do you write 'Hello World' in an alert box?",
     "7. How do you create a function in JavaScript?",
     "8. How do you call a function named 'myFunction'?",
@@ -412,6 +412,8 @@ start.addEventListener('click', (e) => {
 
 
 
+
+
 nextBtn.addEventListener('click', function(e) {
     e.preventDefault();
 
@@ -429,6 +431,35 @@ nextBtn.addEventListener('click', function(e) {
         option4Show.innerHTML = options[count].d;
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+// nextBtn.addEventListener('click', function(e) {
+//     e.preventDefault();
+
+//     if(count > 23) {
+//         quizdashboard_wrapper.style.display = 'none';
+//         quizresultdashboard_wrapper.style.display = 'block';
+//     }
+//     else {
+//         questionDiv.innerHTML = quizQuestions[++count];
+//         questions_wrapper.appendChild(questionDiv);
+
+//         option1Show.innerHTML = options[count].a;
+//         option2Show.innerHTML = options[count].b;
+//         option3Show.innerHTML = options[count].c;
+//         option4Show.innerHTML = options[count].d;
+//     }
+// });
 
 
 
