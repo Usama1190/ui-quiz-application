@@ -92,9 +92,9 @@ keysubmit.addEventListener('click', (e) => {
     inputkey = document.getElementById('inputkey').value;
 
     if(inputkey === (JSON.parse(sessionStorage.getItem('keyset')) || keyset)) {
-        // heading1.style.display = 'block';
+        heading1.style.display = 'block';
         // heading2.style.display = 'none';
-        // heading3.style.display = 'none';
+        heading2.style.display = 'none';
         key_wrapper.style.display = 'none';
         userinfo_wrapper.style.display = 'block';
     }
@@ -125,6 +125,8 @@ enteruserdetails.addEventListener('click', (e) => {
         userinfo_wrapper.style.display = 'none';
         heading1.style.display = 'none';
         heading3.style.display = 'block';
+        heading2.style.display = 'block';
+
 
         quizinfo_wrapper.style.display = 'block';
 
@@ -381,7 +383,7 @@ let optionsPic = options_wrapper.getElementsByClassName("options");
 
 
 
-
+let quizdashboard_wrapper = document.getElementById('quizdashboard_wrapper');
 
 start.addEventListener('click', (e) => {
     e.preventDefault();
@@ -414,12 +416,52 @@ start.addEventListener('click', (e) => {
 
 
 
+
+let currentOption;
+
+
+for (let i = 0; i < optionsPic.length; i++) {
+    optionsPic[i].addEventListener("click", function() {
+
+        currentOption = optionsPic[i].innerHTML;
+
+        correctAnswerShow.innerHTML = score;
+
+        percentage = (score / 25) * 100;
+        percentageDiv.innerHTML = percentage + '%';
+
+        if(percentage > 70) {
+            resultshow.innerHTML = `Congratulations ${user.name}, you passed`;
+            resultshow.style.color = 'rgb(24, 56, 83)';
+        }
+        else {
+            resultshow.innerHTML = 'Sorry you failed';
+            resultshow.style.color = 'red';
+        }
+    });
+}
+
+
+
 nextBtn.addEventListener('click', function(e) {
     e.preventDefault();
+
+    if(currentOption === correctOptions[count2]) {
+        score++;  
+        // console.log(score);          
+    }
+    else {
+        console.log('wrong answer!');
+    }
+    count2++;
+
 
     if(count > 23) {
         quizdashboard_wrapper.style.display = 'none';
         quizresultdashboard_wrapper.style.display = 'block';
+        heading3.style.display = 'none';
+
+        marquee.style.display = 'block';
     }
     else {
         questionDiv.innerHTML = quizQuestions[++count];
@@ -437,68 +479,13 @@ nextBtn.addEventListener('click', function(e) {
 
 
 
-
-
-
-
-
-
-// nextBtn.addEventListener('click', function(e) {
-//     e.preventDefault();
-
-//     if(count > 23) {
-//         quizdashboard_wrapper.style.display = 'none';
-//         quizresultdashboard_wrapper.style.display = 'block';
-//     }
-//     else {
-//         questionDiv.innerHTML = quizQuestions[++count];
-//         questions_wrapper.appendChild(questionDiv);
-
-//         option1Show.innerHTML = options[count].a;
-//         option2Show.innerHTML = options[count].b;
-//         option3Show.innerHTML = options[count].c;
-//         option4Show.innerHTML = options[count].d;
-//     }
-// });
-
-
-
-
-for (let i = 0; i < optionsPic.length; i++) {
-    optionsPic[i].addEventListener("click", function() {
-
-        let currentOption = optionsPic[i].innerHTML;
-
-        console.log(currentOption);
-
-        if(currentOption === correctOptions[count2]) {
-            score++;  
-            console.log(score);          
-        }
-        else {
-            console.log('error!');
-        }
-        count2++;
-        correctAnswerShow.innerHTML = score;
-
-        percentage = (score / 25) * 100;
-        percentageDiv.innerHTML = percentage + '%';
-
-        if(percentage > 70) {
-            resultshow.innerHTML = `Congratulations ${user.name}, you passed`;
-            resultshow.style.color = 'rgb(24, 56, 83)';
-        }
-        else {
-            resultshow.innerHTML = 'Sorry you failed';
-            resultshow.style.color = 'red';
-        }
-    });
-}
-
 let backToHome = document.getElementById('backToHome');
 
 backToHome.addEventListener('click', (e) => {
     e.preventDefault();
+
+    heading2.style.display = 'none';
+
     quizresultdashboard_wrapper.style.display = 'none';
     signupForm.classList.remove('hidden');
 })

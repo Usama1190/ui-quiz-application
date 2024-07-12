@@ -63,7 +63,7 @@ body {
 .questions {
     /* border: 1px solid var(--bordercolor--); */
     width: 95%;
-    height: 60%;
+    /* height: 60%; */
     font-size: 22px;
     color: var(--bgcolor--);
     margin: auto;
@@ -77,9 +77,9 @@ body {
 
 /* home section start */
 
-.app_wrapper {
+/* .app_wrapper {
     height: 620px;
-}
+} */
 
 
 
@@ -167,6 +167,10 @@ body {
 
 /* userinfo_wrapper start */
 
+.quizinfo_wrapper {
+    margin-top: -120px;
+}
+
 .course_wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -197,6 +201,13 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+
+/* quizguide_wrapper start */
+
+
+.quizguide_wrapper {
+    margin-top: -120px;
+}
  
 
 .quizguide_wrapper table {
@@ -216,6 +227,9 @@ body {
 }
 
 
+/* quizguide_wrapper end */
+
+
 
 
 
@@ -225,7 +239,10 @@ body {
 .quizdashboard_wrapper {
     border: 1px solid var(--bordercolor--);
     width: 80%;
+    /* height: auto; */
+    padding: 5px;
     margin: auto;
+    margin-top: -120px;
 }
 
 .timer {
@@ -279,8 +296,8 @@ body {
 .quizresultdashboard_wrapper {
     border: 1px solid var(--bordercolor--);
     width: 50%;
-    /* padding-top: -20px; */
     margin: auto;
+    margin-top: -100px;
     /* border-top: 1px solid var(--bordercolor--); */
     /* border-bottom: 1px solid var(--bordercolor--); */
 }
@@ -309,9 +326,9 @@ body {
 
 @media (max-width: 760px) {
 
-    .app_wrapper {
+    /* .app_wrapper {
         height: 900px;
-    }
+    } */
 
 
     .course {
