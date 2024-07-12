@@ -12,7 +12,6 @@ const admin = {
 
 const firstAttempt = user.email === 'abc@gmail.com';
 
-// sessionStorage.setItem('admin', JSON.stringify(admin));
 
 
 let emailAlreadyExits = JSON.parse(sessionStorage.getItem('user')) || firstAttempt;
@@ -25,7 +24,7 @@ let heading2 = document.getElementById('heading2');
 
 const quizguide_wrapper = document.getElementById('quizguide_wrapper');
 
-let keyset = 'js321';
+let keyset = JSON.parse(sessionStorage.getItem('keyset')) || 'js321';
 let inputkey;
 
 
@@ -38,10 +37,22 @@ const javascript = document.getElementById('javascript');
 let userinfo_wrapper = document.getElementById('userinfo_wrapper');
 let quizinfo_wrapper = document.getElementById('quizinfo_wrapper');
 
+let keyShow = document.getElementById('keyShow');
+keyShow.innerHTML = `key : ${keyset}`;
+
 
 let updateKey = document.getElementById('updateKey');   // button
 
 
+
+
+
+
+
+
+
+
+// ============================================================================
 
 signup.addEventListener('click', (e) => {
     e.preventDefault();
@@ -59,18 +70,51 @@ signup.addEventListener('click', (e) => {
         signupForm.classList.add('hidden');
         key_wrapper.style.display = 'block';
 
+        // ===================== userlogo start ========================
+
+        let userlogo = document.getElementById('userlogo');
+        userlogo.style.display = 'block';
+
+        // ===================== userlogo end ========================
+
+
+        // ===================== adminlogo start =====================
+
+        let adminlogo = document.getElementById('adminlogo');
+        adminlogo.innerHTML = 'Admin';
+
+        // ===================== adminlogo end =====================
+
+
+        // ===================== heading5 start =====================
+
         let heading5 = document.getElementById('heading5');
         heading5.style.display = 'block';
+
+        // ===================== heading5 start =====================
+
 
         let adminKeyWrapper = document.getElementById('adminKeyWrapper');
         adminKeyWrapper.classList.remove('hidden');
 
+        document.body.classList.add('height');
+
         updateKey.addEventListener('click', (e) => {
             e.preventDefault();
-            keyset = document.getElementById('editKey').value;
 
+            keyset = document.getElementById('editKey').value;
+            alert(`Key updated successfully!, New key is ${keyset}`);
+            keyShow.innerHTML = `key : ${keyset}`;
             sessionStorage.setItem('keyset', JSON.stringify(keyset));
         });
+
+        // ================= addCourses start ====================
+
+        let addCourses = document.getElementById('addCourses');
+        addCourses.style.visibility = 'visible';
+
+        // ================= addCourses end ====================
+
     }
     else {
         // warning.innerHTML = 'This email address is not registered';
@@ -79,12 +123,30 @@ signup.addEventListener('click', (e) => {
         signupForm.classList.add('hidden');
         key_wrapper.style.display = 'block';
         heading2.style.display = 'block';
+
+        let userlogo = document.getElementById('userlogo');
+        userlogo.style.display = 'block';
     }
 });
 
 
 
+// ============================================================================
+
+
+
+
+
+
+
+
+
 let warning2 = document.getElementById('demo1');
+
+
+
+// ============================================================================
+
 
 keysubmit.addEventListener('click', (e) => {
     e.preventDefault();
@@ -104,8 +166,24 @@ keysubmit.addEventListener('click', (e) => {
 });
 
 
+// ============================================================================
+
+
+
+
+
+
+
+
+
 let warning3 = document.getElementById('demo2');
 let heading3 = document.getElementById('heading3');
+
+
+
+
+// ============================================================================
+
 
 enteruserdetails.addEventListener('click', (e) => {
     e.preventDefault();
@@ -137,6 +215,23 @@ enteruserdetails.addEventListener('click', (e) => {
     }
 });
 
+
+// ===========================================================================
+
+
+
+
+
+
+
+
+// ===========================================================================
+
+
+let course_wrapper = document.getElementById('course_wrapper');
+
+console.log(course_wrapper);
+
 javascript.addEventListener('click', (e) => {
     e.preventDefault();
 
@@ -144,6 +239,17 @@ javascript.addEventListener('click', (e) => {
     quizguide_wrapper.style.display = 'block';
 })
 
+
+// =============================================================================
+
+
+
+
+
+
+
+
+// ============================================================================
 
 const start = document.getElementById('start');
 let questions_wrapper = document.getElementById('questions_wrapper');
@@ -323,6 +429,15 @@ let correctOptions = [
     'onclick', 'var carName;', '=', 'true', 'Yes'
 ];
 
+// ==============================================================================
+
+
+
+
+
+
+
+
 
 
 let count = 0;
@@ -385,6 +500,12 @@ let optionsPic = options_wrapper.getElementsByClassName("options");
 
 let quizdashboard_wrapper = document.getElementById('quizdashboard_wrapper');
 
+
+
+
+// ===========================================================================
+
+
 start.addEventListener('click', (e) => {
     e.preventDefault();
     
@@ -411,6 +532,11 @@ start.addEventListener('click', (e) => {
         document.getElementById('timer').innerHTML = `${minutes}:${seconds}`;
     }, 1000);
 });
+
+
+// ============================================================================
+
+
 
 
 
@@ -442,6 +568,13 @@ for (let i = 0; i < optionsPic.length; i++) {
 }
 
 
+
+
+
+
+
+
+// =============================================================================
 
 nextBtn.addEventListener('click', function(e) {
     e.preventDefault();
@@ -475,9 +608,17 @@ nextBtn.addEventListener('click', function(e) {
 });
 
 
+// =============================================================================
 
 
 
+
+
+
+
+
+
+// ============================================================================
 
 let backToHome = document.getElementById('backToHome');
 

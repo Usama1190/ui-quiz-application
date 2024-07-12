@@ -14,15 +14,28 @@
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="app_wrapper">
         <div class="homepage_wrapper">
             <div class="topnav_wrapper">
-                <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank"><img src="assets/uit.png" class="usamaimage" alt="usama image"></a>
-                <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank"><span class="fletter">U</span>sama <span class="fletter">I</span>nfo <span class="fletter">T</span>ech</a>
+                <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank">
+                    <img src="assets/uit.png" class="usamaimage" alt="usama image">
+                </a>
+
+                <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank"><span class="fletter">
+                    U</span>sama <span class="fletter">I</span>nfo 
+                    <span class="fletter">T</span>ech
+                </a>
+
+                <strong class="adminlogo hidden" id="userlogo">
+                    <i class="fa fa-user"></i>
+                    <a href="#" id="adminlogo">Logout</a>
+                </strong>
             </div>
+
             <h1 class="heading1 hidden" id="heading5">Hi, Usama Israr Khan, welcome to your website!</h1>
             <h2 class="heading1 hidden" id="heading1">Welcome to the UIT Quiz App Protal</h2>
             <h1 class="heading1 hidden" id="heading2">UIT Quiz Application</h1>
@@ -55,6 +68,8 @@
                         <span class="fa fa-edit edit"></span>
                         <input type="text" id="editKey" class="inputStyle" placeholder="edit key">
                         <button type="button" class="btn1" id="updateKey">Update key</button>
+
+                        <p id="keyShow"></p>
                     </div>
                     <!-- Admin end -->
                 </div>
@@ -74,7 +89,12 @@
                 <h1 class="heading3" id="heading3"></h1>
                 <p>Welcome to the UIT's quiz portal. Select your course below to take a quiz</p>
 
-                <div class="course_wrapper">
+                <div class="course_wrapper" id="course_wrapper">
+
+                    <div class="addCourses visiblityNone" id="addCourses">
+                        <span class="fa fa-plus"></span>
+                    </div>
+
                     <div class="course opacity">
                         <h2>Python</h2>
                         <button type="button" class="btn1" id="python">join</button>

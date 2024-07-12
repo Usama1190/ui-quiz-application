@@ -14,6 +14,10 @@ body {
     color: var(--bgcolor--);
 }
 
+.height {
+    height: 620px;
+}
+
 .inputStyle {
     padding: 6px;
     border: none;
@@ -74,6 +78,13 @@ body {
 }
 
 
+.adminlogo {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    font-size: 16px;
+}
+
 
 /* home section start */
 
@@ -91,12 +102,13 @@ body {
 
 .app_wrapper .homepage_wrapper .topnav_wrapper {
     border: 1px solid var(--bordercolor--);
-    width: 98%;
+    width: 100%;
     padding: 5px;
-    position: absolute;
+    position: fixed;
     top: 0;
     display: flex;
     align-items: center;
+    background-color: var(--colorwhite--);
 }
 
 .app_wrapper .homepage_wrapper .topnav_wrapper a {
@@ -200,6 +212,42 @@ body {
     scale: 1.03;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+
+
+
+
+
+/* addCourses start for admin */
+
+.visiblityNone {
+    visibility: hidden;
+}
+
+.addCourses {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--bgcolor--);
+    border-radius: 50%;
+    color: var(--colorwhite--);
+    background-color: var(--bgcolor--);
+    position: fixed;
+    bottom: 100px;
+    right: 70px;
+    cursor: pointer;
+}
+
+.addCourses:hover {
+    background-color: var(--colorwhite--);
+    color: var(--bgcolor--);
+}
+
+/* addCourses end for admin */
 
 
 /* quizguide_wrapper start */
