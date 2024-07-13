@@ -141,6 +141,9 @@ signup.addEventListener('click', (e) => {
 
         });
 
+        let activateCourse = document.getElementById('activateCourse');
+        activateCourse.style.visibility = 'visible';
+
         // ================= addCourses end ====================
 
     }
