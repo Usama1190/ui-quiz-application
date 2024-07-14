@@ -43,11 +43,9 @@ keyShow.innerHTML = `key : ${keyset}`;
 
 let updateKey = document.getElementById('updateKey');   // button
 
-
-
-
-
-
+let warning2 = document.getElementById('demo1');
+let warning3 = document.getElementById('demo2');
+let heading3 = document.getElementById('heading3');
 
 
 
@@ -170,12 +168,6 @@ signup.addEventListener('click', (e) => {
 
 
 
-
-
-let warning2 = document.getElementById('demo1');
-
-
-
 // ============================================================================
 
 
@@ -201,14 +193,6 @@ keysubmit.addEventListener('click', (e) => {
 
 
 
-
-
-
-
-
-
-let warning3 = document.getElementById('demo2');
-let heading3 = document.getElementById('heading3');
 
 
 
@@ -464,13 +448,6 @@ let correctOptions = [
 
 
 
-
-
-
-
-
-
-
 let count = 0;
 
 let questionDiv = document.createElement('div');
@@ -479,34 +456,24 @@ questionDiv.innerHTML = quizQuestions[count];
 questions_wrapper.appendChild(questionDiv);
 
 let nextBtn = document.getElementById('next');
+nextBtn.setAttribute('disabled', true);
+nextBtn.classList.add('opacity');
 
-let option1 = document.getElementById('option1').attributes.value;
-let option2 = document.getElementById('option2').attributes.value;
-let option3 = document.getElementById('option3').attributes.value;
-let option4 = document.getElementById('option4').attributes.value;
-
-
-
-option1 = options[0].a;
-option2 = options[0].b;
-option3 = options[0].c;
-option4 = options[0].d;
-
-console.log(options[0].a);
+let option1 = document.getElementById('option1');
+let option2 = document.getElementById('option2');
+let option3 = document.getElementById('option3');
+let option4 = document.getElementById('option4');
 
 
-let option1Show = document.getElementById('option1Show');
-let option2Show = document.getElementById('option2Show');
-let option3Show = document.getElementById('option3Show');
-let option4Show = document.getElementById('option4Show');
+document.getElementById('option1').attributes.value = options[0].a;
+document.getElementById('option2').attributes.value = options[0].b;
+document.getElementById('option3').attributes.value = options[0].c;
+document.getElementById('option4').attributes.value = options[0].d;
 
-
-option1Show.innerHTML = options[0].a;
-option2Show.innerHTML = options[0].b;
-option3Show.innerHTML = options[0].c;
-option4Show.innerHTML = options[0].d;
-
-console.log(option1Show.innerHTML);
+document.getElementById('option1Show').innerHTML = options[0].a;
+document.getElementById('option2Show').innerHTML = options[0].b;
+document.getElementById('option3Show').innerHTML = options[0].c;
+document.getElementById('option4Show').innerHTML = options[0].d;
 
 
 let marquee = document.getElementById('marquee');
@@ -518,17 +485,11 @@ let count2 = 0;
 let correctAnswerShow = document.getElementById('correctAnswer');
 let resultshow = document.getElementById('resultshow');
 let percentageDiv = document.getElementById('percentage');
-let percentage;
+let percentage = 0;
 
 // Add active class to the current button (highlight it)
 let options_wrapper = document.getElementById("options_wrapper");
 let optionsPic = options_wrapper.getElementsByClassName("options");
-
-
-
-
-
-
 let quizdashboard_wrapper = document.getElementById('quizdashboard_wrapper');
 
 
@@ -564,21 +525,24 @@ start.addEventListener('click', (e) => {
     }, 1000);
 });
 
+// ===========================================================================
+
+
+
+
+
+
 
 // ============================================================================
-
-
-
-
-
-
-
 
 let currentOption;
 
 
 for (let i = 0; i < optionsPic.length; i++) {
     optionsPic[i].addEventListener("click", function() {
+
+        nextBtn.removeAttribute('disabled', true);
+        nextBtn.classList.remove('opacity');
 
         currentOption = optionsPic[i].innerHTML;
 
@@ -598,6 +562,9 @@ for (let i = 0; i < optionsPic.length; i++) {
     });
 }
 
+percentageDiv.innerHTML = percentage + '%';
+
+// =============================================================================
 
 
 
@@ -609,6 +576,14 @@ for (let i = 0; i < optionsPic.length; i++) {
 
 nextBtn.addEventListener('click', function(e) {
     e.preventDefault();
+
+    option1.checked = false;
+    option2.checked = false;
+    option3.checked = false;
+    option4.checked = false;
+
+    nextBtn.setAttribute('disabled', true);
+    nextBtn.classList.add('opacity');
 
     if(currentOption === correctOptions[count2]) {
         score++;  
@@ -637,7 +612,6 @@ nextBtn.addEventListener('click', function(e) {
         option4Show.innerHTML = options[count].d;
     }
 });
-
 
 // =============================================================================
 
