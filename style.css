@@ -89,18 +89,22 @@ body {
     font-size: 16px;
 }
 
+.inputStyleForm {
+    border: none;
+    border-bottom: 1px solid var(--bordercolor--);
+}
+
+.inputStyleForm:focus {
+    outline: none;
+}
+
+
+
+
 
 /* home section start */
 
-/* .app_wrapper {
-    height: 620px;
-} */
-
-
-
 .app_wrapper .homepage_wrapper {
-    /* border: 1px solid gray; */
-    /* background-color: rgb(0, 75, 75); */
     text-align: center;
 }
 
@@ -147,6 +151,7 @@ body {
 
 
 
+
 /* sign up form start */
 
 .form_wrapper {
@@ -155,8 +160,7 @@ body {
 
 #signupForm {
     padding: 20px;
-    width: 40%;
-    /* height: 60vh; */
+    width: 30%;
     border: 1px solid var(--bordercolor--);
     border-radius: 10px;
     margin: auto;

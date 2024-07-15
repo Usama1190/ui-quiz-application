@@ -1,20 +1,80 @@
-const user = {
+const userArray = [{
+    email: 'usamaisrar@gmail.com',
+    name: 'usama',
+}];
+
+const newUser = {
     email,
     password,
     name: 'xyz',
-    rollno: 190
+    rollno
 }
 
-const admin = {
-    email: 'usamaisrar1190@gmail.com',
-    password: 'usama1190'
+// userArray.push(newUser);
+const firstAttempt = newUser.email === 'abc@gmail.com';
+const emailAlreadyExits = JSON.parse(sessionStorage.getItem('userArray')) || firstAttempt;
+
+
+const btns = {
+    signup: document.getElementById('signup'),
+    keysubmit: document.getElementById('keysubmit'),
+    enteruserdetails: document.getElementById('enteruserdetails'),
+    backToHome: document.getElementById('backToHome'),
+    selectedCourse: document.getElementById('selectedCourse')
 }
 
-const firstAttempt = user.email === 'abc@gmail.com';
+console.log(btns);
+
+
+btns.signup.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    newUser.password = document.getElementById('password').value;
+    newUser.email = document.getElementById('email').value;
+    
+
+})
 
 
 
-let emailAlreadyExits = JSON.parse(sessionStorage.getItem('user')) || firstAttempt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let warning = document.getElementById('demo');
 let signupForm = document.getElementById('signupForm');
 
@@ -26,13 +86,6 @@ const quizguide_wrapper = document.getElementById('quizguide_wrapper');
 
 let keyset = JSON.parse(sessionStorage.getItem('keyset')) || 'js321';
 let inputkey;
-
-
-const signup = document.getElementById('signup');
-const keysubmit = document.getElementById('keysubmit');
-const enteruserdetails = document.getElementById('enteruserdetails');
-const javascript = document.getElementById('javascript');
-
 
 let userinfo_wrapper = document.getElementById('userinfo_wrapper');
 let quizinfo_wrapper = document.getElementById('quizinfo_wrapper');
@@ -52,113 +105,111 @@ let heading3 = document.getElementById('heading3');
 
 // ============================================================================
 
-signup.addEventListener('click', (e) => {
-    e.preventDefault();
+// signup.addEventListener('click', (e) => {
+//     e.preventDefault();
     
-    user.email = document.getElementById('email').value;
-    user.password = document.getElementById('password').value;
+//     newUser.email = document.getElementById('email').value;
+//     newUser.password = document.getElementById('password').value;
     
-    if(user.email.trim() === '' || user.password.length <= 3) {
-        warning.innerHTML = 'input field is not valid';
-    }
-    else if(user.email === emailAlreadyExits.email) {
-        warning.innerHTML = 'This email address already exits';
-    }
-    else if(user.email === admin.email && user.password === admin.password) {
-        signupForm.classList.add('hidden');
-        key_wrapper.style.display = 'block';
+//     if(newUser.email.trim() === '' || newUser.password.length <= 3) {
+//         warning.innerHTML = 'input field is not valid';
+//     }
+//     else if(newUser.email === emailAlreadyExits.email) {
+//         warning.innerHTML = 'This email address already exists';
+//     }
+//     else if(newUser.email === userArray[0].email && newUser.password === userArray[0].password) {
+//         signupForm.classList.add('hidden');
+//         key_wrapper.style.display = 'block';
 
-        // ===================== userlogo start ========================
+//         // ===================== userlogo start ========================
 
-        let userlogo = document.getElementById('userlogo');
-        userlogo.style.display = 'block';
+//         let userlogo = document.getElementById('userlogo');
+//         userlogo.style.display = 'block';
 
-        // ===================== userlogo end ========================
-
-
-        // ===================== adminlogo start =====================
-
-        let adminlogo = document.getElementById('adminlogo');
-        adminlogo.innerHTML = 'Admin';
-
-        // ===================== adminlogo end =====================
+//         // ===================== userlogo end ========================
 
 
-        // ===================== heading5 start =====================
+//         // ===================== adminlogo start =====================
 
-        let heading5 = document.getElementById('heading5');
-        heading5.style.display = 'block';
+//         let adminlogo = document.getElementById('adminlogo');
+//         adminlogo.innerHTML = 'Admin';
 
-        // ===================== heading5 start =====================
+//         // ===================== adminlogo end =====================
 
 
-        let adminKeyWrapper = document.getElementById('adminKeyWrapper');
-        adminKeyWrapper.classList.remove('hidden');
+//         // ===================== heading5 start =====================
 
-        document.body.classList.add('height');
+//         let heading5 = document.getElementById('heading5');
+//         heading5.style.display = 'block';
 
-        updateKey.addEventListener('click', (e) => {
-            e.preventDefault();
+//         // ===================== heading5 start =====================
 
-            keyset = document.getElementById('editKey').value;
-            alert(`Key updated successfully!, New key is ${keyset}`);
-            keyShow.innerHTML = `key : ${keyset}`;
-            sessionStorage.setItem('keyset', JSON.stringify(keyset));
-        });
 
-        // ================= addCourses start ====================
+//         let adminKeyWrapper = document.getElementById('adminKeyWrapper');
+//         adminKeyWrapper.classList.remove('hidden');
 
-        let course_wrapper = document.getElementById('course_wrapper');
+//         document.body.classList.add('height');
 
-        let addCourses = document.getElementById('addCourses');
-        addCourses.style.visibility = 'visible';
+//         updateKey.addEventListener('click', (e) => {
+//             e.preventDefault();
 
-        addCourses.addEventListener('click', (e) => {
-            e.preventDefault();
+//             keyset = document.getElementById('editKey').value;
+//             alert(`Key updated successfully!, New key is ${keyset}`);
+//             keyShow.innerHTML = `key : ${keyset}`;
+//             sessionStorage.setItem('keyset', JSON.stringify(keyset));
+//         });
 
-            let courseTitle = prompt('Enter course title');
+//         // ================= addCourses start ====================
 
-            let addCoursesDiv = document.createElement('div');
+//         let course_wrapper = document.getElementById('course_wrapper');
 
-            let addCoursesDivH2 = document.createElement('h2');
-            let addCoursesDivH2Text = document.createTextNode(courseTitle);
+//         let addCourses = document.getElementById('addCourses');
+//         addCourses.style.visibility = 'visible';
 
-            addCoursesDivH2.appendChild(addCoursesDivH2Text);
-            addCoursesDiv.appendChild(addCoursesDivH2);
-            course_wrapper.appendChild(addCoursesDiv);
+//         addCourses.addEventListener('click', (e) => {
+//             e.preventDefault();
 
-            let addCoursesBtn = document.createElement('button');
-            let addCoursesBtnText = document.createTextNode('Join');
+//             let courseTitle = prompt('Enter course title');
 
-            addCoursesBtn.appendChild(addCoursesBtnText);
-            addCoursesBtn.classList.add('btn1');
-            addCoursesDiv.appendChild(addCoursesBtn);
+//             let addCoursesDiv = document.createElement('div');
 
-            addCoursesDiv.classList.add('course');
-            addCoursesDiv.classList.add('opacity');
+//             let addCoursesDivH2 = document.createElement('h2');
+//             let addCoursesDivH2Text = document.createTextNode(courseTitle);
 
-        });
+//             addCoursesDivH2.appendChild(addCoursesDivH2Text);
+//             addCoursesDiv.appendChild(addCoursesDivH2);
+//             course_wrapper.appendChild(addCoursesDiv);
 
-        let activateCourse = document.getElementById('activateCourse');
-        activateCourse.style.visibility = 'visible';
+//             let addCoursesBtn = document.createElement('button');
+//             let addCoursesBtnText = document.createTextNode('Join');
 
-        // ================= addCourses end ====================
+//             addCoursesBtn.appendChild(addCoursesBtnText);
+//             addCoursesBtn.classList.add('btn1');
+//             addCoursesDiv.appendChild(addCoursesBtn);
 
-    }
-    else {
-        // warning.innerHTML = 'This email address is not registered';
-        sessionStorage.setItem('user', JSON.stringify(user));
+//             addCoursesDiv.classList.add('course');
+//             addCoursesDiv.classList.add('opacity');
+
+//         });
+
+//         let activateCourse = document.getElementById('activateCourse');
+//         activateCourse.style.visibility = 'visible';
+
+//         // ================= addCourses end ====================
+
+//     }
+//     else {
+//         userArray.push(newUser);
+//         sessionStorage.setItem('userArray', JSON.stringify(userArray));
         
-        signupForm.classList.add('hidden');
-        key_wrapper.style.display = 'block';
-        heading2.style.display = 'block';
+//         signupForm.classList.add('hidden');
+//         key_wrapper.style.display = 'block';
+//         heading2.style.display = 'block';
 
-        let userlogo = document.getElementById('userlogo');
-        userlogo.style.display = 'block';
-    }
-});
-
-
+//         let userlogo = document.getElementById('userlogo');
+//         userlogo.style.display = 'block';
+//     }
+// });
 
 // ============================================================================
 
@@ -206,8 +257,8 @@ enteruserdetails.addEventListener('click', (e) => {
     user.name = document.getElementById('name').value
     user.rollno = document.getElementById('rollno').value;
 
-    console.log(user.rollno);
-    console.log(user.rollno.length);
+    // console.log(user.rollno);
+    // console.log(user.rollno.length);
 
     if(user.name.trim() === '' || user.rollno.length <= 3) {
         warning3.innerHTML = 'input field is not valid';
@@ -245,14 +296,14 @@ enteruserdetails.addEventListener('click', (e) => {
 
 let course_wrapper = document.getElementById('course_wrapper');
 
-console.log(course_wrapper);
+// console.log(course_wrapper);
 
-javascript.addEventListener('click', (e) => {
-    e.preventDefault();
+// javascript.addEventListener('click', (e) => {
+//     e.preventDefault();
 
-    quizinfo_wrapper.style.display = 'none';
-    quizguide_wrapper.style.display = 'block';
-})
+//     quizinfo_wrapper.style.display = 'none';
+//     quizguide_wrapper.style.display = 'block';
+// })
 
 
 // =============================================================================
@@ -538,29 +589,29 @@ start.addEventListener('click', (e) => {
 let currentOption;
 
 
-for (let i = 0; i < optionsPic.length; i++) {
-    optionsPic[i].addEventListener("click", function() {
+// for (let i = 0; i < optionsPic.length; i++) {
+//     optionsPic[i].addEventListener("click", function() {
 
-        nextBtn.removeAttribute('disabled', true);
-        nextBtn.classList.remove('opacity');
+//         nextBtn.removeAttribute('disabled', true);
+//         nextBtn.classList.remove('opacity');
 
-        currentOption = optionsPic[i].innerHTML;
+//         currentOption = optionsPic[i].innerHTML;
 
-        correctAnswerShow.innerHTML = score;
+//         correctAnswerShow.innerHTML = score;
 
-        percentage = (score / 25) * 100;
-        percentageDiv.innerHTML = percentage + '%';
+//         percentage = (score / 25) * 100;
+//         percentageDiv.innerHTML = percentage + '%';
 
-        if(percentage > 70) {
-            resultshow.innerHTML = `Congratulations ${user.name}, you passed`;
-            resultshow.style.color = 'rgb(24, 56, 83)';
-        }
-        else {
-            resultshow.innerHTML = 'Sorry you failed';
-            resultshow.style.color = 'red';
-        }
-    });
-}
+//         if(percentage > 70) {
+//             resultshow.innerHTML = `Congratulations ${user.name}, you passed`;
+//             resultshow.style.color = 'rgb(24, 56, 83)';
+//         }
+//         else {
+//             resultshow.innerHTML = 'Sorry you failed';
+//             resultshow.style.color = 'red';
+//         }
+//     });
+// }
 
 percentageDiv.innerHTML = percentage + '%';
 
@@ -574,44 +625,44 @@ percentageDiv.innerHTML = percentage + '%';
 
 // =============================================================================
 
-nextBtn.addEventListener('click', function(e) {
-    e.preventDefault();
+// nextBtn.addEventListener('click', function(e) {
+//     e.preventDefault();
 
-    option1.checked = false;
-    option2.checked = false;
-    option3.checked = false;
-    option4.checked = false;
+//     option1.checked = false;
+//     option2.checked = false;
+//     option3.checked = false;
+//     option4.checked = false;
 
-    nextBtn.setAttribute('disabled', true);
-    nextBtn.classList.add('opacity');
+//     nextBtn.setAttribute('disabled', true);
+//     nextBtn.classList.add('opacity');
 
-    if(currentOption === correctOptions[count2]) {
-        score++;  
-        // console.log(score);          
-    }
-    else {
-        console.log('wrong answer!');
-    }
-    count2++;
+//     if(currentOption === correctOptions[count2]) {
+//         score++;  
+//         // console.log(score);          
+//     }
+//     else {
+//         console.log('wrong answer!');
+//     }
+//     count2++;
 
 
-    if(count > 23) {
-        quizdashboard_wrapper.style.display = 'none';
-        quizresultdashboard_wrapper.style.display = 'block';
-        heading3.style.display = 'none';
+//     if(count > 23) {
+//         quizdashboard_wrapper.style.display = 'none';
+//         quizresultdashboard_wrapper.style.display = 'block';
+//         heading3.style.display = 'none';
 
-        marquee.style.display = 'block';
-    }
-    else {
-        questionDiv.innerHTML = quizQuestions[++count];
-        questions_wrapper.appendChild(questionDiv);
+//         marquee.style.display = 'block';
+//     }
+//     else {
+//         questionDiv.innerHTML = quizQuestions[++count];
+//         questions_wrapper.appendChild(questionDiv);
 
-        option1Show.innerHTML = options[count].a;
-        option2Show.innerHTML = options[count].b;
-        option3Show.innerHTML = options[count].c;
-        option4Show.innerHTML = options[count].d;
-    }
-});
+//         option1Show.innerHTML = options[count].a;
+//         option2Show.innerHTML = options[count].b;
+//         option3Show.innerHTML = options[count].c;
+//         option4Show.innerHTML = options[count].d;
+//     }
+// });
 
 // =============================================================================
 
@@ -625,15 +676,14 @@ nextBtn.addEventListener('click', function(e) {
 
 // ============================================================================
 
-let backToHome = document.getElementById('backToHome');
 
-backToHome.addEventListener('click', (e) => {
-    e.preventDefault();
+// backToHome.addEventListener('click', (e) => {
+//     e.preventDefault();
 
-    heading2.style.display = 'none';
+//     heading2.style.display = 'none';
 
-    quizresultdashboard_wrapper.style.display = 'none';
-    signupForm.classList.remove('hidden');
-})
+//     quizresultdashboard_wrapper.style.display = 'none';
+//     signupForm.classList.remove('hidden');
+// })
 
 // console.log(count, '<= count', questionDiv, '<= questionDiv', nextBtn, '<= nextBtn', "Before click next!");
