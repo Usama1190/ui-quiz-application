@@ -73,6 +73,10 @@ body {
     margin: auto;
 }
 
+.heading {
+    text-decoration: underline;
+}
+
 .heading4 {
     margin-top: 20px;
 }
@@ -117,9 +121,15 @@ body {
     color: var(--bgcolor--);
 }
 
-.app_wrapper .homepage_wrapper .topnav_wrapper .usamaimage {
+.usamaimage {
     width: 50px;
     height: 50px;
+    border-radius: 50%;
+}
+
+.usamaimageForm {
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
 }
 
@@ -144,16 +154,18 @@ body {
 }
 
 #signupForm {
+    padding: 20px;
     width: 40%;
-    height: 50vh;
+    /* height: 60vh; */
     border: 1px solid var(--bordercolor--);
     border-radius: 10px;
     margin: auto;
+    margin-top: -60px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .hr {
-    width: 60%;
+    width: 50%;
     background-color: var(--bordercolor--);
 }
 
@@ -462,8 +474,8 @@ body {
     }
 
     #signupForm {
-        width: 70%;
-        height: 40vh;
+        width: 95%;
+        /* height: 60vh; */
     }
 
     .quizdashboard_wrapper {
