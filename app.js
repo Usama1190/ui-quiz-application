@@ -3,16 +3,17 @@ const userArray = [{
     name: 'usama',
 }];
 
-const newUser = {
-    email,
-    password,
-    name: 'xyz',
-    rollno
-}
+sessionStorage.setItem('userArray', userArray);
+// const newUser = {
+//     email,
+//     password,
+//     name: 'xyz',
+//     rollno
+// }
 
 // userArray.push(newUser);
-const firstAttempt = newUser.email === 'abc@gmail.com';
-const emailAlreadyExits = JSON.parse(sessionStorage.getItem('userArray')) || firstAttempt;
+// const firstAttempt = newUser.email === 'abc@gmail.com';
+// const emailAlreadyExits = JSON.parse(sessionStorage.getItem('userArray')) || firstAttempt;
 
 
 const btns = {
@@ -28,12 +29,35 @@ console.log(btns);
 
 btns.signup.addEventListener('click', (e) => {
     e.preventDefault();
-    
-    newUser.password = document.getElementById('password').value;
-    newUser.email = document.getElementById('email').value;
-    
 
-})
+    const newUser = {
+        email,
+        password,
+        name: 'xyz',
+        rollno
+    }
+    
+    newUser.email = document.getElementById('email').value;
+    newUser.password = document.getElementById('password').value;
+
+    const firstAttempt = newUser.email === 'abc@gmail.com';
+    const emailAlreadyExits = JSON.parse(sessionStorage.getItem('userArray')) || firstAttempt;
+
+    if(newUser.email.trim() === '' || newUser.password.length <= 3) {
+        warning.innerHTML = 'input field is not valid';
+    }
+    else if(newUser.email === emailAlreadyExits.email) {
+        warning.innerHTML = 'This email address already exists';
+    }
+    else if(newUser.email === userArray[0].email && newUser.password === userArray[0].password) {
+        // userArray.push(newUser);
+        console.log(userArray);
+    }
+    else {
+        userArray.push(newUser);
+        console.log(userArray);
+    }
+});
 
 
 
@@ -222,64 +246,64 @@ let heading3 = document.getElementById('heading3');
 // ============================================================================
 
 
-keysubmit.addEventListener('click', (e) => {
-    e.preventDefault();
+// keysubmit.addEventListener('click', (e) => {
+//     e.preventDefault();
 
-    inputkey = document.getElementById('inputkey').value;
+//     inputkey = document.getElementById('inputkey').value;
 
-    if(inputkey === (JSON.parse(sessionStorage.getItem('keyset')) || keyset)) {
-        heading1.style.display = 'block';
-        // heading2.style.display = 'none';
-        heading2.style.display = 'none';
-        key_wrapper.style.display = 'none';
-        userinfo_wrapper.style.display = 'block';
-    }
-    else {
-        warning2.innerHTML = 'Wrong key';
-    }
-});
-
-
-// ============================================================================
-
-
-
-
-
+//     if(inputkey === (JSON.parse(sessionStorage.getItem('keyset')) || keyset)) {
+//         heading1.style.display = 'block';
+//         // heading2.style.display = 'none';
+//         heading2.style.display = 'none';
+//         key_wrapper.style.display = 'none';
+//         userinfo_wrapper.style.display = 'block';
+//     }
+//     else {
+//         warning2.innerHTML = 'Wrong key';
+//     }
+// });
 
 
 // ============================================================================
 
 
-enteruserdetails.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    user.name = document.getElementById('name').value
-    user.rollno = document.getElementById('rollno').value;
-
-    // console.log(user.rollno);
-    // console.log(user.rollno.length);
-
-    if(user.name.trim() === '' || user.rollno.length <= 3) {
-        warning3.innerHTML = 'input field is not valid';
-    }
-    else {
-        sessionStorage.setItem('user', JSON.stringify(user));
-
-        userinfo_wrapper.style.display = 'none';
-        heading1.style.display = 'none';
-        heading3.style.display = 'block';
-        heading2.style.display = 'block';
 
 
-        quizinfo_wrapper.style.display = 'block';
 
-        let namefirstletter = user.name[0].toUpperCase();
-        let nameremainingletters = user.name.slice(1).toLowerCase();
 
-        heading3.innerHTML = `Hi, ${namefirstletter + nameremainingletters}`;
-    }
-});
+
+// ============================================================================
+
+
+// enteruserdetails.addEventListener('click', (e) => {
+//     e.preventDefault();
+
+//     user.name = document.getElementById('name').value
+//     user.rollno = document.getElementById('rollno').value;
+
+//     // console.log(user.rollno);
+//     // console.log(user.rollno.length);
+
+//     if(user.name.trim() === '' || user.rollno.length <= 3) {
+//         warning3.innerHTML = 'input field is not valid';
+//     }
+//     else {
+//         sessionStorage.setItem('user', JSON.stringify(user));
+
+//         userinfo_wrapper.style.display = 'none';
+//         heading1.style.display = 'none';
+//         heading3.style.display = 'block';
+//         heading2.style.display = 'block';
+
+
+//         quizinfo_wrapper.style.display = 'block';
+
+//         let namefirstletter = user.name[0].toUpperCase();
+//         let nameremainingletters = user.name.slice(1).toLowerCase();
+
+//         heading3.innerHTML = `Hi, ${namefirstletter + nameremainingletters}`;
+//     }
+// });
 
 
 // ===========================================================================
@@ -294,7 +318,7 @@ enteruserdetails.addEventListener('click', (e) => {
 // ===========================================================================
 
 
-let course_wrapper = document.getElementById('course_wrapper');
+// let course_wrapper = document.getElementById('course_wrapper');
 
 // console.log(course_wrapper);
 
@@ -549,32 +573,32 @@ let quizdashboard_wrapper = document.getElementById('quizdashboard_wrapper');
 // ===========================================================================
 
 
-start.addEventListener('click', (e) => {
-    e.preventDefault();
+// start.addEventListener('click', (e) => {
+//     e.preventDefault();
     
-    quizguide_wrapper.style.display = 'none';
-    marquee.style.display = 'none';
-    quizdashboard_wrapper.style.display = 'block';
+//     quizguide_wrapper.style.display = 'none';
+//     marquee.style.display = 'none';
+//     quizdashboard_wrapper.style.display = 'block';
 
-    let minutes = 19;
-    let seconds = 59;
+//     let minutes = 19;
+//     let seconds = 59;
 
-    let x = setInterval(function() {
-        seconds--;
+//     let x = setInterval(function() {
+//         seconds--;
 
-        if(seconds === -1) {
-            minutes--;
-            seconds = 59;
-        }
+//         if(seconds === -1) {
+//             minutes--;
+//             seconds = 59;
+//         }
 
-        if(minutes === 0 && seconds === 0) {
-            quizdashboard_wrapper.style.display = 'none';
-            quizresultdashboard_wrapper.style.display = 'block';
-        }
+//         if(minutes === 0 && seconds === 0) {
+//             quizdashboard_wrapper.style.display = 'none';
+//             quizresultdashboard_wrapper.style.display = 'block';
+//         }
 
-        document.getElementById('timer').innerHTML = `${minutes}:${seconds}`;
-    }, 1000);
-});
+//         document.getElementById('timer').innerHTML = `${minutes}:${seconds}`;
+//     }, 1000);
+// });
 
 // ===========================================================================
 
