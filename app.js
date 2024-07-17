@@ -1,7 +1,13 @@
-const userArray = [{
+const userArray = [
+    {
     email: 'usamaisrar@gmail.com',
     name: 'usama',
-}];
+    },
+    {
+        email: 'usama@gmail.com',
+        name: 'usama',
+    }
+];
 
 sessionStorage.setItem('userArray', userArray);
 // const newUser = {
@@ -24,7 +30,12 @@ const btns = {
     selectedCourse: document.getElementById('selectedCourse')
 }
 
-console.log(btns);
+const warn = {
+    warnEmail: document.getElementById('warnEmail'),
+    warnPass: document.getElementById('warnPass'),
+}
+
+// console.log(btns);
 
 
 btns.signup.addEventListener('click', (e) => {
@@ -40,24 +51,74 @@ btns.signup.addEventListener('click', (e) => {
     newUser.email = document.getElementById('email').value;
     newUser.password = document.getElementById('password').value;
 
-    const firstAttempt = newUser.email === 'abc@gmail.com';
-    const emailAlreadyExits = JSON.parse(sessionStorage.getItem('userArray')) || firstAttempt;
+    warn.warnEmail.innerHTML = 
+    newUser.email.trim() === '' ? 'email field is not valid' : '';
 
-    if(newUser.email.trim() === '' || newUser.password.length <= 3) {
-        warning.innerHTML = 'input field is not valid';
-    }
-    else if(newUser.email === emailAlreadyExits.email) {
-        warning.innerHTML = 'This email address already exists';
-    }
-    else if(newUser.email === userArray[0].email && newUser.password === userArray[0].password) {
-        // userArray.push(newUser);
-        console.log(userArray);
-    }
-    else {
-        userArray.push(newUser);
-        console.log(userArray);
+    warn.warnPass.innerHTML = 
+    newUser.password.length <= 5 ? 'password atleast 8 characters long' : '';
+
+
+
+    // if(newUser.email.trim() === '' || newUser.password.length <= 5) {
+        
+    // }
+
+    for (let i = 0; i < userArray.length; i++) {
+        if(newUser.email === userArray[0].email) {
+            console.log('Admin');
+        }
+        else if(newUser.email === userArray[i].email) {
+            console.log('email already exists');
+        }
+        else {
+            console.log('new user');
+        }
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
