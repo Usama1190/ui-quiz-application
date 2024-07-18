@@ -58,6 +58,8 @@ body {
 
 .warningcolor {
     color: red;
+    font-size: 10px;
+    font-family: sans-serif;
 }
 
 .opacity {

@@ -35,9 +35,6 @@ const warn = {
     warnPass: document.getElementById('warnPass'),
 }
 
-// console.log(btns);
-
-
 btns.signup.addEventListener('click', (e) => {
     e.preventDefault();
 
