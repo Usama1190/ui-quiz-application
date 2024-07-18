@@ -57,12 +57,6 @@ btns.signup.addEventListener('click', (e) => {
     warn.warnPass.innerHTML = 
     newUser.password.length <= 5 ? 'password atleast 8 characters long' : '';
 
-
-
-    // if(newUser.email.trim() === '' || newUser.password.length <= 5) {
-        
-    // }
-
     for (let i = 0; i < userArray.length; i++) {
         if(newUser.email === userArray[0].email) {
             console.log('Admin');
