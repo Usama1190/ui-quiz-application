@@ -4,18 +4,12 @@ const userArray = [
     name: 'usama',
     },
     {
-        email: 'usama@gmail.com',
-        name: 'usama',
+        email: 'john@gmail.com'
     }
 ];
 
 sessionStorage.setItem('userArray', userArray);
-// const newUser = {
-//     email,
-//     password,
-//     name: 'xyz',
-//     rollno
-// }
+ let confirmPass;
 
 // userArray.push(newUser);
 // const firstAttempt = newUser.email === 'abc@gmail.com';
@@ -31,8 +25,7 @@ const btns = {
 }
 
 const warn = {
-    warnEmail: document.getElementById('warnEmail'),
-    warnPass: document.getElementById('warnPass'),
+    warning1: document.getElementById('warning'),
 }
 
 btns.signup.addEventListener('click', (e) => {
@@ -47,22 +40,39 @@ btns.signup.addEventListener('click', (e) => {
     
     newUser.email = document.getElementById('email').value;
     newUser.password = document.getElementById('password').value;
+    confirmPass = document.getElementById('confirmPass').value;
 
-    warn.warnEmail.innerHTML = 
-    newUser.email.trim() === '' ? 'email field is not valid' : '';
+    let isValueExists = true;
 
-    warn.warnPass.innerHTML = 
-    newUser.password.length <= 5 ? 'password atleast 8 characters long' : '';
-
-    for (let i = 0; i < userArray.length; i++) {
+    if(newUser.email.trim() === '') {
+        warn.warning1.innerHTML = 'input field is not valid';
+    }
+    else if(newUser.password.length <= 4) {
+        warn.warning1.innerHTML = 'password contains atleast 5 characters';
+    }
+    else if(newUser.password != confirmPass) {
+        warn.warning1.innerHTML = 'password didnot matched!';
+    }
+    else {
         if(newUser.email === userArray[0].email) {
-            console.log('Admin');
-        }
-        else if(newUser.email === userArray[i].email) {
-            console.log('email already exists');
+            console.log('Admin block are open!');
         }
         else {
-            console.log('new user');
+            for (let i = 0; i < userArray.length; i++) {
+                if(newUser.email === userArray[i].email) {
+                    warn.warning1.innerHTML = 'email already exists';
+                    isValueExists = false;
+                }
+                else {
+                    console.log(isValueExists);
+                }
+            }
+
+            if(isValueExists) {
+                userArray.push(newUser);
+                sessionStorage.setItem('userArray', JSON.stringify(userArray));
+            }
+            console.log(userArray);
         }
     }
 });
@@ -74,7 +84,17 @@ btns.signup.addEventListener('click', (e) => {
 
 
 
-
+// for (let i = 0; i < userArray.length; i++) {
+//     if(newUser.email === userArray[0].email) {
+//         console.log('Admin');
+//     }
+//     else if(newUser.email === userArray[i].email) {
+//         console.log('email already exists');
+//     }
+//     else {
+//         console.log('new user');
+//     }
+// }
 
 
 
