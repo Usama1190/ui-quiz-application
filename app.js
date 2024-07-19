@@ -3,12 +3,6 @@ const userArray = JSON.parse(sessionStorage.getItem('userArray')) || [{
     name: 'usama',
 }];
 
-let confirmPass;
-
-// userArray.push(newUser);
-// const firstAttempt = newUser.email === 'abc@gmail.com';
-// const emailAlreadyExits = JSON.parse(sessionStorage.getItem('userArray')) || firstAttempt;
-
 
 const btns = {
     signup: document.getElementById('signup'),
@@ -16,11 +10,29 @@ const btns = {
     enteruserdetails: document.getElementById('enteruserdetails'),
     backToHome: document.getElementById('backToHome'),
     selectedCourse: document.getElementById('selectedCourse')
-}
+};
+
+let confirmPass;
 
 const warn = {
     warning1: document.getElementById('warning'),
 }
+
+const app_wrappers = {
+    quizinfo_wrapper: document.getElementById('quizinfo_wrapper'),
+    key_wrapper: document.getElementById('key_wrapper'),
+    userinfo_wrapper: document.getElementById('userinfo_wrapper'),
+    quizguide_wrapper: document.getElementById('quizguide_wrapper'),
+    quizdashboard_wrapper: document.getElementById('quizdashboard_wrapper'),
+    quizresultdashboard_wrapper: document.getElementById('quizresultdashboard_wrapper'),
+    quizinfo_wrapper: document.getElementById('quizinfo_wrapper'),
+
+    // user dashboard
+    userdashboard_wrapper: document.getElementById('userdashboard_wrapper'),
+}
+
+
+
 
 btns.signup.addEventListener('click', (e) => {
     e.preventDefault();
@@ -55,7 +67,7 @@ btns.signup.addEventListener('click', (e) => {
         else {
             for (let i = 0; i < userArray.length; i++) {
                 if(newUser.email === userArray[i].email) {
-                    warn.warning1.innerHTML = 'email already exists';
+                    warn.warning1.innerHTML = 'This email already exists';
                     isValueExists = false;
                 }
                 else {
