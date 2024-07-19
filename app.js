@@ -1,12 +1,7 @@
-const userArray = [
-    {
+const userArray = JSON.parse(sessionStorage.getItem('userArray')) || [{
     email: 'usamaisrar@gmail.com',
     name: 'usama',
-    },
-    {
-        email: 'john@gmail.com'
-    }
-];
+}];
 
 let confirmPass;
 
@@ -34,7 +29,7 @@ btns.signup.addEventListener('click', (e) => {
         email,
         password,
         name: 'xyz',
-        rollno
+        rollno: 0
     }
     
     newUser.email = document.getElementById('email').value;
