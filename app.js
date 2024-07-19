@@ -50,7 +50,7 @@ btns.signup.addEventListener('click', (e) => {
         warn.warning1.innerHTML = 'password contains atleast 5 characters';
     }
     else if(newUser.password != confirmPass) {
-        warn.warning1.innerHTML = 'password didnot matched!';
+        warn.warning1.innerHTML = "password didn't matched!";
     }
     else {
         warn.warning1.innerHTML = '';

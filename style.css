@@ -48,6 +48,15 @@ body {
 }
 
 
+.googlefont1 {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.googlefont2 {
+    font-family: 'Arsenal SC', sans-serif;
+}
+
+
 .hidden {
     display: none;
 }
