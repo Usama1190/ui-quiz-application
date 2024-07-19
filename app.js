@@ -8,8 +8,7 @@ const userArray = [
     }
 ];
 
-sessionStorage.setItem('userArray', userArray);
- let confirmPass;
+let confirmPass;
 
 // userArray.push(newUser);
 // const firstAttempt = newUser.email === 'abc@gmail.com';
@@ -54,6 +53,7 @@ btns.signup.addEventListener('click', (e) => {
         warn.warning1.innerHTML = 'password didnot matched!';
     }
     else {
+        warn.warning1.innerHTML = '';
         if(newUser.email === userArray[0].email) {
             console.log('Admin block are open!');
         }
