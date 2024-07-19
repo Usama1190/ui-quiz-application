@@ -19,6 +19,8 @@ const warn = {
 }
 
 const app_wrappers = {
+    signupForm: document.getElementById('signupForm'),
+
     quizinfo_wrapper: document.getElementById('quizinfo_wrapper'),
     key_wrapper: document.getElementById('key_wrapper'),
     userinfo_wrapper: document.getElementById('userinfo_wrapper'),
@@ -78,11 +80,19 @@ btns.signup.addEventListener('click', (e) => {
             if(isValueExists) {
                 userArray.push(newUser);
                 sessionStorage.setItem('userArray', JSON.stringify(userArray));
+
+                signupSuccess();
             }
             console.log(userArray);
         }
     }
 });
+
+
+function signupSuccess() {
+    signupForm.style.display = 'none';
+    quizinfo_wrapper.style.display = 'block';
+}
 
 
 
