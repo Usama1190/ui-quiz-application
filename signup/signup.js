@@ -1,33 +1,43 @@
-import { auth, createUserWithEmailAndPassword } from "../firebase/app";
+import { auth, createUserWithEmailAndPassword, onAuthStateChanged } from "../firebase/app.js";
 
 
-const input_fields = document.querySelectorAll('form input');
+let input_fields = document.querySelectorAll('form input');
 
-const { email, password } = input_fields;
+const { user_email, user_password } = input_fields;
 
 console.log(input_fields);
 
-const signup = document.getElementById('signup');
+const signup_btn = document.getElementById('signup_btn');
+
+signup_btn.innerText = 'Signup';
 
 
 const user_signup = () => {
     event.preventDefault();
 
-    createUserWithEmailAndPassword(auth, email, password)
+    signup_btn.innerText = 'loading...';
+
+    createUserWithEmailAndPassword(auth, user_email.value, user_password.value)
     .then((userCredential) => {
         // Signed up 
         const user = userCredential.user;
+
+        signup_btn.innerText = 'Signup';
+        
         // ...
     })
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+    
+        signup_btn.innerText = 'Signup';
+        
         // ..
     });
 }
 
 
-signup.addEventListener('click', user_signup);
+signup_btn.addEventListener('click', user_signup);
 
 onAuthStateChanged(auth, (user) => {
     if(user) {
