@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIT - Quiz Attend</title>
+
+    <!-- css connected -->
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="shortcut icon" href="../assets/uit.png" type="image/x-icon">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app_wrapper">
+        <div class="homepage_wrapper">
+            <!-- <div class="topnav_wrapper">
+                <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank">
+                    <img src="assets/uit.png" class="usamaimage" alt="usama image">
+                </a>
+
+                <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank"><span class="fletter">
+                    U</span>sama <span class="fletter">I</span>nfo 
+                    <span class="fletter">T</span>ech
+                </a>
+
+                <strong class="adminlogo hidden" id="userlogo">
+                    <i class="fa fa-user"></i>
+                    <a href="#" id="userName">Usama</a>
+                    <a href="#" id="adminlogo">Logout</a>
+                </strong>
+            </div> -->
+
+            <h1 class="heading1 hidden" id="heading5">Hi, Usama Israr Khan, welcome to your website!</h1>
+            <h2 class="heading1 hidden" id="heading1">Welcome to the UIT Quiz App Protal</h2>
+            <h1 class="heading1 hidden" id="heading2">UIT Quiz Application</h1>
+    
+
+            <!-- <div class="hidden key_wrapper" id="key_wrapper">
+                <div class="keyinput_wrapper">
+                    <input type="text" placeholder="key" id="inputkey" class="keyinput">
+                    <input type="submit" value="Submit" id="keysubmit" class="btn">
+                    <p id="demo1" class="warningcolor"></p>
+
+                    Admin start
+                    <div class="adminKeyWrapper hidden" id="adminKeyWrapper">
+                        <span class="fa fa-edit edit"></span>
+                        <input type="text" id="editKey" class="inputStyle" placeholder="edit key">
+                        <button type="button" class="btn1" id="updateKey">Update key</button>
+
+                        <p id="keyShow"></p>
+                    </div>
+                    Admin end
+                </div>
+            </div> -->
+
+            <!-- <div class="userinfo_wrapper hidden" id="userinfo_wrapper">
+                <div class="userinfoinput_wrapper">
+                    <input type="text" class="inputStyle" placeholder="Enter your name" id="name"><br><br>
+                    <input type="number" class="inputStyle" placeholder="Enter your roll number" id="rollno"><br><br>
+                    <input type="submit" value="Enter" id="enteruserdetails" class="btn">
+
+                    <p id="demo2" class="warningcolor"></p>
+                </div>
+            </div> -->
+
+            <div class="hidden key_wrapper" id="key_wrapper">
+                <div class="keyinput_wrapper">
+                    <input type="text" placeholder="key" id="inputkey" class="keyinput">
+                    <input type="submit" value="Submit" id="keysubmit" class="btn">
+                    <p id="demo1" class="warningcolor"></p>
+
+                    <!-- Admin start -->
+                    <div class="adminKeyWrapper hidden" id="adminKeyWrapper">
+                        <span class="fa fa-edit edit"></span>
+                        <input type="text" id="editKey" class="inputStyle" placeholder="edit key">
+                        <button type="button" class="btn1" id="updateKey">Update key</button>
+
+                        <p id="keyShow"></p>
+                    </div>
+                    <!-- Admin end -->
+                </div>
+            </div>
+
+            <div class="userinfo_wrapper hidden" id="userinfo_wrapper">
+                <div class="userinfoinput_wrapper">
+                    <input type="text" class="inputStyle" placeholder="Enter your name" id="name"><br><br>
+                    <input type="number" class="inputStyle" placeholder="Enter your roll number" id="rollno"><br><br>
+                    <input type="submit" value="Enter" id="enteruserdetails" class="btn">
+
+                    <p id="demo2" class="warningcolor"></p>
+                </div>
+            </div>
+
+            <div class="quizguide_wrapper hidden" id="quizguide_wrapper">
+                <table class="table">
+                    <tr>
+                        <th>Quiz name</th>
+                        <th>Total questions</th>
+                        <th>Total time</th>
+                        <th>Passing score</th>
+                    </tr>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>25</td>
+                        <td>20 mins</td>
+                        <td>70</td>
+                    </tr>
+                </table><br>
+
+                <button type="button" class="btn" id="start">Start</button>
+            </div>
+
+            <div class="quizdashboard_wrapper hidden googlefont1" id="quizdashboard_wrapper">
+                <div class="timer" id="timer"></div>
+
+                <div id="questions_wrapper"></div>
+
+                <div class="options_wrapper" id="options_wrapper">
+                    <input type="radio" name="option" class="optionsRadio" id="option1" value="">
+                    <label for="option1" class="options" id="option1Show"></label><br><br>
+
+                    <input type="radio" name="option" class="optionsRadio" id="option2" value="">
+                    <label for="option2" class="options" id="option2Show"></label><br><br>
+
+                    <input type="radio" name="option" class="optionsRadio" id="option3" value="">
+                    <label for="option3" class="options" id="option3Show"></label><br><br>
+                    
+                    <input type="radio" name="option" class="optionsRadio" id="option4" value="">
+                    <label for="option4" class="options" id="option4Show"></label>
+                </div>
+
+                <button type="button" class="btn btnNext" id="next">Next</button>
+            </div>
+
+            <div class="quizresultdashboard_wrapper hidden googlefont1" id="quizresultdashboard_wrapper">
+                <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" target="_blank" title="linkedin profile"><img src="assets/uit.png" class="usamaimage2" alt="usama image"></a>
+                <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" target="_blank" title="linkedin profile" class="anchor"><span class="fletter">U</span>sama <span class="fletter">I</span>nfo <span class="fletter">T</span>ech</a>
+                <h1 class="heading4">JavaScript Quiz</h1>
+                <h2 id="resultshow"></h2>
+                <p><strong>Total Questions :</strong> <strong id="">25</strong></p>
+                <p>Correct Answer : <strong id="correctAnswer"></strong></p>
+                <h2 id="percentage"></h2>
+
+                <button type="button" class="btn1" id="backToHome">Back to home</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
