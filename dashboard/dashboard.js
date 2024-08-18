@@ -19,6 +19,6 @@ login_btn.addEventListener('click', user_logout);
 
 onAuthStateChanged(auth, (user) => {
     if(!user) {
-        window.location.href = '../login/index.html';
+        window.location.href = '../index2.html';
     }
 })

@@ -1,6 +1,8 @@
 :root {
     --bordercolor--: #e0e0e0;
-    --bgcolor--:  rgb(24, 56, 83);
+    /* --bgcolor--:  rgb(24, 56, 83); */
+    --bgcolor--:  #003140;
+
     --bgcolor2--:  rgb(125, 197, 255);
     --colorwhite--: #fff;
     --colorblack--: #000;
@@ -475,7 +477,7 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
-    padding: 10px;
+    padding: 21px;
     text-align: center;
     background-color: var(--bgcolor--);
     color: var(--colorwhite--);
