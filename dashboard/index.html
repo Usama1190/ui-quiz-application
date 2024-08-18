@@ -6,10 +6,9 @@
     <title>UIT - Quiz Application</title>
 
     <!-- css connected -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="../style.css">
 
-    <link rel="shortcut icon" href="assets/uit.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/uit.png" type="image/x-icon">
 
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +25,7 @@
         <div class="homepage_wrapper">
             <div class="topnav_wrapper">
                 <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank">
-                    <img src="assets/uit.png" class="usamaimage" alt="usama image">
+                    <img src="../assets/uit.png" class="usamaimage" alt="usama image">
                 </a>
 
                 <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank"><span class="fletter">
@@ -34,10 +33,10 @@
                     <span class="fletter">T</span>ech
                 </a>
 
-                <strong class="adminlogo hidden" id="userlogo">
+                <strong class="adminlogo" id="userlogo">
                     <i class="fa fa-user"></i>
-                    <a href="#" id="userName">Usama</a>
-                    <a href="#" id="adminlogo">Logout</a>
+                    <a href="#" id="userName"></a>
+                    <button id="user_logout" class="btn">Logout</button>
                 </strong>
             </div>
 
@@ -52,6 +51,7 @@
         <footer class="footer">Copyright Ⓒ 2024-2025 Usama Info Tech Company . All rights reserved. Developed By: <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" target="_blank" title="linkedin profile">Usama Israr Khan</a> developer</footer>
     </div>
 
-    <script src="app.js"></script>
+    <script type="module" src="../firebase/app.js"></script>
+    <script type="module" src="dashboard.js"></script>
 </body>
 </html>

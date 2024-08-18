@@ -7,7 +7,6 @@
 
     <!-- css connected -->
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="admin.css">
 
     <link rel="shortcut icon" href="../assets/uit.png" type="image/x-icon">
 
@@ -52,23 +51,23 @@
 
                     <label for="email">
                         <span class="fa fa-user"></span>
-                        <input type="email" name="email" class="inputStyleForm" id="email" placeholder="email" required>
+                        <input type="email" name="email" class="inputStyleForm" id="user_email" placeholder="email" required>
                     </label><br><br>
 
                     <label for="password">
                         <span class="fa fa-unlock-alt"></span>
-                        <input type="password" name="password" class="inputStyleForm" id="password" placeholder="password" required>
+                        <input type="password" name="password" class="inputStyleForm" id="user_password" placeholder="password" required>
                     </label><br><br>
 
-                    <small>Forgot password</small><br><br>
+                    <small id="forgotPassword" class="forgotPassword">Forgot password</small><br><br>
 
-                    <input type="submit" id="login" class="btn" value="Login">
-                    <p id="warning" class="warningcolor"></p>
+                    <p id="warning" class="warningcolor"></p><br>
+                    <button type="submit" id="login" class="btn">Login</button>
 
                     <hr class="hr">
 
 
-                    <small>Already have an account please <span id="signin" class="signin">Signin</span></small>
+                    <small>Already have an account please <a href="../signup/index.html" id="signin" class="signin">Signup</a></small>
                 </form>
             </div>
         </div>
@@ -85,6 +84,7 @@
         <footer class="footer">Copyright Ⓒ 2024-2025 Usama Info Tech Company . All rights reserved. Developed By: <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" target="_blank" title="linkedin profile">Usama Israr Khan</a> developer</footer>
     </div>
 
-    <script src="app.js"></script>
+    <script type="module" src="../firebase/app.js"></script>
+    <script type="module" src="login.js"></script>
 </body>
 </html>

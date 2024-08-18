@@ -3,7 +3,7 @@ import { auth, createUserWithEmailAndPassword, onAuthStateChanged } from "../fir
 
 let input_fields = document.querySelectorAll('form input');
 
-const { user_email, user_password } = input_fields;
+const [ user_email, user_password ] = input_fields;
 
 console.log(input_fields);
 
