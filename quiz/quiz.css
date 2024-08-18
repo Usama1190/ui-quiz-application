@@ -1,0 +1,23 @@
+.questions {
+    /* border: 1px solid var(--bordercolor--); */
+    width: 95%;
+    /* height: 60%; */
+    font-size: 22px;
+    color: var(--bgcolor--);
+    margin: auto;
+}
+
+.heading {
+    text-decoration: underline;
+}
+
+.heading4 {
+    margin-top: 20px;
+}
+
+.adminlogo {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    font-size: 16px;
+}

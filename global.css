@@ -1,7 +1,207 @@
+:root {
+    --bordercolor--: #e0e0e0;
+    /* --bgcolor--:  rgb(24, 56, 83); */
+    --bgcolor--:  #003140;
+
+    --bgcolor2--:  rgb(125, 197, 255);
+    --colorwhite--: #fff;
+    --colorblack--: #000;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    color: var(--bgcolor--);
+}
+
+
+
+/* display starts */
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.opacity {
+    opacity: 0.5;
+}
+
+/* display ends */
+
+
+.warningcolor {
+    color: red;
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+/* buttons starts */
+
+.btn {
+    width: 80px;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    /* font-size: 13px; */
+    color: var(--colorwhite--);
+    transition: all 0.3s;
+    background-color: var(--bgcolor--);
+    font-family: 'Arsenal SC', sans-serif;
+}
+
+.btn:hover {
+    background-color: rgb(3, 20, 34);
+    scale: 1.03;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* buttons ends */
+
+
+
+/* home section starts */
+
+.login_btn {
+    width: 80px;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 700;
+    color: var(--bgcolor--);
+    transition: all 0.3s;
+}
+
+.login_btn:hover {
+    background-color: var(--bgcolor--);
+    color: var(--colorwhite--);
+    scale: 1.03;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.signup_btn {
+    width: 80px;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 700;
+    color: var(--colorwhite--);
+    transition: all 0.3s;
+    background-color: var(--bgcolor--);
+}
+
+.signup_btn:hover {
+    background-color: var(--colorwhite--);
+    color: var(--bgcolor--);
+    scale: 1.03;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .home_image {
     position: absolute;
     top: 70px;
     right: 0;
-    /* width: 100%; */
-    /* border: 1px solid black; */
 }
+
+
+
+
+
+
+.login_signup_container {
+    /* position: absolute; */
+    /* right: 40px; */
+    /* top: 20px; */
+    /* font-size: 16px; */
+    /* float: right; */
+    border: 1px solid black;
+}
+
+.topnav_wrapper {
+    border: 1px solid var(--bordercolor--);
+    width: 100%;
+    padding: 5px;
+    /* position: fixed; */
+    z-index: 1;
+    top: 0;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background-color: var(--colorwhite--);
+}
+
+.app_wrapper .homepage_wrapper .topnav_wrapper a {
+    text-decoration: none;
+    color: var(--bgcolor--);
+}
+
+.usamaimage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.usamaimageForm {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.app_wrapper .homepage_wrapper .topnav_wrapper .fletter {
+    color: var(--colorblack--);
+}
+
+.app_wrapper .homepage_wrapper .heading1 {
+    margin-top: 100px;
+    font-size: 50px;
+}
+
+
+/* home section ends */
+
+
+
+/* google fonts starts */
+
+.googlefont1 {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.googlefont2 {
+    font-family: 'Arsenal SC', sans-serif;
+}
+
+/* google fonts ends */
+
+
+
+
+
+/* login signup form layout starts */
+
+.inputStyle {
+    padding: 6px;
+    border: none;
+    border-bottom: 1px solid var(--bordercolor--);
+}
+
+.inputStyle:focus {
+    outline: none;
+}
+
+.inputStyleForm {
+    border: none;
+    border-bottom: 1px solid var(--bordercolor--);
+}
+
+.inputStyleForm:focus {
+    outline: none;
+}
+
+/* login signup form layout ends */
