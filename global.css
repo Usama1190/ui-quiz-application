@@ -38,7 +38,26 @@ body {
     opacity: 0.5;
 }
 
-/* global classes start */
+/* .form_wrapper {
+    margin-top: 150px;
+}
+
+.form {
+    padding: 20px;
+    width: 30%;
+    border: 1px solid var(--bordercolor--);
+    border-radius: 10px;
+    margin: auto;
+    margin-top: -60px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.hr {
+    width: 50%;
+    background-color: var(--bordercolor--);
+} */
+
+/* global classes end */
 
 
 .warningcolor {
@@ -56,12 +75,14 @@ body {
     cursor: pointer;
     border-radius: 6px;
     /* font-size: 13px; */
+    color: var(--colorwhite--);
     transition: all 0.3s;
+    background-color: var(--bgcolor--);
     font-family: 'Arsenal SC', sans-serif;
 }
 
 .btn:hover {
-    /* background-color: rgb(3, 20, 34); */
+    background-color: rgb(3, 20, 34);
     scale: 1.03;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -72,32 +93,12 @@ body {
 
 /* home section starts */
 
-.btn1 {
-    width: 80px;
-    padding: 8px;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-    font-weight: 700;
-    color: var(--bgcolor--);
-    transition: all 0.3s;
-}
-
-.btn1:hover {
-    background-color: var(--bgcolor--);
-    color: var(--colorwhite--);
-    scale: 1.03;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
 
 .home_image {
     position: absolute;
     top: 70px;
     right: 0;
 }
-
-
 
 
 
@@ -111,23 +112,14 @@ body {
     border: 1px solid black;
 }
 
-.topnav_wrapper {
-    border: 1px solid var(--bordercolor--);
-    width: 100%;
-    padding: 5px;
-    /* position: fixed; */
-    z-index: 1;
-    top: 0;
-    display: flex;
-    justify-content:space-around;
-    align-items: center;
-    background-color: var(--colorwhite--);
-}
 
-.app_wrapper .homepage_wrapper .topnav_wrapper a {
-    text-decoration: none;
-    color: var(--bgcolor--);
-}
+
+
+
+
+
+
+
 
 .usamaimage {
     width: 50px;

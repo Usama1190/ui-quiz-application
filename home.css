@@ -1,0 +1,75 @@
+:root {
+    --bordercolor--: #e0e0e0;
+    /* --bgcolor--:  rgb(24, 56, 83); */
+    --bgcolor--:  #003140;
+
+    --bgcolor2--:  rgb(125, 197, 255);
+    --colorwhite--: #fff;
+    --colorblack--: #000;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    color: var(--bgcolor--);
+    /* background-color: var(--colorwhite--); */
+}
+
+
+
+
+
+/* global classes starts */
+
+.btn1 {
+    width: 80px;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 700;
+    /* color: var(--bgcolor--); */
+    transition: all 0.3s;
+}
+
+.btn1:hover {
+    background-color: var(--bgcolor--);
+    color: var(--colorwhite--);
+    /* scale: 1.03; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* global classes ends */
+
+
+
+
+
+
+/* home page starts */
+
+.app_wrapper {
+    border: 1px solid black;
+    /* background-color: var(--bgcolor--); */
+}
+
+.topnav_wrapper {
+    border: 1px solid var(--bordercolor--);
+    width: 100%;
+    padding: 5px;
+    /* position: fixed; */
+    z-index: 1;
+    top: 0;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background-color: var(--colorwhite--);
+}
+
+.app_wrapper .homepage_wrapper .topnav_wrapper a {
+    text-decoration: none;
+    color: var(--bgcolor--);
+}
+
+
+/* home page ends */
