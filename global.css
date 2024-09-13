@@ -15,8 +15,16 @@ body {
 }
 
 
+/* global classes start */
 
-/* display starts */
+.bg-color {
+    background-color: var(--bgcolor--);
+}
+
+.text-color {
+    color: var(--colorwhite--);
+}
+
 
 .hidden {
     display: none;
@@ -30,7 +38,7 @@ body {
     opacity: 0.5;
 }
 
-/* display ends */
+/* global classes start */
 
 
 .warningcolor {
@@ -48,14 +56,12 @@ body {
     cursor: pointer;
     border-radius: 6px;
     /* font-size: 13px; */
-    color: var(--colorwhite--);
     transition: all 0.3s;
-    background-color: var(--bgcolor--);
     font-family: 'Arsenal SC', sans-serif;
 }
 
 .btn:hover {
-    background-color: rgb(3, 20, 34);
+    /* background-color: rgb(3, 20, 34); */
     scale: 1.03;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -66,7 +72,7 @@ body {
 
 /* home section starts */
 
-.login_btn {
+.btn1 {
     width: 80px;
     padding: 8px;
     border: none;
@@ -77,31 +83,13 @@ body {
     transition: all 0.3s;
 }
 
-.login_btn:hover {
+.btn1:hover {
     background-color: var(--bgcolor--);
     color: var(--colorwhite--);
     scale: 1.03;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.signup_btn {
-    width: 80px;
-    padding: 8px;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-    font-weight: 700;
-    color: var(--colorwhite--);
-    transition: all 0.3s;
-    background-color: var(--bgcolor--);
-}
-
-.signup_btn:hover {
-    background-color: var(--colorwhite--);
-    color: var(--bgcolor--);
-    scale: 1.03;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
 
 .home_image {
     position: absolute;
