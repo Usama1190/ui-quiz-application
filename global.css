@@ -17,13 +17,6 @@ body {
 
 /* global classes start */
 
-.bg-color {
-    background-color: var(--bgcolor--);
-}
-
-.text-color {
-    color: var(--colorwhite--);
-}
 
 
 .hidden {
@@ -65,29 +58,6 @@ body {
     font-size: 10px;
     font-family: sans-serif;
 }
-
-/* buttons starts */
-
-.btn {
-    width: 80px;
-    padding: 8px;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-    /* font-size: 13px; */
-    color: var(--colorwhite--);
-    transition: all 0.3s;
-    background-color: var(--bgcolor--);
-    font-family: 'Arsenal SC', sans-serif;
-}
-
-.btn:hover {
-    background-color: rgb(3, 20, 34);
-    scale: 1.03;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-/* buttons ends */
 
 
 

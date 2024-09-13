@@ -28,16 +28,35 @@ body {
     cursor: pointer;
     border-radius: 6px;
     font-weight: 700;
-    /* color: var(--bgcolor--); */
     transition: all 0.3s;
 }
 
 .btn1:hover {
     background-color: var(--bgcolor--);
     color: var(--colorwhite--);
-    /* scale: 1.03; */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.bg-color {
+    background-color: var(--bgcolor--);
+}
+
+.text-color {
+    color: var(--colorwhite--);
+}
+
+.ml-12 {
+    margin-left: -12px;
+}
+
+/* .zi1 {
+    z-index: 1;
+} */
+
+.zi0 {
+    z-index: -1;
+}
+
 
 /* global classes ends */
 
