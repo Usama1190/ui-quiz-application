@@ -1,6 +1,7 @@
 const main_con = {
     goto_signup_form: document.getElementById('goto_signup_form'),
-    goto_login_form: document.getElementById('goto_login_form')
+    goto_login_form: document.getElementById('goto_login_form'),
+    app_theme: document.getElementById('app_theme')
 }
 
 main_con.goto_signup_form.addEventListener('click', () => {
@@ -11,6 +12,13 @@ main_con.goto_login_form.addEventListener('click', () => {
     window.location.href = '/login';
 });
 
+let theme_sun = true
+main_con.app_theme.addEventListener('click', () => {
+    theme_sun === true ? theme_sun = false: theme_sun = true;
+
+    theme_sun == false ? main_con.app_theme.classList.remove('fa-sun-o') : main_con.app_theme.classList.add('fa-sun-o');
+    theme_sun == true ? main_con.app_theme.classList.remove('fa-moon-o') : main_con.app_theme.classList.add('fa-moon-o');
+});
 
 
 

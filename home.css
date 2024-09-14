@@ -57,14 +57,6 @@ body {
     z-index: -1;
 } */
 
-.nav_left_wrapper {
-    border: 1px solid black;
-    width: 65%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 
 /* global classes ends */
 
@@ -82,7 +74,7 @@ body {
 
 .topnav_wrapper {
     border: 1px solid var(--bordercolor--);
-    width: 100%;
+    /* width: 100%; */
     padding: 8px 12px;
     /* position: fixed; */
     z-index: 1;
@@ -93,19 +85,46 @@ body {
     background-color: var(--colorwhite--);
 }
 
-.app_wrapper .topnav_wrapper a {
+.logo_name {
     text-decoration: none;
     color: var(--bgcolor--);
+    margin-left: 4px;
 }
 
 .ls_btns_wrapper {
     border: 1px solid black;
 }
 
+.logo_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .logo {
-    width: 20px;
-    height: 20px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
+}
+
+.nav_left_wrapper {
+    border: 1px solid black;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.theme_wrapper {
+    border: 1px solid black;
+    /* padding: 8px; */
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 
@@ -126,9 +145,9 @@ body {
 /* footer starts */
 
 .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    /* position: fixed;
+    bottom: 0; */
+    /* width: 100%; */
     padding: 21px;
     text-align: center;
     background-color: var(--bgcolor--);
