@@ -49,13 +49,13 @@ body {
     margin-left: -12px;
 }
 
-/* .zi1 {
+.zi1 {
     z-index: 1;
-} */
-
-.zi0 {
-    z-index: -1;
 }
+
+/* .zi0 {
+    z-index: -1;
+} */
 
 .nav_left_wrapper {
     border: 1px solid black;
@@ -100,6 +100,12 @@ body {
 
 .ls_btns_wrapper {
     border: 1px solid black;
+}
+
+.logo {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
 }
 
 
