@@ -12,6 +12,7 @@ body {
     padding: 0;
     margin: 0;
     color: var(--bgcolor--);
+    font-family: 'Roboto';
     /* background-color: var(--colorwhite--); */
 }
 
@@ -22,8 +23,8 @@ body {
 /* global classes starts */
 
 .btn1 {
-    width: 80px;
-    padding: 8px;
+    /* width: 80px; */
+    padding: 9px 20px;
     border: none;
     cursor: pointer;
     border-radius: 6px;
@@ -36,6 +37,28 @@ body {
     color: var(--colorwhite--);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+
+.btn2 {
+    /* width: 80px; */
+    padding: 14px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 700;
+    transition: all 0.3s;
+    color: var(--colorwhite--);
+    background-color: var(--bgcolor--);
+    margin: 3px;
+}
+
+.btn2:hover {
+    color: var(--bgcolor--);
+    background-color: var(--colorwhite--);
+    /* border: 1px solid var(--bgcolor--); */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 
 .bg-color {
     background-color: var(--bgcolor--);
@@ -88,10 +111,13 @@ body {
 
 .nav_items {
     cursor: pointer;
+    letter-spacing: 0.3px;
+    font-size: 15px;
+    /* transition: all 0.3s; */
 }
 
 .nav_items:hover {
-    text-decoration: underline;
+    border-bottom: 1px solid var(--bgcolor--);
     opacity: 0.5;
 }
 
@@ -136,6 +162,54 @@ body {
     /* border: 1px solid black; */
 }
 
+.home_image {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    /* border: 1px solid black; */
+    z-index: -1;
+}
+
+.home_content_wrapper {
+    /* border: 1px solid black; */
+    width: 270px;
+    padding: 0 42px;
+    margin-top: 100px;
+}
+
+.home_content_wrapper p {
+    font-size: 15px;
+}
+
+
+.home_btn_wrapper {
+    margin-top: 40px;
+}
+
+/* .circle1 {
+    animation: myCircle 2s 0.3s infinite ease-in-out;
+}
+
+.circle2 {
+    animation: myCircle 10s 0.5s infinite ease-in-out;
+}
+
+.circle3 {
+    animation: myCircle 15s 0.9s infinite ease-in-out;
+}
+
+.circle4 {
+    animation: myCircle 2s 1s infinite ease-in-out;
+}
+
+@keyframes myCircle {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+} */
 
 /* home page ends */
 
@@ -154,10 +228,10 @@ body {
 /* footer starts */
 
 .footer {
-    /* position: fixed;
-    bottom: 0; */
-    /* width: 100%; */
-    padding: 21px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 26px 21px;
     text-align: center;
     background-color: var(--bgcolor--);
     color: var(--colorwhite--);
