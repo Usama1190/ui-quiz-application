@@ -291,19 +291,18 @@ body {
 /* footer starts */
 
 .footer {
-    /* position: fixed;
-    bottom: 0; */
-    width: 95%;
-    height: 400px;
-    padding: 26px 21px;
-    text-align: center;
+    padding: 40px;
+    display: flex;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
     background-color: var(--bgcolor--);
     color: var(--colorwhite--);
 }
 
 .footer a {
     text-decoration: none;
-    color: var(--bordercolor--);
+    color: rgb(51, 188, 241)
 }
 
 /* footer ends */
