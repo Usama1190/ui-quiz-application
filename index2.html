@@ -19,11 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    
 </head>
 <body>
     <div class="app_wrapper">
@@ -51,7 +47,7 @@
             </div>
         </div>
         
-        <!-- <div class="home_content_wrapper">
+        <div id="home_content_wrapper">
             <div class="home_content">
                 <h1 class="home_heading">Quiz Application</h1>
                 <div class="icons_wrapper">
@@ -68,39 +64,52 @@
             <div class="home_image_wrapper">
                 <img src="assets/animated student1.gif" class="home_image" alt="student with laptop">
             </div>
-        </div> -->
+        </div>
 
-        <div class="form_wrapper">
-            <form class="form" id="signupForm">
-                <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank">
-                    <img src="../assets/uit.png" class="usamaimageForm" alt="usama image">
-                </a><br>
-                
-                <strong class="heading">UIT-Quiz Application</strong><br><br>
+        <div id="login_signup_form" class="display_none">
+            <div class="form_wrapper">
+                <form class="form" id="signupForm">
+                    <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank">
+                        <img src="../assets/uit.png" class="usamaimageForm" alt="usama image">
+                    </a><br>
+                    
+                    <strong class="heading">UIT-Quiz Application</strong><br><br>
 
-                <label for="email">
-                    <span class="fa fa-user"></span>
-                    <input type="email" name="email" class="inputStyleForm" id="user_email" placeholder="email" required>
-                </label><br><br>
+                    <label for="email">
+                        <span class="fa fa-user icons"></span>
+                        <input type="email" name="email" class="inputStyleForm" id="user_email" placeholder="email" required>
+                    </label><br><br>
 
-                <label for="password">
-                    <span class="fa fa-unlock-alt"></span>
-                    <input type="password" name="password" class="inputStyleForm" id="user_password" placeholder="password" required>
-                </label><br><br>
+                    <label for="password">
+                        <span class="fa fa-unlock-alt icons"></span>
+                        <input type="password" name="password" class="inputStyleForm" id="user_password" placeholder="password" required>
+                    </label><br><br>
 
-                <label for="confirmPass">
-                    <span class="fa fa-lock"></span>
-                    <input type="password" name="confirmPass" class="inputStyleForm" id="confirmPass" placeholder="confirm password" required>
-                </label><br>
+                    <small id="forgotPassword" class="forgotPassword display_none">Forgot password</small>
 
-                <p id="warning" class="warningcolor"></p><br>
-                <button id="signup_btn" class="btn3 border_none cursor_pointer font_weight700 border_radius6px transition_all3 color_dark">Signup</button>
+                    <label for="confirmPass">
+                        <span class="fa fa-lock icons"></span>
+                        <input type="password" name="confirmPass" class="inputStyleForm" id="confirmPass" placeholder="confirm password" required>
+                    </label><br>
 
-                <hr class="hr">
+                    <p id="warning" class="warningcolor"></p><br>
+                    <button id="signup_btn" class="btn3 border_none cursor_pointer font_weight700 border_radius6px transition_all3 color_dark">Signup</button>
+
+                    <hr class="hr">
 
 
-                <small>Already have an account please <a href="../login/index.html" id="signin" class="signin">Signin</a></small>
-            </form>
+                    <small>Already have an account please <a href="../login/index.html" id="signin" class="signin">Signin</a></small>
+                </form>
+            </div>
+
+            <marquee behavior="initial-scale" direction="lang" id="marquee" style="margin-top: 20px;">
+                <span class="marquee" id="marquee">Usama Info Tech</span>
+                <span class="marquee" id="marquee">Usama Info Tech</span>
+                <span class="marquee" id="marquee">Usama Info Tech</span>
+                <span class="marquee" id="marquee">Usama Info Tech</span>
+                <span class="marquee" id="marquee">Usama Info Tech</span>
+                <span class="marquee" id="marquee">Usama Info Tech</span>
+            </marquee>
         </div>
 
         <footer class="footer">DEVELOPED BY &dot; <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" target="_blank" title="linkedin profile">USAMA ISRAR</a></footer>

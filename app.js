@@ -1,15 +1,25 @@
 const main_con = {
-    goto_signup_form: document.getElementById('goto_signup_form'),
-    goto_login_form: document.getElementById('goto_login_form'),
-    app_theme: document.getElementById('app_theme')
+    app_theme: document.getElementById('app_theme'),
+    login_signup_form: document.getElementById('login_signup_form'),
+    home_content_wrapper: document.getElementById('home_content_wrapper')
 }
 
-main_con.goto_signup_form.addEventListener('click', () => {
-    window.location.href = '/signup';
+const main_con_btns = {
+    goto_signup_form: document.getElementById('goto_signup_form'),
+    goto_login_form: document.getElementById('goto_login_form'),
+}
+
+main_con_btns.goto_signup_form.addEventListener('click', () => {
+    main_con.home_content_wrapper.classList.remove('display_flex');
+    main_con.home_content_wrapper.classList.add('display_none');
+    main_con.login_signup_form.classList.remove('display_none');
+    alert('usama')
 });
 
-main_con.goto_login_form.addEventListener('click', () => {
-    window.location.href = '/login';
+main_con_btns.goto_login_form.addEventListener('click', () => {
+    main_con.home_content_wrapper.classList.add('display_none')
+    main_con.login_signup_form.classList.remove('display_none');
+    alert('usama')
 });
 
 let theme_sun = true
