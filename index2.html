@@ -32,26 +32,26 @@
                 <div class="logo_wrapper">
                     <a href="#"><img src="assets/uit.png" alt="logo" class="logo"></a>
                     <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank" class="logo_name">
-                        <strong>Usama Info Tech</strong>
+                        <strong>Info Tech</strong>
                     </a>
                 </div>
             </div>
 
             <div>
-                <div class="theme_wrapper">
+                <div class="theme_wrapper" title="theme">
                     <span><i class="fa fa-sun-o" id="app_theme" title="theme"></i></span>
                 </div>
             </div>
 
             <div>
                 <div class="ls_btns_wrapper">
-                    <button id="goto_signup_form" class="btn1 bg-color text-color">Sign Up</button>
-                    <button id="goto_login_form" class="btn1 ml-12">Log in</button>
+                    <button id="goto_signup_form" class="btn1 bg-color text-color border_none cursor_pointer font_weight700 border_radius6px transition_all3 bg_dark color_white">Sign Up</button>
+                    <button id="goto_login_form" class="btn1 ml-12 border_none cursor_pointer font_weight700 border_radius6px transition_all3 color_dark">Log in</button>
                 </div>
             </div>
         </div>
         
-        <div class="home_content_wrapper">
+        <!-- <div class="home_content_wrapper">
             <div class="home_content">
                 <h1 class="home_heading">Quiz Application</h1>
                 <div class="icons_wrapper">
@@ -61,16 +61,49 @@
                     <p><span><i class="fa fa-random icons"></i></span> Web Routing</p>
                 </div>
                 <div class="home_btn_wrapper">
-                    <button class="btn2">Start Exam</button>
-                    <button class="btn2">Get Result</button>
+                    <button class="btn2 cursor_pointer font_weight700 border_radius6px transition_all3 color_dark">Start Exam</button>
+                    <button class="btn2 cursor_pointer font_weight700 border_radius6px transition_all3 color_dark">Get Result</button>
                 </div>
             </div>
             <div class="home_image_wrapper">
                 <img src="assets/animated student1.gif" class="home_image" alt="student with laptop">
             </div>
+        </div> -->
+
+        <div class="form_wrapper">
+            <form class="form" id="signupForm">
+                <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank">
+                    <img src="../assets/uit.png" class="usamaimageForm" alt="usama image">
+                </a><br>
+                
+                <strong class="heading">UIT-Quiz Application</strong><br><br>
+
+                <label for="email">
+                    <span class="fa fa-user"></span>
+                    <input type="email" name="email" class="inputStyleForm" id="user_email" placeholder="email" required>
+                </label><br><br>
+
+                <label for="password">
+                    <span class="fa fa-unlock-alt"></span>
+                    <input type="password" name="password" class="inputStyleForm" id="user_password" placeholder="password" required>
+                </label><br><br>
+
+                <label for="confirmPass">
+                    <span class="fa fa-lock"></span>
+                    <input type="password" name="confirmPass" class="inputStyleForm" id="confirmPass" placeholder="confirm password" required>
+                </label><br>
+
+                <p id="warning" class="warningcolor"></p><br>
+                <button id="signup_btn" class="btn3 border_none cursor_pointer font_weight700 border_radius6px transition_all3 color_dark">Signup</button>
+
+                <hr class="hr">
+
+
+                <small>Already have an account please <a href="../login/index.html" id="signin" class="signin">Signin</a></small>
+            </form>
         </div>
 
-        <footer class="footer">DEVELOPED BY &dot; <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" target="_blank" title="linkedin profile">USAMA ISRAR KHAN</a></footer>
+        <footer class="footer">DEVELOPED BY &dot; <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" target="_blank" title="linkedin profile">USAMA ISRAR</a></footer>
     </div>
 
     <script src="app.js"></script>
