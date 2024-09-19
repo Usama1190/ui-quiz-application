@@ -1,7 +1,8 @@
 const main_con = {
     app_theme: document.getElementById('app_theme'),
     login_signup_form: document.getElementById('login_signup_form'),
-    home_content_wrapper: document.getElementById('home_content_wrapper')
+    home_content_wrapper: document.getElementById('home_content_wrapper'),
+    home_section: document.getElementById('home_section')
 }
 
 const main_con_btns = {
@@ -9,17 +10,29 @@ const main_con_btns = {
     goto_login_form: document.getElementById('goto_login_form'),
 }
 
+const main_con_form = {
+    user_email: document.getElementById('user_email'),
+    user_password: document.getElementById('user_password'),
+    forgotPassword: document.getElementById('forgotPassword'),
+    confirmPass: document.getElementById('confirmPass'),
+    sign_or_login_btn: document.getElementById('sign_or_login_btn'),
+    another_way_signup_login: document.getElementById('another_way_signup_login')
+}
+
+
+
+
+
+// ========================== Functionalities ===============================
+
 main_con_btns.goto_signup_form.addEventListener('click', () => {
-    main_con.home_content_wrapper.classList.remove('display_flex');
-    main_con.home_content_wrapper.classList.add('display_none');
+    main_con.home_section.classList.add('display_none');
     main_con.login_signup_form.classList.remove('display_none');
-    alert('usama')
 });
 
 main_con_btns.goto_login_form.addEventListener('click', () => {
-    main_con.home_content_wrapper.classList.add('display_none')
+    main_con.home_section.classList.add('display_none');
     main_con.login_signup_form.classList.remove('display_none');
-    alert('usama')
 });
 
 let theme_sun = true

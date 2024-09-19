@@ -47,7 +47,7 @@ body {
 }
 
 .border_radius6px {
-    border-radius: 6px;
+    border-radius: 4px;
 }
 
 .transition_all3 {
@@ -267,7 +267,6 @@ body {
 .inputStyleForm {
     width: 80%;
     padding: 6px;
-    border: none;
     border-bottom: 1px solid var(--bordercolor--);
 }
 
@@ -286,6 +285,17 @@ body {
 
 
 /* signup form ends */
+
+
+
+
+
+
+
+
+
+
+
 
 
 
