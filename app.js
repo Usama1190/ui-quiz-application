@@ -16,8 +16,11 @@ const main_con_form = {
     forgotPassword: document.getElementById('forgotPassword'),
     confirmPass: document.getElementById('confirmPass'),
     sign_or_login_btn: document.getElementById('sign_or_login_btn'),
-    another_way_signup_login: document.getElementById('another_way_signup_login')
+    another_way_signup_login: document.getElementById('another_way_signup_login'),
+    another_way_signup_login_anchor_text: document.getElementById('another_way_signup_login_anchor_text')
 }
+
+let theme_sun = true
 
 
 
@@ -25,17 +28,52 @@ const main_con_form = {
 
 // ========================== Functionalities ===============================
 
-main_con_btns.goto_signup_form.addEventListener('click', () => {
+const signup_content = () => {
+    main_con_form.sign_or_login_btn.innerText = 'Sign up';
+    main_con_form.another_way_signup_login_anchor_text.innerText = 'Login';
+    main_con_form.another_way_signup_login.innerHTML = `Already have an account please <a href='#' onclick='login_content()'>Login</a>`;
+    main_con.home_section.classList.add('display_none');
+    main_con_form.confirmPass.classList.remove('display_none');
+    main_con_form.forgotPassword.classList.add('display_none');
+    main_con.login_signup_form.classList.remove('display_none');
+}
+
+const login_content = () => {
+    main_con_form.sign_or_login_btn.innerText = 'Login';
+    main_con_form.another_way_signup_login_anchor_text.innerText = 'Sign up';
+    main_con_form.another_way_signup_login.innerHTML = `Don't have an account please <a href='#' onclick='signup_content()'>Sign up</a>`;
+    main_con_form.forgotPassword.classList.remove('display_none');
+    main_con_form.confirmPass.classList.add('display_none');
     main_con.home_section.classList.add('display_none');
     main_con.login_signup_form.classList.remove('display_none');
-});
+}
 
-main_con_btns.goto_login_form.addEventListener('click', () => {
-    main_con.home_section.classList.add('display_none');
-    main_con.login_signup_form.classList.remove('display_none');
-});
+main_con_btns.goto_signup_form.addEventListener('click', signup_content);
+main_con_btns.goto_login_form.addEventListener('click', login_content);
 
-let theme_sun = true
+
+// main_con_btns.goto_signup_form.addEventListener('click', () => {
+    // main_con_form.sign_or_login_btn.innerText = 'Sign up';
+    // main_con_form.another_way_signup_login_anchor_text.innerText = 'Login';
+    // main_con_form.another_way_signup_login.innerHTML = `Already have an account please <a href='#'>Login</a>`;
+    // main_con.home_section.classList.add('display_none');
+    // main_con_form.confirmPass.classList.remove('display_none');
+    // main_con_form.forgotPassword.classList.add('display_none');
+    // main_con.login_signup_form.classList.remove('display_none');
+// });
+
+// main_con_btns.goto_login_form.addEventListener('click', () => {
+    // main_con_form.sign_or_login_btn.innerText = 'Login';
+    // main_con_form.another_way_signup_login_anchor_text.innerText = 'Sign up';
+    // main_con_form.another_way_signup_login.innerHTML = `Don't have an account please <a href='#'>Sign up</a>`;
+    // main_con_form.forgotPassword.classList.remove('display_none');
+    // main_con_form.confirmPass.classList.add('display_none');
+    // main_con.home_section.classList.add('display_none');
+    // main_con.login_signup_form.classList.remove('display_none');
+// });
+
+
+
 main_con.app_theme.addEventListener('click', () => {
     theme_sun === true ? theme_sun = false: theme_sun = true;
 

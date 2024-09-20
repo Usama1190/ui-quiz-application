@@ -38,25 +38,6 @@
     border: 1px solid var(--bordercolor--);
 }
 
-.btn1 {
-    border: 1px solid var(--bgcolor--);
-    background-color: transparent;
-    color: var(--bgcolor--);
-    width: 80px;
-    padding: 8px;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-family: 'Arsenal SC', sans-serif;
-}
-
-.btn1:hover {
-    color: var(--colorwhite--);
-    background-color: rgb(3, 20, 34);
-    scale: 1.03;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-
 
 
 
