@@ -23,7 +23,7 @@
 </head>
 <body>
     <div class="app_wrapper">
-        <div class="topnav_wrapper">
+        <div id="topnav_wrapper">
             <div class="nav_left_wrapper">
                 <div class="logo_wrapper">
                     <a href="#"><img src="assets/uit.png" alt="logo" class="logo"></a>
@@ -33,16 +33,18 @@
                 </div>
             </div>
 
-            <div>
-                <div class="theme_wrapper" title="theme">
-                    <span><i class="fa fa-sun-o" id="app_theme" title="theme"></i></span>
+            <div class="nav_right_wrapper">
+                <div>
+                    <div class="theme_wrapper" title="theme">
+                        <span><i class="fa fa-sun-o" id="app_theme" title="theme"></i></span>
+                    </div>
                 </div>
-            </div>
 
-            <div>
-                <div class="ls_btns_wrapper">
-                    <button id="goto_signup_form" class="btn1 bg-color text-color border_none cursor_pointer font_weight700 border_radius6px transition_all3 bg_dark color_white">Sign Up</button>
-                    <button id="goto_login_form" class="btn1 ml-12 border_none cursor_pointer font_weight700 border_radius6px transition_all3 color_dark">Log in</button>
+                <div>
+                    <div id="ls_btns_wrapper">
+                        <button id="goto_signup_form" class="btn1 bg-color text-color border_none cursor_pointer font_weight700 border_radius6px transition_all3 bg_dark color_white">Sign Up</button>
+                        <button id="goto_login_form" class="btn1 ml-12 border_none cursor_pointer font_weight700 border_radius6px transition_all3 color_dark">Log in</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -68,10 +70,10 @@
             </div>
         </div>
 
-        <div id="login_signup_form" class="display_none">
-            <button class="btn2 border_none transition_all3 color_white bg_dark border_radius6px cursor_pointer">Back to home</button>
+        <div id="login_signup_form" class="display_none">            
             <div class="form_wrapper">
                 <form class="form" id="signupForm">
+                    <span id="close_sign_or_login" title="close" class="cursor_pointer"><i class="fa fa-times icons"></i></span>
                     <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank">
                         <img src="../assets/uit.png" class="usamaimageForm" alt="usama image">
                     </a><br>
@@ -101,7 +103,9 @@
                     <hr class="hr">
 
 
-                    <small id="another_way_signup_login">Already have an account please <a href="../login/index.html" id="another_way_signup_login_anchor_text" class="signin">Login</a></small>
+                    <small id="another_way_signup_login">Already have an account please <a href="../login/index.html" id="another_way_signup_login_anchor_text" class="signin">Login</a></small><br><br>
+                    <span>or</span><br><br>
+                    <button class="btn3 cursor_pointer border_none border_radius6px color_dark font_size30 transition_all3">Continue with Google</button>
                 </form>
             </div>
         </div>

@@ -58,6 +58,10 @@ body {
     color: var(--bgcolor--);
 }
 
+.font_size30 {
+    font-size: 17px;
+}
+
 
 .btn1 {
     padding: 11px 20px;
@@ -130,7 +134,7 @@ body {
 
 /* home page starts */
 
-.topnav_wrapper {
+#topnav_wrapper {
     border-bottom: 1px solid var(--bordercolor--);
     /* width: 100%; */
     padding: 8px 12px;
@@ -171,6 +175,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.nav_right_wrapper {
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-around;
+    width: 29%;
 }
 
 .theme_wrapper {
@@ -252,6 +263,7 @@ body {
 }
 
 .usamaimage {
+    position: relative;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -275,12 +287,12 @@ body {
 }
 
 .login_signup_container {
-    /* position: absolute; */
-    /* right: 40px; */
-    /* top: 20px; */
-    /* font-size: 16px; */
-    /* float: right; */
     border: 1px solid black;
+}
+
+#close_sign_or_login {
+    float: right;
+    position: relative;
 }
 
 
