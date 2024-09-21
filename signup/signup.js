@@ -1,5 +1,5 @@
-// import { auth, createUserWithEmailAndPassword, onAuthStateChanged } from "../firebase/app.js";
-
+import { auth, createUserWithEmailAndPassword, onAuthStateChanged } from "../firebase/app.js";
+// import { main_con_form } from "../app.js";
 
 // let input_fields = document.querySelectorAll('form input');
 
@@ -11,30 +11,78 @@
 
 // signup_btn.innerText = 'Signup';
 
+console.log(main_con_form);
+
+
+const user_signup_or_login = () => {
+    event.preventDefault();
+
+    if(main_con_form.sign_or_login_btn.innerText === 'Sign up') {
+        alert('Sign up!')
+    }
+    else {
+        alert('Login!');
+    }
+
+    // alert('Sign up!');
+
+    // signup_btn.innerText = 'loading...';
+
+    // createUserWithEmailAndPassword(auth, user_email.value, user_password.value)
+    // .then((userCredential) => {
+    //     // Signed up 
+    //     const user = userCredential.user;
+
+    //     signup_btn.innerText = 'Signup';
+        
+    //     // ...
+    // })
+    // .catch((error) => {
+    //     const errorCode = error.code;
+    //     const errorMessage = error.message;
+    
+    //     signup_btn.innerText = 'Signup';
+        
+    //     // ..
+    // });
+}
+
+
+main_con_form.sign_or_login_btn.addEventListener('click', user_signup_or_login);
+
+
+
+
+
+
+
 
 // const user_signup = () => {
-//     event.preventDefault();
+    // event.preventDefault();
 
-//     signup_btn.innerText = 'loading...';
+    // alert('Sign up!');
 
-//     createUserWithEmailAndPassword(auth, user_email.value, user_password.value)
-//     .then((userCredential) => {
-//         // Signed up 
-//         const user = userCredential.user;
+    // signup_btn.innerText = 'loading...';
 
-//         signup_btn.innerText = 'Signup';
+    // createUserWithEmailAndPassword(auth, user_email.value, user_password.value)
+    // .then((userCredential) => {
+    //     // Signed up 
+    //     const user = userCredential.user;
+
+    //     signup_btn.innerText = 'Signup';
         
-//         // ...
-//     })
-//     .catch((error) => {
-//         const errorCode = error.code;
-//         const errorMessage = error.message;
+    //     // ...
+    // })
+    // .catch((error) => {
+    //     const errorCode = error.code;
+    //     const errorMessage = error.message;
     
-//         signup_btn.innerText = 'Signup';
+    //     signup_btn.innerText = 'Signup';
         
-//         // ..
-//     });
+    //     // ..
+    // });
 // }
+
 
 
 // signup_btn.addEventListener('click', user_signup);

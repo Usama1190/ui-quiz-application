@@ -18,4 +18,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 
-export { auth, GoogleAuthProvider  , signOut, sendPasswordResetEmail  ,createUserWithEmailAndPassword, signInWithPopup ,  signInWithEmailAndPassword, onAuthStateChanged };
+export { auth, signOut, sendPasswordResetEmail  ,createUserWithEmailAndPassword ,  signInWithEmailAndPassword, onAuthStateChanged };
+
+// GoogleAuthProvider , signInWithPopup
