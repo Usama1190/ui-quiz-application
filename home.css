@@ -34,6 +34,16 @@ body {
     display: flex;
 }
 
+.display_flex_plus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.margin_auto {
+    margin: auto;
+}
+
 .border_none {
     border: none;
 }
@@ -248,7 +258,7 @@ body {
 
 .form {
     padding: 20px;
-    width: 30%;
+    width: 40%;
     text-align: center;
     border: 1px solid var(--bordercolor--);
     border-radius: 10px;
@@ -295,6 +305,11 @@ body {
     position: relative;
 }
 
+.google_logo {
+    width: 35px;
+    height: 35px;
+}
+
 
 /* signup form ends */
 
@@ -318,23 +333,21 @@ body {
 
 /* footer starts */
 
-.footer {
+#footer {
     padding: 40px;
-    display: flex;
     font-size: 25px;
     font-weight: 300;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     background-color: var(--bgcolor--);
     color: var(--colorwhite--);
 }
 
-.footer a {
+#footer a {
     text-decoration: none;
     color: rgb(51, 188, 241)
 }
 
-.footer a:hover {
+#footer a:hover {
     opacity: 0.5;
     text-decoration: underline;
 }

@@ -1,16 +1,6 @@
 import { auth, createUserWithEmailAndPassword, onAuthStateChanged } from "../firebase/app.js";
 // import { main_con_form } from "../app.js";
 
-// let input_fields = document.querySelectorAll('form input');
-
-// const [ user_email, user_password ] = input_fields;
-
-// console.log(input_fields);
-
-// const signup_btn = document.getElementById('signup_btn');
-
-// signup_btn.innerText = 'Signup';
-
 console.log(main_con_form);
 
 
@@ -55,6 +45,29 @@ main_con_form.sign_or_login_btn.addEventListener('click', user_signup_or_login);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let input_fields = document.querySelectorAll('form input');
+
+// const [ user_email, user_password ] = input_fields;
+
+// console.log(input_fields);
+
+// const signup_btn = document.getElementById('signup_btn');
+
+// signup_btn.innerText = 'Signup';
 
 
 // const user_signup = () => {

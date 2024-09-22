@@ -3,7 +3,9 @@ const main_con = {
     login_signup_form: document.getElementById('login_signup_form'),
     home_content_wrapper: document.getElementById('home_content_wrapper'),
     home_section: document.getElementById('home_section'),
-    ls_btns_wrapper: document.getElementById('ls_btns_wrapper')
+    ls_btns_wrapper: document.getElementById('ls_btns_wrapper'),
+    app_navbar: document.getElementById('app_navbar'),
+    footer: document.getElementById('footer')
 }
 
 const main_con_btns = {
@@ -34,11 +36,9 @@ const signup_content = () => {
     main_con_form.sign_or_login_btn.innerText = 'Sign up';
     main_con_form.another_way_signup_login_anchor_text.innerText = 'Login';
     main_con_form.another_way_signup_login.innerHTML = `Already have an account please <a href='#login' onclick='login_content()'>Login</a>`;
-    main_con.home_section.classList.add('display_none');
     main_con_form.confirmPass.classList.remove('display_none');
     main_con_form.forgotPassword.classList.add('display_none');
-    main_con.login_signup_form.classList.remove('display_none');
-    main_con.ls_btns_wrapper.classList.add('display_none');
+    common_login_signup();
 }
 
 const login_content = () => {
@@ -47,15 +47,21 @@ const login_content = () => {
     main_con_form.another_way_signup_login.innerHTML = `Don't have an account please <a href='#signup' onclick='signup_content()'>Sign up</a>`;
     main_con_form.forgotPassword.classList.remove('display_none');
     main_con_form.confirmPass.classList.add('display_none');
+    common_login_signup();
+}
+
+const common_login_signup = () => {
     main_con.home_section.classList.add('display_none');
     main_con.login_signup_form.classList.remove('display_none');
-    main_con.ls_btns_wrapper.classList.add('display_none');
+    main_con.app_navbar.classList.add('display_none');
+    main_con.footer.classList.add('display_none');
 }
 
 main_con_form.close_sign_or_login.addEventListener('click', () => {
     main_con.login_signup_form.classList.add('display_none');
-    main_con.ls_btns_wrapper.classList.remove('display_none');
     main_con.home_section.classList.remove('display_none');
+    main_con.app_navbar.classList.remove('display_none');
+    main_con.footer.classList.remove('display_none');
 })
 
 main_con_btns.goto_signup_form.addEventListener('click', signup_content);

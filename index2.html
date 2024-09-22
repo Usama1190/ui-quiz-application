@@ -23,27 +23,29 @@
 </head>
 <body>
     <div class="app_wrapper">
-        <div id="topnav_wrapper">
-            <div class="nav_left_wrapper">
-                <div class="logo_wrapper">
-                    <a href="#"><img src="assets/uit.png" alt="logo" class="logo"></a>
-                    <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank" class="logo_name">
-                        <strong>Info Tech</strong>
-                    </a>
-                </div>
-            </div>
-
-            <div class="nav_right_wrapper">
-                <div>
-                    <div class="theme_wrapper" title="theme">
-                        <span><i class="fa fa-sun-o" id="app_theme" title="theme"></i></span>
+        <div id="app_navbar">
+            <div id="topnav_wrapper">
+                <div class="nav_left_wrapper">
+                    <div class="logo_wrapper">
+                        <a href="#"><img src="assets/uit.png" alt="logo" class="logo"></a>
+                        <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank" class="logo_name">
+                            <strong>Info Tech</strong>
+                        </a>
                     </div>
                 </div>
 
-                <div>
-                    <div id="ls_btns_wrapper">
-                        <button id="goto_signup_form" class="btn1 bg-color text-color border_none cursor_pointer font_weight700 border_radius6px transition_all3 bg_dark color_white">Sign Up</button>
-                        <button id="goto_login_form" class="btn1 ml-12 border_none cursor_pointer font_weight700 border_radius6px transition_all3 color_dark">Log in</button>
+                <div class="nav_right_wrapper">
+                    <div>
+                        <div class="theme_wrapper" title="theme">
+                            <span><i class="fa fa-sun-o" id="app_theme" title="theme"></i></span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div id="ls_btns_wrapper">
+                            <button id="goto_signup_form" class="btn1 bg-color text-color border_none cursor_pointer font_weight700 border_radius6px transition_all3 bg_dark color_white">Sign Up</button>
+                            <button id="goto_login_form" class="btn1 ml-12 border_none cursor_pointer font_weight700 border_radius6px transition_all3 color_dark">Log in</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -105,12 +107,12 @@
 
                     <small id="another_way_signup_login">Already have an account please <a href="../login/index.html" id="another_way_signup_login_anchor_text" class="signin">Login</a></small><br><br>
                     <span>or</span><br><br>
-                    <button class="btn3 cursor_pointer border_none border_radius6px color_dark font_size30 transition_all3">Continue with Google</button>
+                    <button class="btn3 margin_auto display_flex_plus cursor_pointer border_none border_radius6px color_dark font_size30 transition_all3"><img src="assets/google-logo-removebg-preview.png" alt="google logo" class="google_logo"> Continue with Google</button>
                 </form>
             </div>
         </div>
 
-        <footer class="footer">DEVELOPED BY &dot; <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" target="_blank" title="linkedin profile">USAMA ISRAR</a></footer>
+        <footer id="footer">DEVELOPED BY &dot; <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" target="_blank" title="linkedin profile">USAMA ISRAR</a></footer>
     </div>
 
     <script type="module" src="./signup/signup.js"></script>
