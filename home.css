@@ -1,19 +1,25 @@
 :root {
     --bordercolor--: #e0e0e0;
-    /* --bgcolor--:  rgb(24, 56, 83); */
+    --bgcolor--:  rgb(24, 56, 83);
     --bgcolor--:  #003140;
 
     --bgcolor2--:  rgb(125, 197, 255);
     --colorwhite--: #fff;
     --colorblack--: #000;
+
+    --color-0: #000000;
+    --color-1: #73C3F6;
+    --color-2: #172F55;
+    --color-3: #B6E9FC;
+    --color-4: #ffffff;
 }
 
 body {
+    background-color: var(--color-2);
     padding: 0;
     margin: 0;
     color: var(--bgcolor--);
     font-family: 'Roboto';
-    /* background-color: var(--colorwhite--); */
 }
 
 
@@ -21,6 +27,11 @@ body {
 
 
 /* global classes starts */
+
+.active_btn {
+    background-color: var(--color-1);
+    color: var(--color-4);
+}
 
 .display_none {
     display: none;
@@ -74,27 +85,38 @@ body {
 
 
 .btn1 {
+    transition: all 0.3s;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
     padding: 11px 20px;
+    /* color: var(--color-1); */
 }
 
 .btn1:hover {
-    background-color: var(--bgcolor--);
-    color: var(--colorwhite--);
+    background-color: var(--color-1);
+    color: var(--color-4);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
 .btn2 {
+    cursor: pointer;
+    font-weight: 700;
     padding: 14px 30px;
-    border: 1px solid var(--bgcolor--);
+    border-radius: 6px;
+    transition: all 0.3s;
+    border: 1px solid var(--color-1);
     background-color: var(--colorwhite--);
     margin: 3px;
+    color: var(--color-1);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .btn2:hover {
-    color: var(--colorwhite--);
-    background-color: var(--bgcolor--);
+    color: var(--color-4);
+    background-color: var(--color-1);
 }
 
 .btn3 {
@@ -145,24 +167,21 @@ body {
 /* home page starts */
 
 #topnav_wrapper {
-    border-bottom: 1px solid var(--bordercolor--);
-    /* width: 100%; */
+    border-bottom: 1px solid var(--color-3);
     padding: 8px 12px;
     position: sticky;
     top: 0;
     z-index: 1;
-    top: 0;
     display: flex;
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
     justify-content:space-around;
     align-items: center;
-    background: transparent;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .logo_name {
     text-decoration: none;
-    color: var(--bgcolor--);
+    color: var(--color-1);
     margin-left: 4px;
 }
 
@@ -174,13 +193,14 @@ body {
 }
 
 .logo {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--color-3);
     border-radius: 50%;
 }
 
 .nav_left_wrapper {
-    /* border: 1px solid black; */
+    border: 1px solid red;
     width: 69%;
     display: flex;
     justify-content: space-between;
@@ -206,13 +226,13 @@ body {
 }
 
 .home_image_wrapper {
-    width: 60%;
+    width: 50%;
     overflow: hidden;
     border-radius: 20%;
 }
 
 .home_image {
-    width: 600px;
+    width: 450px;
     z-index: -1;
 }
 
@@ -338,13 +358,15 @@ body {
     font-size: 25px;
     font-weight: 300;
     text-align: center;
-    background-color: var(--bgcolor--);
+    border: 1px solid var(--color-1);
+    background-color: var(--color-3);
     color: var(--colorwhite--);
 }
 
 #footer a {
     text-decoration: none;
-    color: rgb(51, 188, 241)
+    color: var(--color-1);
+    transition: all 0.3s;
 }
 
 #footer a:hover {
