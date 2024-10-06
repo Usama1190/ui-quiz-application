@@ -1,5 +1,4 @@
 import { auth, createUserWithEmailAndPassword, onAuthStateChanged } from "../firebase/app.js";
-// import { main_con_form } from "../app.js";
 
 console.log(main_con_form);
 

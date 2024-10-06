@@ -27,9 +27,6 @@ const main_con_form = {
 let theme_sun = true
 
 
-
-
-
 // ========================== Functionalities ===============================
 
 const signup_content = () => {
@@ -76,7 +73,25 @@ main_con.app_theme.addEventListener('click', () => {
 });
 
 
-// export { main_con_form };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
