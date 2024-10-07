@@ -62,8 +62,8 @@
                         <p><span><i class="fa fa-random icons"></i></span> Web Routing</p>
                     </div>
                     <div class="home_btn_wrapper">
-                        <button class="btn2">Start Exam</button>
-                        <button class="btn2">Get Result</button>
+                        <button class="btn2" id="startexam_btn">Start Exam</button>
+                        <button class="btn2" id="getresult_btn">Get Result</button>
                     </div>
                 </div>
                 <div class="home_image_wrapper">
@@ -92,7 +92,12 @@
                         <input type="password" name="password" class="inputStyleForm border_none" id="user_password" placeholder="password" required>
                     </label><br><br>
 
-                    <small id="forgotPassword" class="display_none cursor_pointer">Forgot password</small>
+                    <div class="remember_forget_wrapper">
+                        <label for="remember">
+                        <input type="checkbox" id="remember"> Remember me
+                        </label>
+                        <small id="forgotPassword" class="display_none cursor_pointer">Forgot password</small>
+                    </div>
 
                     <label for="confirmPass" id="confirmPass">
                         <span class="fa fa-lock icons"></span>

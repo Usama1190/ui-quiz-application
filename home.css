@@ -14,6 +14,22 @@
     --color-4: #ffffff;
 }
 
+.light_theme {
+    --color-0: #000000;
+    --color-1: #73C3F6;
+    --color-2: #172F55;
+    --color-3: #B6E9FC;
+    --color-4: #ffffff;
+}
+
+.dark_theme {
+    --color-0: #000000;
+    --color-1: #73C3F6;
+    --color-2: #ffffff;
+    --color-3: #B6E9FC;
+    --color-4: #172F55;
+}
+
 body {
     background-color: var(--color-2);
     padding: 0;
@@ -92,7 +108,7 @@ body {
     border-radius: 6px;
     font-weight: 700;
     cursor: pointer;
-    border: none;
+    border: 1px solid var(--color-4);
     padding: 11px 20px;
     /* color: var(--color-2); */
 }
@@ -165,10 +181,10 @@ body {
 /* home page starts */
 
 #topnav_wrapper {
-    border-bottom: 1px solid var(--color-3);
+    border-bottom: 1px solid var(--color-4);
     padding: 8px 12px;
     z-index: 1;
-    background-color: var(--color-3);
+    background-color: var(--color-4);
     display: flex;
     justify-content:space-around;
     align-items: center;
@@ -212,6 +228,7 @@ body {
 
 .theme_wrapper {
     border: 1px solid var(--color-2);
+    color: var(--color-2);
     width: 30px;
     height: 30px;
     display: flex;
@@ -275,10 +292,20 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
 /* signup form starts */
 
 .form_wrapper {
-    margin-top: 150px;
+    margin-top: 100px;
 }
 
 .form {
@@ -286,6 +313,7 @@ body {
     width: 40%;
     text-align: center;
     border: 1px solid var(--bordercolor--);
+    /* background-color: var(--color-4); */
     border-radius: 10px;
     margin: auto;
     margin-top: -60px;
@@ -333,6 +361,13 @@ body {
 .google_logo {
     width: 35px;
     height: 35px;
+}
+
+.remember_forget_wrapper {
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 

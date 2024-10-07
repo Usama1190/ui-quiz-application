@@ -11,6 +11,8 @@ const main_con = {
 const main_con_btns = {
     goto_signup_form: document.getElementById('goto_signup_form'),
     goto_login_form: document.getElementById('goto_login_form'),
+    startexam_btn: document.getElementById('startexam_btn'),
+    getresult_btn: document.getElementById('getresult_btn')
 }
 
 const main_con_form = {
@@ -63,17 +65,23 @@ main_con_form.close_sign_or_login.addEventListener('click', () => {
 
 main_con_btns.goto_signup_form.addEventListener('click', signup_content);
 main_con_btns.goto_login_form.addEventListener('click', login_content);
+main_con_btns.startexam_btn.addEventListener('click', signup_content);
+main_con_btns.getresult_btn.addEventListener('click', login_content);
 
 
 main_con.app_theme.addEventListener('click', () => {
     if(theme_sun == false) {
         main_con.app_theme.classList.remove('fa-sun-o');
         main_con.app_theme.classList.add('fa-moon-o');
+        document.body.classList.remove('light_theme');
+        document.body.classList.add('dark_theme');
         theme_sun = true;
     }
     else if(theme_sun == true) {
         main_con.app_theme.classList.add('fa-sun-o');
         main_con.app_theme.classList.remove('fa-moon-o');
+        document.body.classList.add('light_theme');
+        document.body.classList.remove('dark_theme');
         theme_sun = false;
     }
 });
