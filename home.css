@@ -29,9 +29,12 @@ body {
 /* global classes starts */
 
 .active_btn {
-    background-color: var(--color-1);
+    background-color: var(--color-2);
     color: var(--color-4);
 }
+
+
+
 
 .display_none {
     display: none;
@@ -91,11 +94,11 @@ body {
     cursor: pointer;
     border: none;
     padding: 11px 20px;
-    /* color: var(--color-1); */
+    /* color: var(--color-2); */
 }
 
 .btn1:hover {
-    background-color: var(--color-1);
+    background-color: var(--color-2);
     color: var(--color-4);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -107,16 +110,17 @@ body {
     padding: 14px 30px;
     border-radius: 6px;
     transition: all 0.3s;
-    border: 1px solid var(--color-1);
-    background-color: var(--colorwhite--);
+    border: 1px solid var(--color-2);
+    background-color: var(--color-4);
     margin: 3px;
-    color: var(--color-1);
+    color: var(--color-2);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .btn2:hover {
+    border: 1px solid var(--color-4);
     color: var(--color-4);
-    background-color: var(--color-1);
+    background-color: var(--color-2);
 }
 
 .btn3 {
@@ -147,12 +151,6 @@ body {
     margin-left: -12px;
 }
 
-.icons {
-    padding: 5px;
-    border: 1px solid var(--bordercolor--);
-    border-radius: 50%;
-}
-
 /* global classes ends */
 
 
@@ -169,19 +167,25 @@ body {
 #topnav_wrapper {
     border-bottom: 1px solid var(--color-3);
     padding: 8px 12px;
-    position: sticky;
-    top: 0;
     z-index: 1;
+    background-color: var(--color-3);
     display: flex;
-    /* backdrop-filter: blur(10px); */
     justify-content:space-around;
     align-items: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.nav_left_wrapper {
+    /* border: 1px solid red; */
+    width: 69%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .logo_name {
     text-decoration: none;
-    color: var(--color-1);
+    color: var(--color-2);
     margin-left: 4px;
 }
 
@@ -195,16 +199,8 @@ body {
 .logo {
     width: 40px;
     height: 40px;
-    border: 1px solid var(--color-3);
+    border: 1px solid var(--color-2);
     border-radius: 50%;
-}
-
-.nav_left_wrapper {
-    border: 1px solid red;
-    width: 69%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .nav_right_wrapper {
@@ -215,7 +211,7 @@ body {
 }
 
 .theme_wrapper {
-    border: 1px solid var(--bordercolor--);
+    border: 1px solid var(--color-2);
     width: 30px;
     height: 30px;
     display: flex;
@@ -245,7 +241,8 @@ body {
     padding: 0 42px;
 }
 
-.home_heading {
+.home_content_heading1 {
+    color: var(--color-3);
     font-size: 4rem;
     margin: 0;
     font-weight: 300;
@@ -253,11 +250,19 @@ body {
 
 .icons_wrapper {
     margin-left: 10px;
-    /* border: 1px solid black; */
+
 }
 
-.home_content_wrapper p {
+.icons {
+    padding: 5px;
+    border: 1px solid var(--color-3);
+    color: var(--color-4);
+    border-radius: 50%;
+}
+
+.icons_wrapper p {
     font-size: 15px;
+    color: var(--color-4);
 }
 
 
@@ -289,7 +294,7 @@ body {
 
 .hr {
     width: 50%;
-    background-color: var(--bordercolor--);
+    background-color: var(--color-3);
 }
 
 .usamaimage {
@@ -358,14 +363,13 @@ body {
     font-size: 25px;
     font-weight: 300;
     text-align: center;
-    border: 1px solid var(--color-1);
     background-color: var(--color-3);
-    color: var(--colorwhite--);
+    color: var(--color-0);
 }
 
 #footer a {
     text-decoration: none;
-    color: var(--color-1);
+    color: var(--color-2);
     transition: all 0.3s;
 }
 

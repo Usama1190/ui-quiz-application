@@ -66,10 +66,16 @@ main_con_btns.goto_login_form.addEventListener('click', login_content);
 
 
 main_con.app_theme.addEventListener('click', () => {
-    theme_sun === true ? theme_sun = false: theme_sun = true;
-
-    theme_sun == false ? main_con.app_theme.classList.remove('fa-sun-o') : main_con.app_theme.classList.add('fa-sun-o');
-    theme_sun == true ? main_con.app_theme.classList.remove('fa-moon-o') : main_con.app_theme.classList.add('fa-moon-o');
+    if(theme_sun == false) {
+        main_con.app_theme.classList.remove('fa-sun-o');
+        main_con.app_theme.classList.add('fa-moon-o');
+        theme_sun = true;
+    }
+    else if(theme_sun == true) {
+        main_con.app_theme.classList.add('fa-sun-o');
+        main_con.app_theme.classList.remove('fa-moon-o');
+        theme_sun = false;
+    }
 });
 
 
