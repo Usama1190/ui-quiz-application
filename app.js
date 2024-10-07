@@ -18,7 +18,7 @@ const main_con_btns = {
 const main_con_form = {
     user_email: document.getElementById('user_email'),
     user_password: document.getElementById('user_password'),
-    forgotPassword: document.getElementById('forgotPassword'),
+    remember_forget_wrapper: document.getElementById('remember_forget_wrapper'),
     confirmPass: document.getElementById('confirmPass'),
     sign_or_login_btn: document.getElementById('sign_or_login_btn'),
     another_way_signup_login: document.getElementById('another_way_signup_login'),
@@ -36,7 +36,7 @@ const signup_content = () => {
     main_con_form.another_way_signup_login_anchor_text.innerText = 'Login';
     main_con_form.another_way_signup_login.innerHTML = `Already have an account please <a href='#login' onclick='login_content()'>Login</a>`;
     main_con_form.confirmPass.classList.remove('display_none');
-    main_con_form.forgotPassword.classList.add('display_none');
+    main_con_form.remember_forget_wrapper.classList.add('display_none');
     common_login_signup();
 }
 
@@ -44,7 +44,7 @@ const login_content = () => {
     main_con_form.sign_or_login_btn.innerText = 'Login';
     main_con_form.another_way_signup_login_anchor_text.innerText = 'Sign up';
     main_con_form.another_way_signup_login.innerHTML = `Don't have an account please <a href='#signup' onclick='signup_content()'>Sign up</a>`;
-    main_con_form.forgotPassword.classList.remove('display_none');
+    main_con_form.remember_forget_wrapper.classList.remove('display_none');
     main_con_form.confirmPass.classList.add('display_none');
     common_login_signup();
 }
