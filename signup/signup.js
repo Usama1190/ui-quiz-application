@@ -1,22 +1,18 @@
 import { auth, createUserWithEmailAndPassword, onAuthStateChanged } from "../firebase/app.js";
 
-console.log(main_con_form);
-console.log(login_signup_form);
-
-
 
 const user_signup_or_login = () => {
     event.preventDefault();
 
     if(main_con_form.confirmPass.value === main_con_form.user_password.value) {
-        sign_or_login_btn.innerText = 'loading...';
+        main_con_form.sign_or_login_btn.innerText = 'loading...';
 
         createUserWithEmailAndPassword(auth, user_email.value, user_password.value)
         .then((userCredential) => {
             // Signed up 
             const user = userCredential.user;
 
-            sign_or_login_btn.innerText = 'Signup';
+            main_con_form.sign_or_login_btn.innerText = 'Signup';
             
             // ...
         })
@@ -24,13 +20,13 @@ const user_signup_or_login = () => {
             const errorCode = error.code;
             const errorMessage = error.message;
         
-            sign_or_login_btn.innerText = 'Signup';
+            main_con_form.sign_or_login_btn.innerText = 'Signup';
             
             // ..
         });
     }
     else {
-        main_con_form
+        main_con_form.warning.innerText = "Confirm password doesn't matched!";
     }
 }
 

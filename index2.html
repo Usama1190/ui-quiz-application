@@ -47,6 +47,12 @@
                             <button id="goto_login_form" class="btn1 ml-12">Log in</button>
                         </div>
                     </div>
+
+                    <strong class="adminlogo display_none" id="userlogo">
+                        <i class="fa fa-user"></i>
+                        <a href="#" id="userName"></a>
+                        <button id="user_logout" class="btn">Logout</button>
+                    </strong>
                 </div>
             </div>
         </div>
@@ -104,9 +110,9 @@
                     <label for="confirmPass" id="confirmPass">
                         <span class="fa fa-lock icons"></span>
                         <input type="password" name="confirmPass" class="inputStyleForm border_none" id="confirmPass" placeholder="confirm password" required>
-                    </label><br>
+                    </label><br><br>
 
-                    <p id="warning" class="warningcolor"></p>
+                    <small id="warning" class="warning_color"></small>
                     <button id="sign_or_login_btn" class="btn3 color_dark">Signup</button><br><br>
 
                     <hr class="hr"><br>
@@ -117,6 +123,10 @@
                     <button class="google_btn"><img src="assets/google-logo-removebg-preview.png" alt="google logo" class="google_logo"> Continue with Google</button>
                 </form>
             </div>
+        </div>
+
+        <div id="dashboard_wrapper" class="display_none">
+            <h1>Dashboard</h1>
         </div>
 
         <footer id="footer">DEVELOPED BY : <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" target="_blank" title="linkedin profile">USAMA ISRAR</a></footer>

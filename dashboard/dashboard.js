@@ -1,5 +1,7 @@
 import { auth, signOut, onAuthStateChanged } from "../firebase/app.js";
 
+console.log(main_con_form);
+
 
 const login_btn = document.getElementById('user_logout');
 

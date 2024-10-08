@@ -23,7 +23,8 @@ const main_con_form = {
     sign_or_login_btn: document.getElementById('sign_or_login_btn'),
     another_way_signup_login: document.getElementById('another_way_signup_login'),
     another_way_signup_login_anchor_text: document.getElementById('another_way_signup_login_anchor_text'),
-    close_sign_or_login: document.getElementById('close_sign_or_login')
+    close_sign_or_login: document.getElementById('close_sign_or_login'),
+    warning: document.getElementById('warning'),
 }
 
 let theme_sun = true
