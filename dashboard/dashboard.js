@@ -1,14 +1,10 @@
 import { auth, signOut, onAuthStateChanged } from "../firebase/app.js";
 
-console.log(main_con_form, 'hello dashboard here!');
+// console.log(main_con_form, 'hello dashboard here!');
 
-
-
-const login_btn = document.getElementById('user_logout');
 
 const user_logout = () => {
     event.preventDefault();
-
 
     signOut(auth).then(() => {
         // Sign-out successful.
@@ -18,7 +14,7 @@ const user_logout = () => {
 }
 
 
-login_btn.addEventListener('click', user_logout);
+main_con_btns.user_logout_btn.addEventListener('click', user_logout);
 
 onAuthStateChanged(auth, (user) => {
     if(!user) {

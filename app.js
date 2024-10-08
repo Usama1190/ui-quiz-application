@@ -14,7 +14,8 @@ const main_con_btns = {
     goto_signup_form: document.getElementById('goto_signup_form'),
     goto_login_form: document.getElementById('goto_login_form'),
     startexam_btn: document.getElementById('startexam_btn'),
-    getresult_btn: document.getElementById('getresult_btn')
+    getresult_btn: document.getElementById('getresult_btn'),
+    user_logout_btn: document.getElementById('user_logout_btn'),
 }
 
 const main_con_form = {
@@ -32,7 +33,6 @@ const main_con_form = {
 }
 
 let theme_sun = true
-
 
 // ========================== Functionalities ===============================
 

@@ -1,13 +1,11 @@
 import { auth, createUserWithEmailAndPassword, onAuthStateChanged } from "../firebase/app.js";
 
 
-const user_signup_or_login = () => {
+const user_signup = () => {
     event.preventDefault();
 
-    console.log(main_con_form.user_password.value, 'user_password');
-    console.log(main_con_form.user_confirmpass.value, 'user_confirmpass');
-
-
+    console.log('Signup Function is running!');
+    
 
     if(main_con_form.user_password.value === main_con_form.user_confirmpass.value) {
         main_con_form.sign_or_login_btn.innerText = 'loading...';
@@ -35,23 +33,24 @@ const user_signup_or_login = () => {
     }
 }
 
-console.log(main_con_form.sign_or_login_btn.innerText);
+// console.log(main_con_form.sign_or_login_btn.innerText);
 
 
 
 if(main_con_form.sign_or_login_btn.innerText === 'Sign up') {
-    main_con_form.sign_or_login_btn.addEventListener('click', user_signup_or_login);
+    main_con_form.sign_or_login_btn.addEventListener('click', user_signup);
 }
-else if(main_con_form.sign_or_login_btn.innerText === 'Login') {
-    console.log('Signup Function is not Running!');
+// else if(main_con_form.sign_or_login_btn.innerText === 'Login') {
+//     console.log('Signup Function is not Running!');
     
-}
+// }
 
 
 onAuthStateChanged(auth, (user) => {
     if(user) {
         main_con.app_navbar.classList.remove('d_none');
         main_con.home_section.classList.add('d_none');
+        main_con.login_signup_form.classList.add('d_none');
         main_con.dashboard_section.classList.remove('d_none');
         main_con.footer.classList.remove('_none');
         main_con.ls_btns_wrapper.classList.add('d_none');

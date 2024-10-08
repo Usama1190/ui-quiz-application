@@ -1,9 +1,11 @@
 import { auth, sendPasswordResetEmail  , signInWithEmailAndPassword, onAuthStateChanged } from "../firebase/app.js";
 
-console.log(main_con_form.sign_or_login_btn.innerText, 'Login here');
+// console.log(main_con_form.sign_or_login_btn.innerText, 'Login here');
 
 const login = () => {
     event.preventDefault();
+
+    console.log('Login Function is running!');
 
     main_con_form.sign_or_login_btn.innerText = 'Loading...';
 
@@ -13,7 +15,7 @@ const login = () => {
         main_con_form.sign_or_login_btn.innerText = 'Login';
 
         const user = userCredential.user;
-        console.log(user);
+        // console.log(user);
         
         // ...
         main_con_form.warning.innerText = '';
@@ -32,10 +34,6 @@ const login = () => {
 
 if(main_con_form.sign_or_login_btn.innerText === 'Login') {
     main_con_form.sign_or_login_btn.addEventListener('click', login);
-}
-else if(main_con_form.sign_or_login_btn.innerText === 'Sign up') {
-    console.log('Login Function is not Running!');
-    
 }
 
 
@@ -66,5 +64,6 @@ onAuthStateChanged(auth, (user) => {
         main_con.footer.classList.remove('_none');
         main_con.ls_btns_wrapper.classList.add('d_none');
         main_con.logout_wrapper.classList.remove('d_none');
+        main_con.login_signup_form.classList.add('d_none');
     }
 });
