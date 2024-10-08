@@ -4,7 +4,12 @@ import { auth, createUserWithEmailAndPassword, onAuthStateChanged } from "../fir
 const user_signup_or_login = () => {
     event.preventDefault();
 
-    if(main_con_form.confirmPass.value === main_con_form.user_password.value) {
+    console.log(main_con_form.user_password.value, 'user_password');
+    console.log(main_con_form.user_confirmpass.value, 'user_confirmpass');
+
+
+
+    if(main_con_form.user_password.value === main_con_form.user_confirmpass.value) {
         main_con_form.sign_or_login_btn.innerText = 'loading...';
 
         createUserWithEmailAndPassword(auth, user_email.value, user_password.value)

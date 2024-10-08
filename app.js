@@ -7,6 +7,7 @@ const main_con = {
     app_navbar: document.getElementById('app_navbar'),
     footer: document.getElementById('footer'),
     dashboard_section: document.getElementById('dashboard_section'),
+    logout_wrapper: document.getElementById('logout_wrapper'),
 }
 
 const main_con_btns = {
@@ -20,7 +21,8 @@ const main_con_form = {
     user_email: document.getElementById('user_email'),
     user_password: document.getElementById('user_password'),
     remember_forget_wrapper: document.getElementById('remember_forget_wrapper'),
-    confirmPass: document.getElementById('confirmPass'),
+    user_confirmpass_wrapper: document.getElementById('user_confirmpass_wrapper'),
+    user_confirmpass: document.getElementById('user_confirmpass'),
     sign_or_login_btn: document.getElementById('sign_or_login_btn'),
     another_way_signup_login: document.getElementById('another_way_signup_login'),
     another_way_signup_login_anchor_text: document.getElementById('another_way_signup_login_anchor_text'),
@@ -37,7 +39,7 @@ const signup_content = () => {
     main_con_form.sign_or_login_btn.innerText = 'Sign up';
     main_con_form.another_way_signup_login_anchor_text.innerText = 'Login';
     main_con_form.another_way_signup_login.innerHTML = `Already have an account please <a href='#login' onclick='login_content()'>Login</a>`;
-    main_con_form.confirmPass.classList.remove('d_none');
+    main_con_form.user_confirmpass_wrapper.classList.remove('d_none');
     main_con_form.remember_forget_wrapper.classList.add('d_none');
     common_login_signup();
 }
@@ -47,7 +49,7 @@ const login_content = () => {
     main_con_form.another_way_signup_login_anchor_text.innerText = 'Sign up';
     main_con_form.another_way_signup_login.innerHTML = `Don't have an account please <a href='#signup' onclick='signup_content()'>Sign up</a>`;
     main_con_form.remember_forget_wrapper.classList.remove('d_none');
-    main_con_form.confirmPass.classList.add('d_none');
+    main_con_form.user_confirmpass_wrapper.classList.add('d_none');
     common_login_signup();
 }
 

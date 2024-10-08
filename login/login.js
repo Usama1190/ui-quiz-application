@@ -1,45 +1,38 @@
 import { auth, sendPasswordResetEmail  , signInWithEmailAndPassword, onAuthStateChanged } from "../firebase/app.js";
 
-let formField = document.querySelectorAll('form input');
-
-const [user_email, user_password] = formField;
-
-let forgotPassword = document.getElementById('forgotPassword');
-
-let warning = document.getElementById('warning');
-
-let login_btn = document.getElementById('login');
+console.log(main_con_form.sign_or_login_btn.innerText, 'Login here');
 
 const login = () => {
     event.preventDefault();
 
-    login_btn.innerText = 'Loading...';
+    main_con_form.sign_or_login_btn.innerText = 'Loading...';
 
     signInWithEmailAndPassword(auth, user_email.value, user_password.value)
     .then((userCredential) => {
         // Signed in 
-        login_btn.innerText = 'Login';
+        main_con_form.sign_or_login_btn.innerText = 'Login';
 
         const user = userCredential.user;
         console.log(user);
         
         // ...
-        warning.innerText = '';
+        main_con_form.warning.innerText = '';
     })
     .catch((error) => {
-        login_btn.innerText = 'Login';
+        main_con_form.sign_or_login_btn.innerText = 'Login';
 
         const errorCode = error.code;
         const errorMessage = error.message;
 
-        warning.innerText = 'invalid input field';
+        main_con_form.warning.innerText = 'invalid input field';
     });
 
     
 }
 
-login_btn.addEventListener('click', login);
-
+if(main_con_form.sign_or_main_con_form.innerText === 'Login') {
+    main_con_form.sign_or_login_btn.addEventListener('click', login);
+}
 
 
 const forgotPass = () => {
@@ -63,6 +56,11 @@ forgotPassword.addEventListener('click', forgotPass);
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
-        window.location.href = '../dashboard/index.html';
+        main_con.app_navbar.classList.remove('d_none');
+        main_con.home_section.classList.add('d_none');
+        main_con.dashboard_section.classList.remove('d_none');
+        main_con.footer.classList.remove('_none');
+        main_con.ls_btns_wrapper.classList.add('d_none');
+        main_con.logout_wrapper.classList.remove('d_none');
     }
 });
