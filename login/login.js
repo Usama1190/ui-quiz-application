@@ -7,12 +7,12 @@ const login = () => {
 
     console.log('Login Function is running!');
 
-    main_con_form.sign_or_login_btn.innerText = 'Loading...';
+    main_con_form.login_btn.innerText = 'Loading...';
 
     signInWithEmailAndPassword(auth, user_email.value, user_password.value)
     .then((userCredential) => {
         // Signed in 
-        main_con_form.sign_or_login_btn.innerText = 'Login';
+        main_con_form.login_btn.innerText = 'Login';
 
         const user = userCredential.user;
         // console.log(user);
@@ -21,7 +21,7 @@ const login = () => {
         main_con_form.warning.innerText = '';
     })
     .catch((error) => {
-        main_con_form.sign_or_login_btn.innerText = 'Login';
+        main_con_form.login_btn.innerText = 'Login';
 
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -32,9 +32,7 @@ const login = () => {
     
 }
 
-if(main_con_form.sign_or_login_btn.innerText === 'Login') {
-    main_con_form.sign_or_login_btn.addEventListener('click', login);
-}
+main_con_form.login_btn.addEventListener('click', login);
 
 
 const forgotPass = () => {

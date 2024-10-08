@@ -25,7 +25,8 @@ const main_con_form = {
     forgot_password: document.getElementById('forgot_password'),
     user_confirmpass_wrapper: document.getElementById('user_confirmpass_wrapper'),
     user_confirmpass: document.getElementById('user_confirmpass'),
-    sign_or_login_btn: document.getElementById('sign_or_login_btn'),
+    signup_btn: document.getElementById('signup_btn'),
+    login_btn: document.getElementById('login_btn'),
     another_way_signup_login: document.getElementById('another_way_signup_login'),
     another_way_signup_login_anchor_text: document.getElementById('another_way_signup_login_anchor_text'),
     close_sign_or_login: document.getElementById('close_sign_or_login'),
@@ -37,7 +38,8 @@ let theme_sun = true
 // ========================== Functionalities ===============================
 
 const signup_content = () => {
-    main_con_form.sign_or_login_btn.innerText = 'Sign up';
+    main_con_form.signup_btn.classList.remove('d_none');
+    main_con_form.login_btn.classList.add('d_none');
     main_con_form.another_way_signup_login_anchor_text.innerText = 'Login';
     main_con_form.another_way_signup_login.innerHTML = `Already have an account please <a href='#login' onclick='login_content()'>Login</a>`;
     main_con_form.user_confirmpass_wrapper.classList.remove('d_none');
@@ -46,7 +48,8 @@ const signup_content = () => {
 }
 
 const login_content = () => {
-    main_con_form.sign_or_login_btn.innerText = 'Login';
+    main_con_form.signup_btn.classList.add('d_none');
+    main_con_form.login_btn.classList.remove('d_none');
     main_con_form.another_way_signup_login_anchor_text.innerText = 'Sign up';
     main_con_form.another_way_signup_login.innerHTML = `Don't have an account please <a href='#signup' onclick='signup_content()'>Sign up</a>`;
     main_con_form.remember_forget_wrapper.classList.remove('d_none');

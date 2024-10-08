@@ -8,14 +8,14 @@ const user_signup = () => {
     
 
     if(main_con_form.user_password.value === main_con_form.user_confirmpass.value) {
-        main_con_form.sign_or_login_btn.innerText = 'loading...';
+        main_con_form.signup_btn.innerText = 'loading...';
 
         createUserWithEmailAndPassword(auth, user_email.value, user_password.value)
         .then((userCredential) => {
             // Signed up 
             const user = userCredential.user;
 
-            main_con_form.sign_or_login_btn.innerText = 'Signup';
+            main_con_form.signup_btn.innerText = 'Signup';
             
             // ...
         })
@@ -23,7 +23,7 @@ const user_signup = () => {
             const errorCode = error.code;
             const errorMessage = error.message;
         
-            main_con_form.sign_or_login_btn.innerText = 'Signup';
+            main_con_form.signup_btn.innerText = 'Signup';
             
             // ..
         });
@@ -37,13 +37,7 @@ const user_signup = () => {
 
 
 
-if(main_con_form.sign_or_login_btn.innerText === 'Sign up') {
-    main_con_form.sign_or_login_btn.addEventListener('click', user_signup);
-}
-// else if(main_con_form.sign_or_login_btn.innerText === 'Login') {
-//     console.log('Signup Function is not Running!');
-    
-// }
+main_con_form.signup_btn.addEventListener('click', user_signup);
 
 
 onAuthStateChanged(auth, (user) => {
@@ -52,7 +46,7 @@ onAuthStateChanged(auth, (user) => {
         main_con.home_section.classList.add('d_none');
         main_con.login_signup_form.classList.add('d_none');
         main_con.dashboard_section.classList.remove('d_none');
-        main_con.footer.classList.remove('_none');
+        main_con.footer.classList.remove('d_none');
         main_con.ls_btns_wrapper.classList.add('d_none');
         main_con.logout_wrapper.classList.remove('d_none');
     }
