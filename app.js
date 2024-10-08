@@ -21,6 +21,7 @@ const main_con_form = {
     user_email: document.getElementById('user_email'),
     user_password: document.getElementById('user_password'),
     remember_forget_wrapper: document.getElementById('remember_forget_wrapper'),
+    forgot_password: document.getElementById('forgot_password'),
     user_confirmpass_wrapper: document.getElementById('user_confirmpass_wrapper'),
     user_confirmpass: document.getElementById('user_confirmpass'),
     sign_or_login_btn: document.getElementById('sign_or_login_btn'),

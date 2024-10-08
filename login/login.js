@@ -30,8 +30,12 @@ const login = () => {
     
 }
 
-if(main_con_form.sign_or_main_con_form.innerText === 'Login') {
+if(main_con_form.sign_or_login_btn.innerText === 'Login') {
     main_con_form.sign_or_login_btn.addEventListener('click', login);
+}
+else if(main_con_form.sign_or_login_btn.innerText === 'Sign up') {
+    console.log('Login Function is not Running!');
+    
 }
 
 
@@ -48,7 +52,7 @@ const forgotPass = () => {
     });
 };
 
-forgotPassword.addEventListener('click', forgotPass);
+main_con_form.forgot_password.addEventListener('click', forgotPass);
 
 
 
