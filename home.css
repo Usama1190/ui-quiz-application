@@ -139,21 +139,24 @@ body {
 }
 
 .btn3 {
-    background-color: var(--color-4);
-    color: var(--color-2);
+    background-color: var(--color-2);
+    color: var(--color-4);
+    font-weight: 700;
     cursor: pointer;
-    width: 80%;
-    border: 1px solid var(--color-2);
+    width: 85%;
+    border: none;
+    /* border: 1px solid var(--color-4); */
     border-radius: 6px;
     transition: all 0.3s;
-    padding: 11px;
+    padding: 14px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .btn3:hover {
+    box-shadow: none;
     background-color: var(--color-2);
-    border: 1px solid var(--color-4);
+    /* border: 1px solid var(--color-4); */
     color: var(--color-4);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .google_btn {
@@ -299,7 +302,7 @@ body {
 
 .icons {
     padding: 5px;
-    border: 1px solid var(--color-3);
+    border: 1px solid var(--color-4);
     color: var(--color-4);
     border-radius: 50%;
 }
@@ -370,7 +373,7 @@ body {
 
 .inputStyleForm {
     width: 80%;
-    padding: 6px;
+    padding: 8px;
     border-bottom: 1px solid var(--bordercolor--);
 }
 
@@ -406,6 +409,7 @@ body {
 }
 
 .forgot_password {
+    text-decoration: underline;
     cursor: pointer;
     transition: all 0.3s;
 }
