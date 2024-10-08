@@ -1,6 +1,7 @@
 import { auth, signOut, onAuthStateChanged } from "../firebase/app.js";
 
-console.log(main_con_form);
+console.log(main_con_form, 'hello dashboard here!');
+
 
 
 const login_btn = document.getElementById('user_logout');
@@ -21,6 +22,15 @@ login_btn.addEventListener('click', user_logout);
 
 onAuthStateChanged(auth, (user) => {
     if(!user) {
-        window.location.href = '../index2.html';
+        main_con.home_section.classList.remove('d_none');
+        main_con.app_navbar.classList.remove('d_none');
+        main_con.dashboard_section.classList.add('d_none');
+        main_con.footer.classList.remove('dislay_none');
     }
-})
+    else {
+        main_con.app_navbar.classList.remove('d_none');
+        main_con.home_section.classList.add('d_none');
+        main_con.dashboard_section.classList.remove('d_none');
+        main_con.footer.classList.remove('dislay_none');
+    }
+});

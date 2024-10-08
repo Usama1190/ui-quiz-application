@@ -48,7 +48,7 @@
                         </div>
                     </div>
 
-                    <strong class="adminlogo display_none" id="userlogo">
+                    <strong class="adminlogo d_none" id="userlogo">
                         <i class="fa fa-user"></i>
                         <a href="#" id="userName"></a>
                         <button id="user_logout" class="btn">Logout</button>
@@ -78,7 +78,7 @@
             </div>
         </div>
 
-        <div id="login_signup_form" class="display_none">            
+        <div id="login_signup_form" class="d_none">            
             <div class="form_wrapper">
                 <form class="form" id="signupForm">
                     <span id="close_sign_or_login" title="close" class="cursor_pointer"><i class="fa fa-times icons"></i></span>
@@ -125,13 +125,14 @@
             </div>
         </div>
 
-        <div id="dashboard_wrapper" class="display_none">
+        <div id="dashboard_section" class="d_none">
             <h1>Dashboard</h1>
         </div>
 
         <footer id="footer">DEVELOPED BY : <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" target="_blank" title="linkedin profile">USAMA ISRAR</a></footer>
     </div>
 
+    <script type="module" src="dashboard/dashboard.js"></script>
     <script type="module" src="./signup/signup.js"></script>
     <script src="app.js"></script>
 </body>

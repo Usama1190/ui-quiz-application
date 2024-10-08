@@ -5,7 +5,8 @@ const main_con = {
     home_section: document.getElementById('home_section'),
     ls_btns_wrapper: document.getElementById('ls_btns_wrapper'),
     app_navbar: document.getElementById('app_navbar'),
-    footer: document.getElementById('footer')
+    footer: document.getElementById('footer'),
+    dashboard_section: document.getElementById('dashboard_section'),
 }
 
 const main_con_btns = {
@@ -36,8 +37,8 @@ const signup_content = () => {
     main_con_form.sign_or_login_btn.innerText = 'Sign up';
     main_con_form.another_way_signup_login_anchor_text.innerText = 'Login';
     main_con_form.another_way_signup_login.innerHTML = `Already have an account please <a href='#login' onclick='login_content()'>Login</a>`;
-    main_con_form.confirmPass.classList.remove('display_none');
-    main_con_form.remember_forget_wrapper.classList.add('display_none');
+    main_con_form.confirmPass.classList.remove('d_none');
+    main_con_form.remember_forget_wrapper.classList.add('d_none');
     common_login_signup();
 }
 
@@ -45,23 +46,23 @@ const login_content = () => {
     main_con_form.sign_or_login_btn.innerText = 'Login';
     main_con_form.another_way_signup_login_anchor_text.innerText = 'Sign up';
     main_con_form.another_way_signup_login.innerHTML = `Don't have an account please <a href='#signup' onclick='signup_content()'>Sign up</a>`;
-    main_con_form.remember_forget_wrapper.classList.remove('display_none');
-    main_con_form.confirmPass.classList.add('display_none');
+    main_con_form.remember_forget_wrapper.classList.remove('d_none');
+    main_con_form.confirmPass.classList.add('d_none');
     common_login_signup();
 }
 
 const common_login_signup = () => {
-    main_con.home_section.classList.add('display_none');
-    main_con.login_signup_form.classList.remove('display_none');
-    main_con.app_navbar.classList.add('display_none');
-    main_con.footer.classList.add('display_none');
+    main_con.home_section.classList.add('d_none');
+    main_con.login_signup_form.classList.remove('d_none');
+    main_con.app_navbar.classList.add('d_none');
+    main_con.footer.classList.add('d_none');
 }
 
 main_con_form.close_sign_or_login.addEventListener('click', () => {
-    main_con.login_signup_form.classList.add('display_none');
-    main_con.home_section.classList.remove('display_none');
-    main_con.app_navbar.classList.remove('display_none');
-    main_con.footer.classList.remove('display_none');
+    main_con.login_signup_form.classList.add('d_none');
+    main_con.home_section.classList.remove('d_none');
+    main_con.app_navbar.classList.remove('d_none');
+    main_con.footer.classList.remove('d_none');
 })
 
 main_con_btns.goto_signup_form.addEventListener('click', signup_content);
