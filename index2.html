@@ -125,43 +125,41 @@
         </div>
 
         <div id="dashboard_section" class="d_none">
-            <h1>Hi <span>Usama Israr Khan</span> 🖐</h1>
-            <p>Welcome to the UI's quiz portal. Select your course below to take a quiz</p>
+            <div class="dashboard_header_wrapper">
+                <div class="dashboard_header">
+                    <h1>Hi <span>Usama Israr Khan</span> 🖐</h1>
+                    <p>Welcome to the UI's quiz portal. Select your course below to take a quiz</p>
+                </div>
+
+                <div class="add_course_btns_wrapper">
+                    <button class="btn2" id="add_course_btn">Add Course</button>
+                </div>
+            </div>
 
             <hr style="width: 90%;"><br>
 
+            <div id="add_course_form_wrapper">
+                <span id="close_add_course_wrapper" title="close" class="cursor_pointer"><i class="fa fa-times icons"></i></span>
+                <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank">
+                    <img src="../assets/uilogo-removebg-preview.png" class="form_logo" alt="logo">
+                </a><br>
+
+                <input type="text" name="course_title" class="inputStyleForm border_none" id="course_title" placeholder="Enter course title" required><br><br>
+
+                <div class="input_fields_wrapper">
+                    <span>Status: </span>
+                    <input type="radio" name="Active" id="active" class="status">
+                    <label for="active">Active</label>
+                    <input type="radio" name="Active" id="non_active" class="status">
+                    <label for="non_active">Non active</label>
+                </div><br>
+                <button class="btn3">Create course</button>
+            </div>
+
             <div id="course_wrapper">
-                <div class="activateCourse" id="activateCourse" title="Activate Course">
-                    <span class="fa fa-pencil"></span>
-                </div>
-
-                <div class="addCourses visiblityNone" id="addCourses" title="Add Courses">
-                    <span class="fa fa-plus"></span>
-                </div>
-
                 <div class="course opacity">
                     <h2>Python</h2>
                     <button type="button" class="btn1" id="python">join</button>
-                </div>
-
-                <div class="course">
-                    <h2>JavaScript</h2>
-                    <button type="button" class="btn1" id="javascript">join</button>
-                </div>
-
-                <div class="course opacity">
-                    <h2>CSS</h2>
-                    <button type="button" class="btn1" id="css">join</button>
-                </div>
-
-                <div class="course opacity">
-                    <h2>HTML</h2>
-                    <button type="button" class="btn1" id="html">join</button>
-                </div>
-
-                <div class="course opacity">
-                    <h2>TypeScript</h2>
-                    <button type="button" class="btn1" id="javascript">join</button>
                 </div>
             </div>
         </div>

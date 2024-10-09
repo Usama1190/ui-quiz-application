@@ -1,8 +1,17 @@
+
+
+
+
+
+
+
+
+/*
 @media (max-width: 760px) {
 
-    /* .app_wrapper {
+    .app_wrapper {
         height: 900px;
-    } */
+    }
 
 
     .course {
@@ -11,7 +20,7 @@
 
     #signupForm {
         width: 95%;
-        /* height: 60vh; */
+        height: 60vh;
     }
 
     .quizdashboard_wrapper {
@@ -31,3 +40,4 @@
         margin-top: -150px;
     }
 }
+*/

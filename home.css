@@ -433,6 +433,26 @@ body {
 
 /* student dashboard starts */
 
+.dashboard_header_wrapper {
+    display: flex;
+    padding: 16px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#add_course_form_wrapper {
+    border: 1px solid red;
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+
+.input_fields_wrapper {
+    margin: auto;
+    width: 80%;
+    border: 1px solid blue;
+    text-align: left;
+}
 
 .key_wrapper .keyinput_wrapper {
     text-align: center;

@@ -35,6 +35,12 @@ const main_con_form = {
 
 let theme_sun = true
 
+const student_dashboard = {}
+
+const student_dashboard_btns = {
+    add_course_btn: document.getElementById('add_course_btn'),
+}
+
 // ========================== Functionalities ===============================
 
 const signup_content = () => {
@@ -95,10 +101,44 @@ main_con.app_theme.addEventListener('click', () => {
 });
 
 
+student_dashboard_btns.add_course_btn.addEventListener('click', () => {
+    alert('Heool')
+})
 
 
+let course_wrapper = document.getElementById('course_wrapper');
 
+let addCourses = document.getElementById('addCourses');
+addCourses.style.visibility = 'visible';
 
+addCourses.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    let courseTitle = prompt('Enter course title');
+
+    let addCoursesDiv = document.createElement('div');
+
+    let addCoursesDivH2 = document.createElement('h2');
+    let addCoursesDivH2Text = document.createTextNode(courseTitle);
+
+    addCoursesDivH2.appendChild(addCoursesDivH2Text);
+    addCoursesDiv.appendChild(addCoursesDivH2);
+    course_wrapper.appendChild(addCoursesDiv);
+
+    let addCoursesBtn = document.createElement('button');
+    let addCoursesBtnText = document.createTextNode('Join');
+
+    addCoursesBtn.appendChild(addCoursesBtnText);
+    addCoursesBtn.classList.add('btn1');
+    addCoursesDiv.appendChild(addCoursesBtn);
+
+    addCoursesDiv.classList.add('course');
+    addCoursesDiv.classList.add('opacity');
+
+});
+
+let activateCourse = document.getElementById('activateCourse');
+activateCourse.style.visibility = 'visible';
 
 
 
@@ -396,39 +436,7 @@ main_con.app_theme.addEventListener('click', () => {
 
 //         // ================= addCourses start ====================
 
-//         let course_wrapper = document.getElementById('course_wrapper');
-
-//         let addCourses = document.getElementById('addCourses');
-//         addCourses.style.visibility = 'visible';
-
-//         addCourses.addEventListener('click', (e) => {
-//             e.preventDefault();
-
-//             let courseTitle = prompt('Enter course title');
-
-//             let addCoursesDiv = document.createElement('div');
-
-//             let addCoursesDivH2 = document.createElement('h2');
-//             let addCoursesDivH2Text = document.createTextNode(courseTitle);
-
-//             addCoursesDivH2.appendChild(addCoursesDivH2Text);
-//             addCoursesDiv.appendChild(addCoursesDivH2);
-//             course_wrapper.appendChild(addCoursesDiv);
-
-//             let addCoursesBtn = document.createElement('button');
-//             let addCoursesBtnText = document.createTextNode('Join');
-
-//             addCoursesBtn.appendChild(addCoursesBtnText);
-//             addCoursesBtn.classList.add('btn1');
-//             addCoursesDiv.appendChild(addCoursesBtn);
-
-//             addCoursesDiv.classList.add('course');
-//             addCoursesDiv.classList.add('opacity');
-
-//         });
-
-//         let activateCourse = document.getElementById('activateCourse');
-//         activateCourse.style.visibility = 'visible';
+//         
 
 //         // ================= addCourses end ====================
 
