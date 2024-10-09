@@ -39,15 +39,20 @@ const student_dashboard = {
     add_course_form_wrapper: document.getElementById('add_course_form_wrapper'),
     close_add_course_wrapper: document.getElementById('close_add_course_wrapper'),
     courses_wrapper: document.getElementById('courses_wrapper'),
+    key_wrapper: document.getElementById('key_wrapper'),
+    quizguide_wrapper: document.getElementById('quizguide_wrapper'),
 }
 
 const student_dashboard_btns = {
     add_course_btn: document.getElementById('add_course_btn'),
     close_add_course_btn: document.getElementById('close_add_course_btn'),
+    join_typescript_btn: document.getElementById('join_typescript_btn'),
+    key_submit_btn: document.getElementById('key_submit_btn'),
 }
 
 const add_course_form = {
     course_title: document.getElementById('course_title'),
+    number_of_subjects: document.getElementById('number_of_subjects'),
     create_course_btn: document.getElementById('create_course_btn'),
 }
 
@@ -110,7 +115,7 @@ main_con.app_theme.addEventListener('click', () => {
     }
 });
 
-
+/*
 student_dashboard_btns.add_course_btn.addEventListener('click', () => {
     student_dashboard_btns.add_course_btn.classList.add('d_none');
     student_dashboard.add_course_form_wrapper.classList.remove('d_none');
@@ -128,14 +133,17 @@ student_dashboard_btns.close_add_course_btn.addEventListener('click', () => {
 add_course_form.create_course_btn.addEventListener('click', () => {
     // student_dashboard.courses_wrapper = document.createElement('div');
 })
+*/
+
+student_dashboard_btns.join_typescript_btn.addEventListener('click', () => {
+    student_dashboard.courses_wrapper.classList.add('d_none');
+    student_dashboard.key_wrapper.classList.remove('d_none');
+})
 
 
 
 
-
-
-
-
+/*
 let course_wrapper = document.getElementById('course_wrapper');
 
 let addCourses = document.getElementById('addCourses');
@@ -169,7 +177,7 @@ addCourses.addEventListener('click', (e) => {
 
 let activateCourse = document.getElementById('activateCourse');
 activateCourse.style.visibility = 'visible';
-
+*/
 
 
 

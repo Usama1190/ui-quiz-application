@@ -132,7 +132,7 @@
                 </div>
 
                 <div class="add_course_btns_wrapper">
-                    <button class="btn2" id="add_course_btn">Add Course</button>
+                    <button class="btn2 d_none" id="add_course_btn">Add Course</button>
                 </div>
             </div>
 
@@ -142,9 +142,10 @@
                 <span id="close_add_course_btn" title="close" class="close_add_course_form"><i class="fa fa-times icons"></i></span>
                 <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank">
                     <img src="../assets/uilogo-removebg-preview.png" class="form_logo" alt="logo">
-                </a><br>
+                </a><br><br>
 
                 <input type="text" name="course_title" class="inputStyleForm border_none" id="course_title" placeholder="Enter course title" required><br><br>
+                <input type="number" name="number_of_subjects" class="inputStyleForm border_none" id="number_of_subjects" placeholder="Enter number of subjects" required><br><br>
 
                 <div class="input_fields_wrapper">
                     <span>Status: </span>
@@ -164,20 +165,65 @@
                     </div>
 
                     <div class="course opacity">
-                        <h2>Python</h2>
+                        <h2>HTML5</h2>
                         <button type="button" class="btn3" id="python">join</button>
                     </div>
 
                     <div class="course opacity">
-                        <h2>Python</h2>
+                        <h2>TypeScript</h2>
+                        <button type="button" class="btn3" id="join_typescript_btn">join</button>
+                    </div>
+
+                    <div class="course opacity">
+                        <h2>Generative AI & Chatbot</h2>
                         <button type="button" class="btn3" id="python">join</button>
                     </div>
 
                     <div class="course opacity">
-                        <h2>Python</h2>
+                        <h2>JavaScript</h2>
+                        <button type="button" class="btn3" id="python">join</button>
+                    </div>
+
+                    <div class="course opacity">
+                        <h2>ECMAScript - ES6</h2>
                         <button type="button" class="btn3" id="python">join</button>
                     </div>
                 </div>
+            </div>
+
+            <div id="key_wrapper" class="d_none">
+                <input type="text" placeholder="key" id="inputkey" class="inputStyleForm border_none">
+                <button type="submit" class="btn1" id="key_submit_btn">Submit</button>
+                <p id="demo1" class="warningcolor"></p>
+
+                <!-- Admin start -->
+                <div class="d_none" id="adminKeyWrapper">
+                    <span class="fa fa-edit edit"></span>
+                    <input type="text" id="editKey" class="inputStyle" placeholder="edit key">
+                    <button type="button" class="btn1" id="updateKey">Update key</button>
+
+                    <p id="keyShow"></p>
+                </div>
+                <!-- Admin end -->
+            </div>
+
+            <div class="quizguide_wrapper d_none" id="quizguide_wrapper">
+                <table class="table">
+                    <tr>
+                        <th>Quiz name</th>
+                        <th>Total questions</th>
+                        <th>Total time</th>
+                        <th>Passing score</th>
+                    </tr>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>25</td>
+                        <td>20 mins</td>
+                        <td>70</td>
+                    </tr>
+                </table><br>
+
+                <button type="button" class="btn" id="start">Start</button>
             </div>
         </div>
 

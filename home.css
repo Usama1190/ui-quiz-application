@@ -444,7 +444,7 @@ body {
     width: 50%;
     text-align: center;
     margin: auto;
-    padding: 12px;
+    padding: 30px;
     border-radius: 6px;
     border: 1px solid var(--color-4);
 }
@@ -473,26 +473,27 @@ body {
 
 
 
-
-
-
-
-
-
-.key_wrapper .keyinput_wrapper {
-    text-align: center;
+#key_wrapper {
+    width: 80%;
+    margin: auto;
+    padding: 30px;
 }
 
-.key_wrapper .keyinput_wrapper .keyinput {
-    width: 60vw;
-    padding: 6px;
-    border: none;
-    border-bottom: 1px solid black;
-}
 
-.key_wrapper .keyinput_wrapper .keyinput:focus {
-    outline: none;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .quizinfo_wrapper {
