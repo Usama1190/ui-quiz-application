@@ -36,11 +36,13 @@ const main_con_form = {
 let theme_sun = true
 
 const student_dashboard = {
+    dashboard_header_content: document.getElementById('dashboard_header_content'),
     add_course_form_wrapper: document.getElementById('add_course_form_wrapper'),
     close_add_course_wrapper: document.getElementById('close_add_course_wrapper'),
     courses_wrapper: document.getElementById('courses_wrapper'),
     key_wrapper: document.getElementById('key_wrapper'),
     quizguide_wrapper: document.getElementById('quizguide_wrapper'),
+    quizdashboard_wrapper: document.getElementById('quizdashboard_wrapper'),
 }
 
 const student_dashboard_btns = {
@@ -48,6 +50,7 @@ const student_dashboard_btns = {
     close_add_course_btn: document.getElementById('close_add_course_btn'),
     join_typescript_btn: document.getElementById('join_typescript_btn'),
     key_submit_btn: document.getElementById('key_submit_btn'),
+    start_quiz_btn: document.getElementById('start_quiz_btn'),
 }
 
 const add_course_form = {
@@ -136,9 +139,28 @@ add_course_form.create_course_btn.addEventListener('click', () => {
 */
 
 student_dashboard_btns.join_typescript_btn.addEventListener('click', () => {
+    student_dashboard.dashboard_header_content.classList.add('d_none');
     student_dashboard.courses_wrapper.classList.add('d_none');
     student_dashboard.key_wrapper.classList.remove('d_none');
+});
+
+
+student_dashboard_btns.key_submit_btn.addEventListener('click', () => {
+    student_dashboard.key_wrapper.classList.add('d_none');
+    student_dashboard.quizguide_wrapper.classList.remove('d_none');
+});
+
+
+student_dashboard_btns.start_quiz_btn.addEventListener('click', () => {
+    student_dashboard.quizguide_wrapper.classList.add('d_none');
+    student_dashboard.quizdashboard_wrapper.classList.remove('d_none');
+    main_con.app_navbar.classList.add('d_none');
 })
+
+
+
+
+
 
 
 
@@ -198,299 +220,146 @@ activateCourse.style.visibility = 'visible';
 
 
 
-// // const userArray = JSON.parse(sessionStorage.getItem('userArray')) || [{
-// //     email: 'usamaisrar@gmail.com',
-// //     name: 'usama',
-// // }];
+// const userArray = JSON.parse(sessionStorage.getItem('userArray')) || [{
+//     email: 'usamaisrar@gmail.com',
+//     name: 'usama',
+// }];
 
 
-// // const btns = {
-// //     signup: document.getElementById('signup'),
-// //     keysubmit: document.getElementById('keysubmit'),
-// //     enteruserdetails: document.getElementById('enteruserdetails'),
-// //     backToHome: document.getElementById('backToHome'),
-// //     selectedCourse: document.getElementById('selectedCourse')
-// // };
+// const btns = {
+//     signup: document.getElementById('signup'),
+//     keysubmit: document.getElementById('keysubmit'),
+//     enteruserdetails: document.getElementById('enteruserdetails'),
+//     backToHome: document.getElementById('backToHome'),
+//     selectedCourse: document.getElementById('selectedCourse')
+// };
 
-// // let confirmPass;
+// let confirmPass;
 
-// // const warn = {
-// //     warning1: document.getElementById('warning'),
-// // }
+// const warn = {
+//     warning1: document.getElementById('warning'),
+// }
 
-// // const app_wrappers = {
-// //     signupForm: document.getElementById('signupForm'),
+// const app_wrappers = {
+//     signupForm: document.getElementById('signupForm'),
 
-// //     quizinfo_wrapper: document.getElementById('quizinfo_wrapper'),
-// //     key_wrapper: document.getElementById('key_wrapper'),
-// //     userinfo_wrapper: document.getElementById('userinfo_wrapper'),
-// //     quizguide_wrapper: document.getElementById('quizguide_wrapper'),
-// //     quizdashboard_wrapper: document.getElementById('quizdashboard_wrapper'),
-// //     quizresultdashboard_wrapper: document.getElementById('quizresultdashboard_wrapper'),
-// //     quizinfo_wrapper: document.getElementById('quizinfo_wrapper'),
+//     quizinfo_wrapper: document.getElementById('quizinfo_wrapper'),
+//     key_wrapper: document.getElementById('key_wrapper'),
+//     userinfo_wrapper: document.getElementById('userinfo_wrapper'),
+//     quizguide_wrapper: document.getElementById('quizguide_wrapper'),
+//     quizdashboard_wrapper: document.getElementById('quizdashboard_wrapper'),
+//     quizresultdashboard_wrapper: document.getElementById('quizresultdashboard_wrapper'),
+//     quizinfo_wrapper: document.getElementById('quizinfo_wrapper'),
 
-// //     // user dashboard
-// //     userdashboard_wrapper: document.getElementById('userdashboard_wrapper'),
-// // }
+//     // user dashboard
+//     userdashboard_wrapper: document.getElementById('userdashboard_wrapper'),
+// }
 
 
 
 
-// // btns.signup.addEventListener('click', (e) => {
-// //     e.preventDefault();
-
-// //     const newUser = {
-// //         email,
-// //         password,
-// //         name: 'xyz',
-// //         rollno: 0
-// //     }
-    
-// //     newUser.email = document.getElementById('email').value;
-// //     newUser.password = document.getElementById('password').value;
-// //     confirmPass = document.getElementById('confirmPass').value;
-
-// //     let isValueExists = true;
-
-// //     if(newUser.email.trim() === '') {
-// //         warn.warning1.innerHTML = 'input field is not valid';
-// //     }
-// //     else if(newUser.password.length <= 4) {
-// //         warn.warning1.innerHTML = 'password contains atleast 5 characters';
-// //     }
-// //     else if(newUser.password != confirmPass) {
-// //         warn.warning1.innerHTML = "password didn't matched!";
-// //     }
-// //     else {
-// //         warn.warning1.innerHTML = '';
-// //         if(newUser.email === userArray[0].email) {
-// //             console.log('Admin block are open!');
-// //         }
-// //         else {
-// //             for (let i = 0; i < userArray.length; i++) {
-// //                 if(newUser.email === userArray[i].email) {
-// //                     warn.warning1.innerHTML = 'This email already exists';
-// //                     isValueExists = false;
-// //                 }
-// //                 else {
-// //                     console.log(isValueExists);
-// //                 }
-// //             }
-
-// //             if(isValueExists) {
-// //                 userArray.push(newUser);
-// //                 sessionStorage.setItem('userArray', JSON.stringify(userArray));
-
-// //                 signupSuccess();
-// //             }
-// //             console.log(userArray);
-// //         }
-// //     }
-// // });
-
-
-// // function signupSuccess() {
-// //     signupForm.style.display = 'none';
-// //     quizinfo_wrapper.style.display = 'block';
-// // }
-
-
-
-
-
-
-
-
-// // for (let i = 0; i < userArray.length; i++) {
-// //     if(newUser.email === userArray[0].email) {
-// //         console.log('Admin');
-// //     }
-// //     else if(newUser.email === userArray[i].email) {
-// //         console.log('email already exists');
-// //     }
-// //     else {
-// //         console.log('new user');
-// //     }
-// // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let warning = document.getElementById('demo');
-// let signupForm = document.getElementById('signupForm');
-
-// let key_wrapper = document.getElementById('key_wrapper');
-// let heading1 = document.getElementById('heading1');
-// let heading2 = document.getElementById('heading2');
-
-// const quizguide_wrapper = document.getElementById('quizguide_wrapper');
-
-// let keyset = JSON.parse(sessionStorage.getItem('keyset')) || 'js321';
-// let inputkey;
-
-// let userinfo_wrapper = document.getElementById('userinfo_wrapper');
-// let quizinfo_wrapper = document.getElementById('quizinfo_wrapper');
-
-// let keyShow = document.getElementById('keyShow');
-// keyShow.innerHTML = `key : ${keyset}`;
-
-
-// let updateKey = document.getElementById('updateKey');   // button
-
-// let warning2 = document.getElementById('demo1');
-// let warning3 = document.getElementById('demo2');
-// let heading3 = document.getElementById('heading3');
-
-
-
-
-// // ============================================================================
-
-// signup.addEventListener('click', (e) => {
+// btns.signup.addEventListener('click', (e) => {
 //     e.preventDefault();
+
+//     const newUser = {
+//         email,
+//         password,
+//         name: 'xyz',
+//         rollno: 0
+//     }
     
 //     newUser.email = document.getElementById('email').value;
 //     newUser.password = document.getElementById('password').value;
-    
-//     if(newUser.email.trim() === '' || newUser.password.length <= 3) {
-//         warning.innerHTML = 'input field is not valid';
+//     confirmPass = document.getElementById('confirmPass').value;
+
+//     let isValueExists = true;
+
+//     if(newUser.email.trim() === '') {
+//         warn.warning1.innerHTML = 'input field is not valid';
 //     }
-//     else if(newUser.email === emailAlreadyExits.email) {
-//         warning.innerHTML = 'This email address already exists';
+//     else if(newUser.password.length <= 4) {
+//         warn.warning1.innerHTML = 'password contains atleast 5 characters';
 //     }
-//     else if(newUser.email === userArray[0].email && newUser.password === userArray[0].password) {
-//         signupForm.classList.add('hidden');
-//         key_wrapper.style.display = 'block';
-
-//         // ===================== userlogo start ========================
-
-//         let userlogo = document.getElementById('userlogo');
-//         userlogo.style.display = 'block';
-
-//         // ===================== userlogo end ========================
-
-
-//         // ===================== adminlogo start =====================
-
-//         let adminlogo = document.getElementById('adminlogo');
-//         adminlogo.innerHTML = 'Admin';
-
-//         // ===================== adminlogo end =====================
-
-
-//         // ===================== heading5 start =====================
-
-//         let heading5 = document.getElementById('heading5');
-//         heading5.style.display = 'block';
-
-//         // ===================== heading5 start =====================
-
-
-//         let adminKeyWrapper = document.getElementById('adminKeyWrapper');
-//         adminKeyWrapper.classList.remove('hidden');
-
-//         document.body.classList.add('height');
-
-//         updateKey.addEventListener('click', (e) => {
-//             e.preventDefault();
-
-//             keyset = document.getElementById('editKey').value;
-//             alert(`Key updated successfully!, New key is ${keyset}`);
-//             keyShow.innerHTML = `key : ${keyset}`;
-//             sessionStorage.setItem('keyset', JSON.stringify(keyset));
-//         });
-
-//         // ================= addCourses start ====================
-
-//         
-
-//         // ================= addCourses end ====================
-
+//     else if(newUser.password != confirmPass) {
+//         warn.warning1.innerHTML = "password didn't matched!";
 //     }
 //     else {
-//         userArray.push(newUser);
-//         sessionStorage.setItem('userArray', JSON.stringify(userArray));
-        
-//         signupForm.classList.add('hidden');
-//         key_wrapper.style.display = 'block';
-//         heading2.style.display = 'block';
+//         warn.warning1.innerHTML = '';
+//         if(newUser.email === userArray[0].email) {
+//             console.log('Admin block are open!');
+//         }
+//         else {
+//             for (let i = 0; i < userArray.length; i++) {
+//                 if(newUser.email === userArray[i].email) {
+//                     warn.warning1.innerHTML = 'This email already exists';
+//                     isValueExists = false;
+//                 }
+//                 else {
+//                     console.log(isValueExists);
+//                 }
+//             }
 
-//         let userlogo = document.getElementById('userlogo');
-//         userlogo.style.display = 'block';
+//             if(isValueExists) {
+//                 userArray.push(newUser);
+//                 sessionStorage.setItem('userArray', JSON.stringify(userArray));
+
+//                 signupSuccess();
+//             }
+//             console.log(userArray);
+//         }
 //     }
 // });
+
+
+// function signupSuccess() {
+//     signupForm.style.display = 'none';
+//     quizinfo_wrapper.style.display = 'block';
+// }
+
+
+
+
+
+
+
+
+// for (let i = 0; i < userArray.length; i++) {
+//     if(newUser.email === userArray[0].email) {
+//         console.log('Admin');
+//     }
+//     else if(newUser.email === userArray[i].email) {
+//         console.log('email already exists');
+//     }
+//     else {
+//         console.log('new user');
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // // ============================================================================
 

@@ -125,18 +125,20 @@
         </div>
 
         <div id="dashboard_section" class="d_none">
-            <div class="dashboard_header_wrapper">
-                <div class="dashboard_header">
-                    <h1>Hi <span>Usama Israr Khan</span> 👋</h1>
-                    <p>Welcome to the UI's quiz portal. Select your course below to take a quiz</p>
-                </div>
+            <div id="dashboard_header_content">
+                <div id="dashboard_header_wrapper">
+                    <div class="dashboard_header">
+                        <h1>Hi <span>Usama Israr Khan</span> 👋</h1>
+                        <p>Welcome to the UI's quiz portal. Select your course below to take a quiz</p>
+                    </div>
 
-                <div class="add_course_btns_wrapper">
-                    <button class="btn2 d_none" id="add_course_btn">Add Course</button>
+                    <div class="add_course_btns_wrapper">
+                        <button class="btn2 d_none" id="add_course_btn">Add Course</button>
+                    </div>
                 </div>
+                <hr style="width: 90%;"><br>
             </div>
 
-            <hr style="width: 90%;"><br>
 
             <div id="add_course_form_wrapper" class="d_none">
                 <span id="close_add_course_btn" title="close" class="close_add_course_form"><i class="fa fa-times icons"></i></span>
@@ -192,6 +194,9 @@
             </div>
 
             <div id="key_wrapper" class="d_none">
+                <h1>TypeScript Quiz</h1>
+                <hr style="width: 100%;"><br><br><br>
+
                 <input type="text" placeholder="key" id="inputkey" class="inputStyleForm border_none">
                 <button type="submit" class="btn1" id="key_submit_btn">Submit</button>
                 <p id="demo1" class="warningcolor"></p>
@@ -207,7 +212,9 @@
                 <!-- Admin end -->
             </div>
 
-            <div class="quizguide_wrapper d_none" id="quizguide_wrapper">
+            <div class="d_none" id="quizguide_wrapper">
+                <h1>TypeScript Quiz</h1>
+                <hr style="width: 100%;"><br><br><br>
                 <table class="table">
                     <tr>
                         <th>Quiz name</th>
@@ -223,7 +230,29 @@
                     </tr>
                 </table><br>
 
-                <button type="button" class="btn" id="start">Start</button>
+                <button type="button" class="btn1" id="start_quiz_btn">Start</button>
+            </div>
+
+            <div id="quizdashboard_wrapper" class="d_none">
+                <div class="timer" id="timer"></div>
+
+                <div id="questions_wrapper"></div>
+
+                <div class="options_wrapper" id="options_wrapper">
+                    <input type="radio" name="option" class="optionsRadio" id="option1" value="">
+                    <label for="option1" class="options" id="option1Show"></label><br><br>
+
+                    <input type="radio" name="option" class="optionsRadio" id="option2" value="">
+                    <label for="option2" class="options" id="option2Show"></label><br><br>
+
+                    <input type="radio" name="option" class="optionsRadio" id="option3" value="">
+                    <label for="option3" class="options" id="option3Show"></label><br><br>
+                    
+                    <input type="radio" name="option" class="optionsRadio" id="option4" value="">
+                    <label for="option4" class="options" id="option4Show"></label>
+                </div>
+
+                <button type="button" class="btn1 btnNext" id="next">Next</button>
             </div>
         </div>
 

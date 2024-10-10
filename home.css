@@ -433,7 +433,7 @@ body {
 
 /* student dashboard starts */
 
-.dashboard_header_wrapper {
+#dashboard_header_wrapper {
     display: flex;
     padding: 0.5rem 2.5rem;
     justify-content: space-between;
@@ -469,6 +469,10 @@ body {
 .course {
     text-align: center;
     border-radius: 2px;
+    width: 30%;
+    height: 30vh;
+    margin: 10px;
+    border: 1px solid var(--bordercolor--);
 }
 
 
@@ -479,37 +483,62 @@ body {
     padding: 30px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.quizinfo_wrapper {
-    margin-top: -120px;
+#quizguide_wrapper {
+    padding: 30px;
 }
+
+#quizguide_wrapper table {
+    border-collapse: collapse;
+    width: 80%;
+}
+  
+#quizguide_wrapper td, th {
+    border-bottom: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+#quizguide_wrapper tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#quizdashboard_wrapper {
+    border: 1px solid var(--bordercolor--);
+    width: 80%;
+    padding: 5px;
+    margin: auto;
+    margin-top: 200px;
+}
+
+.timer {
+    text-align: right;
+}
+
+.options_wrapper {
+    padding: 15px;
+    width: 80%;
+    border: 1px solid var(--bordercolor--);
+    margin: auto;
+    background-color: var(--bordercolor--);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .course_wrapper {
     display: flex;
     flex-wrap: wrap;
-}
-
-.course {
-    width: 30%;
-    height: 30vh;
-    margin: 10px;
-    border: 1px solid var(--bordercolor--);
 }
 
 
@@ -559,49 +588,10 @@ body {
     background-color: var(--colorwhite--);
     color: var(--bgcolor--);
 }
-
-.quizguide_wrapper {
-    margin-top: -120px;
-}
  
 
-.quizguide_wrapper table {
-    margin-left: 20px;
-    border-collapse: collapse;
-    width: 80%;
-}
-  
-.quizguide_wrapper td, th {
-    border-bottom: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-.quizguide_wrapper tr:nth-child(even) {
-    background-color: #dddddd;
-}
 
 
-.quizdashboard_wrapper {
-    border: 1px solid var(--bordercolor--);
-    width: 80%;
-    /* height: auto; */
-    padding: 5px;
-    margin: auto;
-    margin-top: -120px;
-}
-
-.timer {
-    text-align: right;
-}
-
-.options_wrapper {
-    padding: 15px;
-    width: 80%;
-    border: 1px solid var(--bordercolor--);
-    margin: auto;
-    background-color: var(--bordercolor--);
-}
 
 .options {
     float: left;
@@ -644,30 +634,9 @@ body {
     width: 50%;
     margin: auto;
     margin-top: -100px;
-    /* border-top: 1px solid var(--bordercolor--); */
-    /* border-bottom: 1px solid var(--bordercolor--); */
 }
 
-
-
-
-
-
 /* student dashboard ends */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
