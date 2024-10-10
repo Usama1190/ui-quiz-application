@@ -32,10 +32,35 @@ body {
 }
 
 
+/*
+
+.warningcolor {
+    color: red;
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+.app_wrapper .homepage_wrapper .topnav_wrapper .fletter {
+    color: var(--colorblack--);
+}
+
+.app_wrapper .homepage_wrapper .heading1 {
+    margin-top: 100px;
+    font-size: 50px;
+}
+
+*/
+
+
 
 
 
 /* global classes starts */
+
+.opacity {
+    opacity: 0.5;
+}
+
 
 .active_btn {
     background-color: var(--color-2);
@@ -629,7 +654,7 @@ body {
 }
 
 
-.quizresultdashboard_wrapper {
+#quiz_result_wrapper {
     border: 1px solid var(--bordercolor--);
     width: 50%;
     margin: auto;

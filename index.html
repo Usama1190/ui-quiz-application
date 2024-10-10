@@ -1,14 +1,260 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head></head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI - Quiz Application</title>
+
+    <!-- CSS Connented -->
+    <link rel="stylesheet" href="home.css">
+
+    <link rel="shortcut icon" href="assets/uilogo-removebg-preview.png" type="image/x-icon">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+</head>
 <body>
     <div class="app_wrapper">
-        <div class="homepage_wrapper">
-            <div class="userdashboard_wrapper hidden" id="userdashboard_wrapper">user_dashboard</div>
+        <div id="app_navbar">
+            <div id="topnav_wrapper">
+                <div class="nav_left_wrapper">
+                    <div class="logo_wrapper">
+                        <a href="#"><img src="assets/uilogo-removebg-preview.png" alt="logo" class="logo"></a>
+                        <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank" class="logo_name">
+                            <strong>Info Tech</strong>
+                        </a>
+                    </div>
+                </div>
 
-            <div class="quizresultdashboard_wrapper hidden googlefont1" id="quizresultdashboard_wrapper">
-                <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" target="_blank" title="linkedin profile"><img src="assets/uit.png" class="usamaimage2" alt="usama image"></a>
-                <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" target="_blank" title="linkedin profile" class="anchor"><span class="fletter">U</span>sama <span class="fletter">I</span>nfo <span class="fletter">T</span>ech</a>
+                <div class="nav_right_wrapper">
+                    <div>
+                        <div class="theme_wrapper" title="theme">
+                            <span><i class="fa fa-sun-o" id="app_theme" title="theme"></i></span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div id="ls_btns_wrapper">
+                            <button id="goto_signup_form" class="btn1 active_btn">Sign Up</button>
+                            <button id="goto_login_form" class="btn1 ml-12">Log in</button>
+                        </div>
+                    </div>
+
+                    <strong class="d_none" id="logout_wrapper">
+                        <button id="user_logout_btn" class="btn1 active_btn">Logout</button>
+                    </strong>
+                </div>
+            </div>
+        </div>
+        
+        <div id="home_section" class="">
+            <div id="home_content_wrapper">
+                <div class="home_content">
+                    <h1 class="home_content_heading1">Quiz Application</h1>
+                    <div class="icons_wrapper">
+                        <p><span><i class="fa fa-code icons"></i></span> Web Structure</p>
+                        <p><span><i class="fa fa-picture-o icons"></i></span> Web Layouting</p>
+                        <p><span><i class="fa fa-wrench icons"></i></span> Web Interactivity</p>
+                        <p><span><i class="fa fa-random icons"></i></span> Web Routing</p>
+                    </div>
+                    <div class="home_btn_wrapper">
+                        <button class="btn2" id="startexam_btn">Start Exam</button>
+                        <button class="btn2" id="getresult_btn">Get Result</button>
+                    </div>
+                </div>
+                <div class="home_image_wrapper">
+                    <img src="assets/student-with-laptop6-removebg-preview.png" class="home_image" alt="student with laptop">
+                </div>
+            </div>
+        </div>
+
+        <div id="login_signup_form" class="d_none">            
+            <div class="form_wrapper">
+                <form class="form" id="signupForm">
+                    <span id="close_sign_or_login" title="close" class="cursor_pointer"><i class="fa fa-times icons"></i></span>
+                    <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank">
+                        <img src="../assets/uilogo-removebg-preview.png" class="form_logo" alt="logo">
+                    </a><br>
+                    
+                    <strong class="heading">UI- Quiz Application</strong><br><br>
+
+                    <label for="email">
+                        <span class="fa fa-user icons"></span>
+                        <input type="email" name="email" class="inputStyleForm border_none" id="user_email" placeholder="email" required>
+                    </label><br><br>
+
+                    <label for="password">
+                        <span class="fa fa-unlock-alt icons"></span>
+                        <input type="password" name="password" class="inputStyleForm border_none" id="user_password" placeholder="password" required>
+                    </label><br><br>
+
+                    <div id="remember_forget_wrapper">
+                        <div class="remember_forget_wrapper">
+                            <label for="remember">
+                            <input type="checkbox" id="remember" class="remember_me"> Remember me
+                            </label>
+                            <p id="forgot_password" class="forgot_password">Forgot password</p>
+                        </div>
+                    </div>
+
+                    <label for="user_confirmpass" id="user_confirmpass_wrapper">
+                        <span class="fa fa-lock icons"></span>
+                        <input type="password" name="user_confirmpass" class="inputStyleForm border_none" id="user_confirmpass" placeholder="confirm password">
+                    </label><br><br>
+
+                    <small id="warning" class="warning_color"></small>
+                    <button id="signup_btn" class="btn3 color_dark d_none">Signup</button><br><br>
+                    <button id="login_btn" class="btn3 color_dark d_none">Login</button><br><br>
+
+                    <hr class="hr"><br>
+
+
+                    <small id="another_way_signup_login">Already have an account please <a href="../login/index.html" id="another_way_signup_login_anchor_text" class="signin">Login</a></small><br><br>
+                    <span>or</span><br><br>
+                    <button class="google_btn"><img src="assets/google-logo-removebg-preview.png" alt="google logo" class="google_logo"> Continue with Google</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="dashboard_section" class="d_none">
+            <div id="dashboard_header_content">
+                <div id="dashboard_header_wrapper">
+                    <div class="dashboard_header">
+                        <h1>Hi <span>Usama Israr Khan</span> 👋</h1>
+                        <p>Welcome to the UI's quiz portal. Select your course below to take a quiz</p>
+                    </div>
+
+                    <div class="add_course_btns_wrapper">
+                        <button class="btn2 d_none" id="add_course_btn">Add Course</button>
+                    </div>
+                </div>
+                <hr style="width: 90%;"><br>
+            </div>
+
+            <div id="add_course_form_wrapper" class="d_none">
+                <span id="close_add_course_btn" title="close" class="close_add_course_form"><i class="fa fa-times icons"></i></span>
+                <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank">
+                    <img src="../assets/uilogo-removebg-preview.png" class="form_logo" alt="logo">
+                </a><br><br>
+
+                <input type="text" name="course_title" class="inputStyleForm border_none" id="course_title" placeholder="Enter course title" required><br><br>
+                <input type="number" name="number_of_subjects" class="inputStyleForm border_none" id="number_of_subjects" placeholder="Enter number of subjects" required><br><br>
+
+                <div class="input_fields_wrapper">
+                    <span>Status: </span>
+                    <input type="radio" name="Active" id="active" class="status">
+                    <label for="active">Active</label>
+                    <input type="radio" name="Active" id="non_active" class="status">
+                    <label for="non_active">Non active</label>
+                </div><br>
+                <button class="btn2" id="create_course_btn">Create course</button>
+            </div>
+
+            <div id="courses_wrapper">
+                <div id="course_wrapper">
+                    <div class="course opacity">
+                        <h2>Python</h2>
+                        <button type="button" class="btn3" id="python">join</button>
+                    </div>
+
+                    <div class="course opacity">
+                        <h2>HTML5</h2>
+                        <button type="button" class="btn3" id="python">join</button>
+                    </div>
+
+                    <div class="course opacity">
+                        <h2>TypeScript</h2>
+                        <button type="button" class="btn3" id="join_typescript_btn">join</button>
+                    </div>
+
+                    <div class="course opacity">
+                        <h2>Generative AI & Chatbot</h2>
+                        <button type="button" class="btn3" id="python">join</button>
+                    </div>
+
+                    <div class="course opacity">
+                        <h2>JavaScript</h2>
+                        <button type="button" class="btn3" id="python">join</button>
+                    </div>
+
+                    <div class="course opacity">
+                        <h2>ECMAScript - ES6</h2>
+                        <button type="button" class="btn3" id="python">join</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="key_wrapper" class="d_none">
+                <h1>TypeScript Quiz</h1>
+                <hr style="width: 100%;"><br><br><br>
+
+                <input type="text" placeholder="key" id="inputkey" class="inputStyleForm border_none">
+                <button type="submit" class="btn1" id="key_submit_btn">Submit</button>
+                <p id="demo1" class="warningcolor"></p>
+
+                <!-- Admin start -->
+                <div class="d_none" id="adminKeyWrapper">
+                    <span class="fa fa-edit edit"></span>
+                    <input type="text" id="editKey" class="inputStyle" placeholder="edit key">
+                    <button type="button" class="btn1" id="updateKey">Update key</button>
+
+                    <p id="keyShow"></p>
+                </div>
+                <!-- Admin end -->
+            </div>
+
+            <div id="quizguide_wrapper" class="d_none">
+                <h1>TypeScript Quiz</h1>
+                <hr style="width: 100%;"><br><br><br>
+                <table class="table">
+                    <tr>
+                        <th>Quiz name</th>
+                        <th>Total questions</th>
+                        <th>Total time</th>
+                        <th>Passing score</th>
+                    </tr>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>25</td>
+                        <td>20 mins</td>
+                        <td>70</td>
+                    </tr>
+                </table><br>
+
+                <button type="button" class="btn1" id="start_quiz_btn">Start</button>
+            </div>
+
+            <div id="quizdashboard_wrapper" class="d_none">
+                <div class="timer" id="timer"></div>
+
+                <div id="questions_wrapper"></div>
+
+                <div class="options_wrapper" id="options_wrapper">
+                    <input type="radio" name="option" class="optionsRadio" id="option1" value="">
+                    <label for="option1" class="options" id="option1Show"></label><br><br>
+
+                    <input type="radio" name="option" class="optionsRadio" id="option2" value="">
+                    <label for="option2" class="options" id="option2Show"></label><br><br>
+
+                    <input type="radio" name="option" class="optionsRadio" id="option3" value="">
+                    <label for="option3" class="options" id="option3Show"></label><br><br>
+                    
+                    <input type="radio" name="option" class="optionsRadio" id="option4" value="">
+                    <label for="option4" class="options" id="option4Show"></label>
+                </div>
+
+                <button type="button" class="btn1 btnNext" id="next">Next</button>
+            </div>
+
+            <div id="quiz_result_wrapper" class="d_none">
                 <h1 class="heading4">JavaScript Quiz</h1>
                 <h2 id="resultshow"></h2>
                 <p><strong>Total Questions :</strong> <strong id="">25</strong></p>
@@ -18,6 +264,13 @@
                 <button type="button" class="btn1" id="backToHome">Back to home</button>
             </div>
         </div>
+
+        <footer id="footer">DEVELOPED BY : <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" target="_blank" title="linkedin profile">USAMA ISRAR</a></footer>
     </div>
+
+    <script type="module" src="dashboard/dashboard.js"></script>
+    <script type="module" src="login/login.js"></script>
+    <script type="module" src="./signup/signup.js"></script>
+    <script src="app.js"></script>
 </body>
-</html -->
+</html>
