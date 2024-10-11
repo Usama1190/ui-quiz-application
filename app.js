@@ -63,6 +63,8 @@ const add_course_form = {
 
 const about_quiz = {
     questions_wrapper: document.getElementById('questions_wrapper'),
+    user_input_key: document.getElementById('user_input_key'),
+    warning_for_key: document.getElementById('warning_for_key'),
 }
 
 let quizQuestions = [
@@ -241,7 +243,7 @@ let correctOptions = [
 ];
 
 let count = 0;
-
+const key = 'js01';
 
 let questionDiv = document.createElement('div');
 questionDiv.classList.add('questions');
@@ -376,8 +378,13 @@ student_dashboard_btns.join_typescript_btn.addEventListener('click', () => {
 
 
 student_dashboard_btns.key_submit_btn.addEventListener('click', () => {
-    student_dashboard.key_wrapper.classList.add('d_none');
-    student_dashboard.quizguide_wrapper.classList.remove('d_none');
+    // if(about_quiz.user_input_key.value === key) {
+        student_dashboard.key_wrapper.classList.add('d_none');
+        student_dashboard.quizguide_wrapper.classList.remove('d_none');
+    // }
+    // else {
+        about_quiz.warning_for_key.innerText = 'Invalid key!';
+    // }
 });
 
 
@@ -518,20 +525,6 @@ for (let i = 0; i < optionsPic.length; i++) {
 }
 
 percentageDiv.innerHTML = percentage + '%';
-
-
-
-
-
-
-
-
-// // =============================================================================
-
-
-// // =============================================================================
-
-// // ============================================================================
 
 
 backToHome.addEventListener('click', (e) => {
