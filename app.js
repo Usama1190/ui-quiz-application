@@ -271,7 +271,6 @@ document.getElementById('option3Show').innerHTML = options[0].c;
 document.getElementById('option4Show').innerHTML = options[0].d;
 
 
-let quizresultdashboard_wrapper = document.getElementById('quizresultdashboard_wrapper');
 
 let score = 0;
 let count2 = 0;
@@ -283,7 +282,6 @@ let percentage = 0;
 // Add active class to the current button (highlight it)
 let options_wrapper = document.getElementById("options_wrapper");
 let optionsPic = options_wrapper.getElementsByClassName("options");
-let quizdashboard_wrapper = document.getElementById('quizdashboard_wrapper');
 
 
 
@@ -439,8 +437,8 @@ nextBtn.addEventListener('click', function(e) {
     count2++;
 
 
-    if(count > 23) {
-        student_dashboard.quizdashboard_wrapper.classList.add('d_none');
+    if(count > 1) {
+        student_dashboard.quizdashboard_wrapper.style.display = 'none';
         student_dashboard.quiz_result_wrapper.classList.remove('d_none');
     }
     else {
@@ -529,8 +527,6 @@ percentageDiv.innerHTML = percentage + '%';
 
 backToHome.addEventListener('click', (e) => {
     e.preventDefault();
-
-    heading2.style.display = 'none';
 
     quizresultdashboard_wrapper.style.display = 'none';
     signupForm.classList.remove('hidden');
