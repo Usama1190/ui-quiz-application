@@ -48,9 +48,20 @@
                         </div>
                     </div>
 
-                    <strong class="d_none" id="logout_wrapper">
+                    <div class="dropdown d_none" id="logout_wrapper">
+                        <i class="fa fa-user uicon"></i>
+                        <div class="dropdown-content">
+                            <button id="user_logout_btn" class="btn1 active_btn">Logout</button><br>
+                            <div id="show_result_btn">
+                                <span><i class="fa fa-bar-chart"></i></span>
+                                <span>Result</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <strong class="d_none" id="logout_wrapper">
                         <button id="user_logout_btn" class="btn1 active_btn">Logout</button>
-                    </strong>
+                    </strong> -->
                 </div>
             </div>
         </div>
@@ -261,12 +272,42 @@
                 <p>Correct Answer : <strong id="correctAnswer"></strong></p>
                 <h2 id="percentage"></h2>
 
-                <button type="button" class="btn1" id="backToHome">Back to home</button>
+                <button type="button" class="btn1" id="back_to_home">Back to home</button>
             </div>
         </div>
 
         <div id="student_result_dashboard_wrapper" class="d_none">
             <h1>Result Show In this Wrapper!</h1>
+            <table id="results_table">
+                <tr>
+                  <th>#</th>
+                  <th>Quiz</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Result</th>
+                </tr>
+                <tr>
+                  <td>01</td>
+                  <td>JavaScript</td>
+                  <td>Oct 12, 2024</td>
+                  <td>Pass</td>
+                  <td>90%</td>
+                </tr>
+                <tr>
+                    <td>01</td>
+                    <td>JavaScript</td>
+                    <td>Oct 12, 2024</td>
+                    <td>Pass</td>
+                    <td>90%</td>
+                </tr>
+                <tr>
+                    <td>01</td>
+                    <td>JavaScript</td>
+                    <td>Oct 12, 2024</td>
+                    <td>Pass</td>
+                    <td>90%</td>
+                </tr>
+              </table>
         </div>
 
         <footer id="footer">DEVELOPED BY : <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" target="_blank" title="linkedin profile">USAMA ISRAR</a></footer>

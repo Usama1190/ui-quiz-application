@@ -8,6 +8,7 @@ const main_con = {
     footer: document.getElementById('footer'),
     dashboard_section: document.getElementById('dashboard_section'),
     logout_wrapper: document.getElementById('logout_wrapper'),
+    student_result_dashboard_wrapper: document.getElementById('student_result_dashboard_wrapper'),
 }
 
 const main_con_btns = {
@@ -16,6 +17,7 @@ const main_con_btns = {
     startexam_btn: document.getElementById('startexam_btn'),
     getresult_btn: document.getElementById('getresult_btn'),
     user_logout_btn: document.getElementById('user_logout_btn'),
+    show_result_btn: document.getElementById('show_result_btn'),
 }
 
 const main_con_form = {
@@ -52,6 +54,7 @@ const student_dashboard_btns = {
     join_typescript_btn: document.getElementById('join_typescript_btn'),
     key_submit_btn: document.getElementById('key_submit_btn'),
     start_quiz_btn: document.getElementById('start_quiz_btn'),
+    back_to_home: document.getElementById('back_to_home'),
 }
 
 const add_course_form = {
@@ -453,6 +456,14 @@ nextBtn.addEventListener('click', function(e) {
 });
 
 
+main_con_btns.show_result_btn.addEventListener('click', () => {
+    main_con.student_result_dashboard_wrapper.classList.remove('d_none');
+    main_con.dashboard_section.classList.add('d_none');
+    student_dashboard.dashboard_header_content.classList.add('d_none');
+    student_dashboard.courses_wrapper.classList.add('d_none');
+})
+
+
 
 
 
@@ -525,11 +536,12 @@ for (let i = 0; i < optionsPic.length; i++) {
 percentageDiv.innerHTML = percentage + '%';
 
 
-backToHome.addEventListener('click', (e) => {
+student_dashboard_btns.back_to_home.addEventListener('click', (e) => {
     e.preventDefault();
 
-    quizresultdashboard_wrapper.style.display = 'none';
-    signupForm.classList.remove('hidden');
-})
-
-// console.log(count, '<= count', questionDiv, '<= questionDiv', nextBtn, '<= nextBtn', "Before click next!");
+    student_dashboard.quiz_result_wrapper.classList.add('d_none');
+    main_con.dashboard_section.classList.remove('d_none');
+    student_dashboard.dashboard_header_content.classList.remove('d_none');
+    student_dashboard.courses_wrapper.classList.remove('d_none');
+    main_con.app_navbar.classList.remove('d_none');
+});

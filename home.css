@@ -286,6 +286,47 @@ body {
     cursor: pointer;
 }
 
+.uicon {
+    cursor: pointer;
+}
+
+#show_result_btn {
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#show_result_btn:hover {
+    opacity: 0.5;
+    text-decoration: underline;
+}
+
+.dropdown {
+    position: relative;
+    font-size: 28px;
+    display: inline-block;
+    border-radius: 50%;
+    color: var(--color-2);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    color: var(--color-4);
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 8px 10px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
 .home_image_wrapper {
     width: 50%;
     overflow: hidden;
@@ -565,6 +606,8 @@ body {
 .course_wrapper {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 200px;
+    border: 1px solid red;
 }
 
 
@@ -668,6 +711,33 @@ body {
 
 
 
+
+
+#results_table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    margin: auto;
+}
+
+#results_table td, #results_table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#results_table tr:nth-child(even){background-color: #f2f2f2;}
+
+#results_table tr:nth-child(odd){background-color: #ffffff;}
+
+#results_table tr:hover {background-color: #ddd;}
+
+#results_table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--color-4);
+    color: var(--color-2);
+}
 
 
 
