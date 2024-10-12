@@ -7,12 +7,18 @@ const login = () => {
 
     console.log('Login Function is running!');
 
-    main_con_form.login_btn.innerText = 'Loading...';
+    // main_con_form.login_btn.innerText = 'Loading...';
+    main_con_form.loader_wrapper_form.classList.remove('d_none');
+    main_con_form.loader_wrapper_form.style.zIndex = '1';
+    main_con_form.form.style.opacity = '0.5';
 
     signInWithEmailAndPassword(auth, user_email.value, user_password.value)
     .then((userCredential) => {
         // Signed in 
-        main_con_form.login_btn.innerText = 'Login';
+        // main_con_form.login_btn.innerText = 'Login';
+        main_con_form.loader_wrapper_form.classList.add('d_none');
+        main_con_form.loader_wrapper_form.style.zIndex = '-1';
+        main_con_form.form.style.opacity = '1';
 
         const user = userCredential.user;
         // console.log(user);
@@ -21,7 +27,10 @@ const login = () => {
         main_con_form.warning.innerText = '';
     })
     .catch((error) => {
-        main_con_form.login_btn.innerText = 'Login';
+        // main_con_form.login_btn.innerText = 'Login';
+        main_con_form.loader_wrapper_form.classList.add('d_none');
+        main_con_form.loader_wrapper_form.style.zIndex = '-1';
+        main_con_form.form.style.opacity = '1';
 
         const errorCode = error.code;
         const errorMessage = error.message;

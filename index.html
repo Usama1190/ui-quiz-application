@@ -20,6 +20,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div class="app_wrapper">
@@ -35,11 +39,11 @@
                 </div>
 
                 <div class="nav_right_wrapper">
-                    <div>
+                    <!-- <div>
                         <div class="theme_wrapper" title="theme">
                             <span><i class="fa fa-sun-o" id="app_theme" title="theme"></i></span>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div>
                         <div id="ls_btns_wrapper">
@@ -48,13 +52,15 @@
                         </div>
                     </div>
 
-                    <div class="dropdown d_none" id="logout_wrapper">
-                        <i class="fa fa-user uicon"></i>
-                        <div class="dropdown-content">
-                            <button id="user_logout_btn" class="btn1 active_btn">Logout</button><br>
-                            <div id="show_result_btn">
-                                <span><i class="fa fa-bar-chart"></i></span>
-                                <span>Result</span>
+                    <div id="logout_wrapper" class="d_none">
+                        <div class="dropdown">
+                            <i class="fa fa-user uicon"></i>
+                            <div class="dropdown-content">
+                                <button id="user_logout_btn" class="btn1 active_btn">Logout</button><br>
+                                <div id="show_result_btn">
+                                    <span><i class="fa fa-bar-chart"></i></span>
+                                    <span>Result</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -87,9 +93,15 @@
             </div>
         </div>
 
-        <div id="login_signup_form" class="d_none">            
+        <div id="login_signup_form" class="d_none">
+            <div id="loader_wrapper_form" class="d_none">
+                <div id="loader_wrapper">
+                    <div class="loader"></div>          
+                </div>
+            </div>
+
             <div class="form_wrapper">
-                <form class="form" id="signupForm">
+                <form class="form" id="form">
                     <span id="close_sign_or_login" title="close" class="cursor_pointer"><i class="fa fa-times icons"></i></span>
                     <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank">
                         <img src="../assets/uilogo-removebg-preview.png" class="form_logo" alt="logo">
@@ -139,7 +151,7 @@
             <div id="dashboard_header_content">
                 <div id="dashboard_header_wrapper">
                     <div class="dashboard_header">
-                        <h1>Hi <span>Usama Israr Khan</span> 👋</h1>
+                        <h1 class="heading1">Hi, <span>Usama Israr Khan</span> 👋</h1>
                         <p>Welcome to the UI's quiz portal. Select your course below to take a quiz</p>
                     </div>
 
@@ -172,33 +184,45 @@
             <div id="courses_wrapper">
                 <div id="course_wrapper">
                     <div class="course opacity">
-                        <h2>Python</h2>
-                        <button type="button" class="btn3" id="python">join</button>
+                        <h2 class="sm_heading">Python</h2>
+                        <p>Basic</p>
+                        <button type="button" class="btn4" id="python">join</button>
                     </div>
 
                     <div class="course opacity">
-                        <h2>HTML5</h2>
-                        <button type="button" class="btn3" id="python">join</button>
+                        <h2 class="sm_heading">HTML5</h2>
+                        <p>Basic</p>
+                        <button type="button" class="btn4" id="python">join</button>
+                    </div>
+
+                    <div class="course">
+                        <h2 class="sm_heading">JavaScript</h2>
+                        <p>Basic</p>
+                        <button type="button" class="btn4" id="join_typescript_btn">join</button>
                     </div>
 
                     <div class="course opacity">
-                        <h2>TypeScript</h2>
-                        <button type="button" class="btn3" id="join_typescript_btn">join</button>
+                        <h2 class="sm_heading">Generative AI & Chatbot</h2>
+                        <p>Basic</p>
+                        <button type="button" class="btn4" id="python">join</button>
                     </div>
 
                     <div class="course opacity">
-                        <h2>Generative AI & Chatbot</h2>
-                        <button type="button" class="btn3" id="python">join</button>
+                        <h2 class="sm_heading">TypeScript</h2>
+                        <p>Basic</p>
+                        <button type="button" class="btn4" id="python">join</button>
                     </div>
 
                     <div class="course opacity">
-                        <h2>JavaScript</h2>
-                        <button type="button" class="btn3" id="python">join</button>
+                        <h2 class="sm_heading">ECMAScript - ES6</h2>
+                        <p>Basic</p>
+                        <button type="button" class="btn4" id="python">join</button>
                     </div>
 
                     <div class="course opacity">
-                        <h2>ECMAScript - ES6</h2>
-                        <button type="button" class="btn3" id="python">join</button>
+                        <h2 class="sm_heading">My-SQL</h2>
+                        <p>Basic</p>
+                        <button type="button" class="btn4" id="python">join</button>
                     </div>
                 </div>
             </div>
@@ -277,14 +301,15 @@
         </div>
 
         <div id="student_result_dashboard_wrapper" class="d_none">
-            <h1>Result Show In this Wrapper!</h1>
+            <h1>Result</h1>
+            <hr style="width: 90%;"><br>
             <table id="results_table">
                 <tr>
                   <th>#</th>
                   <th>Quiz</th>
                   <th>Date</th>
                   <th>Status</th>
-                  <th>Result</th>
+                  <th>Score</th>
                 </tr>
                 <tr>
                   <td>01</td>

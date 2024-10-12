@@ -8,14 +8,21 @@ const user_signup = () => {
     
 
     if(main_con_form.user_password.value === main_con_form.user_confirmpass.value) {
-        main_con_form.signup_btn.innerText = 'loading...';
+        // main_con_form.signup_btn.innerText = 'loading...';
+        main_con_form.loader_wrapper_form.classList.remove('d_none');
+        main_con_form.loader_wrapper_form.style.zIndex = '1';
+        main_con_form.form.style.opacity = '0.5';
+        
 
         createUserWithEmailAndPassword(auth, user_email.value, user_password.value)
         .then((userCredential) => {
             // Signed up 
             const user = userCredential.user;
 
-            main_con_form.signup_btn.innerText = 'Signup';
+            // main_con_form.signup_btn.innerText = 'Signup';
+            main_con_form.loader_wrapper_form.classList.add('d_none');
+            main_con_form.loader_wrapper_form.style.zIndex = '-1';
+            main_con_form.form.style.opacity = '1';
             
             // ...
         })
@@ -23,7 +30,10 @@ const user_signup = () => {
             const errorCode = error.code;
             const errorMessage = error.message;
         
-            main_con_form.signup_btn.innerText = 'Signup';
+            // main_con_form.signup_btn.innerText = 'Signup';
+            main_con_form.loader_wrapper_form.classList.add('d_none');
+            main_con_form.loader_wrapper_form.style.zIndex = '-1';
+            main_con_form.form.style.opacity = '1';
             
             // ..
         });

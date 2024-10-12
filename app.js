@@ -33,6 +33,8 @@ const main_con_form = {
     another_way_signup_login_anchor_text: document.getElementById('another_way_signup_login_anchor_text'),
     close_sign_or_login: document.getElementById('close_sign_or_login'),
     warning: document.getElementById('warning'),
+    loader_wrapper_form: document.getElementById('loader_wrapper_form'),
+    form: document.getElementById('form'),
 }
 
 let theme_sun = true
@@ -333,7 +335,7 @@ main_con_btns.goto_login_form.addEventListener('click', login_content);
 main_con_btns.startexam_btn.addEventListener('click', signup_content);
 main_con_btns.getresult_btn.addEventListener('click', login_content);
 
-
+/*
 main_con.app_theme.addEventListener('click', () => {
     if(theme_sun == false) {
         main_con.app_theme.classList.remove('fa-sun-o');
@@ -350,7 +352,7 @@ main_con.app_theme.addEventListener('click', () => {
         theme_sun = false;
     }
 });
-
+*/
 /*
 student_dashboard_btns.add_course_btn.addEventListener('click', () => {
     student_dashboard_btns.add_course_btn.classList.add('d_none');
@@ -523,7 +525,7 @@ for (let i = 0; i < optionsPic.length; i++) {
         percentageDiv.innerHTML = percentage + '%';
 
         if(percentage > 70) {
-            resultshow.innerHTML = `Congratulations ${user.name}, you passed`;
+            resultshow.innerHTML = `Congratulations, you passed!`;
             resultshow.style.color = 'rgb(24, 56, 83)';
         }
         else {

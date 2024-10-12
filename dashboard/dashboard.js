@@ -24,6 +24,7 @@ onAuthStateChanged(auth, (user) => {
         main_con.footer.classList.remove('d_none');
         main_con.ls_btns_wrapper.classList.remove('d_none');
         main_con.logout_wrapper.classList.add('d_none');
+        main_con.student_result_dashboard_wrapper.classList.add('d_none');
     }
     else {
         main_con.app_navbar.classList.remove('d_none');
