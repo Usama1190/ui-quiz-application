@@ -101,8 +101,8 @@
             </div>
 
             <div class="form_wrapper">
+                <span id="close_sign_or_login" title="close" class="cursor_pointer"><i class="fa fa-times"></i></span>
                 <form class="form" id="form">
-                    <span id="close_sign_or_login" title="close" class="cursor_pointer"><i class="fa fa-times icons"></i></span>
                     <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank">
                         <img src="../assets/uilogo-removebg-preview.png" class="form_logo" alt="logo">
                     </a><br>
@@ -141,11 +141,10 @@
                     </label><br>
 
                     <small id="warning" class="warning_color mt-10"></small>
-                    <button id="signup_btn" class="btn3 color_dark d_none mt-10">Signup</button>
-                    <button id="login_btn" class="btn3 color_dark d_none">Login</button><br><br>
+                    <button type="button" id="signup_btn" class="btn3 color_dark d_none mt-10">Signup</button>
+                    <button type="button" id="login_btn" class="btn3 color_dark d_none">Login</button><br><br>
 
                     <hr class="hr"><br>
-
 
                     <small id="another_way_signup_login">Already have an account please <a href="../login/index.html" id="another_way_signup_login_anchor_text" class="signin">Login</a></small><br><br>
                     <span>or</span><br><br>
@@ -158,7 +157,7 @@
             <div id="dashboard_header_content">
                 <div id="dashboard_header_wrapper">
                     <div class="dashboard_header">
-                        <h1 class="heading1">Hi, <span>Usama Israr Khan</span> 👋</h1>
+                        <h1 class="heading1">Hi, <span id="show_user_name"></span> 👋</h1>
                         <p>Welcome to the UI's quiz portal. Select your course below to take a quiz</p>
                     </div>
 

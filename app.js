@@ -43,6 +43,7 @@ let theme_sun = true
 
 const student_dashboard = {
     dashboard_header_content: document.getElementById('dashboard_header_content'),
+    show_user_name: document.getElementById('show_user_name'),
     add_course_form_wrapper: document.getElementById('add_course_form_wrapper'),
     close_add_course_wrapper: document.getElementById('close_add_course_wrapper'),
     courses_wrapper: document.getElementById('courses_wrapper'),
@@ -294,9 +295,38 @@ const date = {
     day: new Date().getDate(),
     month: new Date().getMonth(),
     year: new Date().getFullYear(),
+    week: new Date().getDay(),
 }
 
+let week_day;
 let current_month;
+
+switch (date.week) {
+    case 0:
+        week_day = 'Sun';
+        break;
+    case 1:
+        week_day = 'Mon';
+        break;
+    case 2:
+        week_day = 'Tue';
+        break;
+    case 3:
+        week_day = 'Wed';
+        break;
+    case 4:
+        week_day = 'Thur';
+        break;
+    case 5:
+        week_day = 'Fri';
+        break;
+    case 6:
+        week_day = 'Sat';
+        break;
+
+    default:
+        week_day = 'None';
+}
 
 switch (date.month) {
     case 0:
@@ -357,17 +387,19 @@ const student_result = {
 // ========================== Functionalities ===============================
 
 const signup_content = () => {
+    event.preventDefault();
     main_con_form.signup_btn.classList.remove('d_none');
     main_con_form.login_btn.classList.add('d_none');
     main_con_form.another_way_signup_login_anchor_text.innerText = 'Login';
     main_con_form.another_way_signup_login.innerHTML = `Already have an account please <a href='#login' onclick='login_content()'>Login</a>`;
     main_con_form.user_confirmpass_wrapper.classList.remove('d_none');
     main_con_form.remember_forget_wrapper.classList.add('d_none');
-    main_con_form.user_name_wrapper.classList.remove('d_none');
+    main_con_form.user_name_wrapper.classList.remove('d_none');    
     common_login_signup();
 }
 
 const login_content = () => {
+    event.preventDefault();
     main_con_form.signup_btn.classList.add('d_none');
     main_con_form.login_btn.classList.remove('d_none');
     main_con_form.another_way_signup_login_anchor_text.innerText = 'Sign up';
@@ -390,12 +422,12 @@ main_con_form.close_sign_or_login.addEventListener('click', () => {
     main_con.home_section.classList.remove('d_none');
     main_con.app_navbar.classList.remove('d_none');
     main_con.footer.classList.remove('d_none');
-})
+});
 
 main_con_btns.goto_signup_form.addEventListener('click', signup_content);
 main_con_btns.goto_login_form.addEventListener('click', login_content);
 main_con_btns.startexam_btn.addEventListener('click', signup_content);
-main_con_btns.getresult_btn.addEventListener('click', login_content);
+main_con_btns.getresult_btn.addEventListener('click', login_content)
 
 /*
 main_con.app_theme.addEventListener('click', () => {
@@ -443,7 +475,8 @@ student_dashboard_btns.join_typescript_btn.addEventListener('click', () => {
     }
     else {
         student_dashboard.courses_wrapper.classList.add('d_none');
-        student_dashboard.quiz_result_wrapper.classList.add('d_none');
+        student_dashboard.dashboard_header_content.classList.add('d_none');
+        student_dashboard.quiz_result_wrapper.classList.remove('d_none');
     }
     
 });
@@ -511,7 +544,7 @@ nextBtn.addEventListener('click', function(e) {
     count2++;
 
 
-    if(count > 23) {
+    if(count > 1) {
         student_dashboard.quizdashboard_wrapper.style.display = 'none';
         student_dashboard.quiz_result_wrapper.classList.remove('d_none');
     }
@@ -595,10 +628,10 @@ for (let i = 0; i < optionsPic.length; i++) {
         percentageDiv.innerHTML = percentage + '%';
 
         if(percentage > 70) {
-            resultshow.innerHTML = `Congratulations, you passed!`;
+            resultshow.innerHTML = `Congratulations ${main_con_form.user_name.value}, you passed!`;
             resultshow.style.color = 'rgb(24, 56, 83)';
 
-            student_result.date.innerText = today_date;
+            student_result.date.innerText = `${week_day}, ${today_date}`;
             student_result.quiz_name.innerText = 'JavaScript (Basic)';
             student_result.serial.innerText = '01';
             student_result.score.innerText = `${percentage}%`;
@@ -609,7 +642,7 @@ for (let i = 0; i < optionsPic.length; i++) {
             resultshow.innerHTML = 'Sorry you failed';
             resultshow.style.color = 'red';
 
-            student_result.date.innerText = today_date;
+            student_result.date.innerText = `${week_day}, ${today_date}`;
             student_result.quiz_name.innerText = 'JavaScript (Basic)';
             student_result.serial.innerText = '01';
             student_result.score.innerText = `${percentage}%`;

@@ -5,7 +5,7 @@ const user_signup = () => {
     event.preventDefault();
 
     console.log('Signup Function is running!');
-    
+    student_dashboard.show_user_name.innerText = main_con_form.user_name.value;
 
     if(main_con_form.user_name.value != '' && main_con_form.user_password.value === main_con_form.user_confirmpass.value) {
         // main_con_form.signup_btn.innerText = 'loading...';
