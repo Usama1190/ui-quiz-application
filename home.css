@@ -8,12 +8,14 @@
     /* --color-2: #172F55; */
     /* --color-3: #B6E9FC; */
     --color-4: #ffffff;
+    --color-5: #CAEAFF;
 }
 
+/*
 .light_theme {
     --color-0: #000000;
     --color-1: #73C3F6;
-    /* --color-2: #ffffff; */
+    --color-2: #ffffff;
     --color-2: #172F55;
     --color-3: #B6E9FC;
     --color-4: #EBFDFF;
@@ -25,9 +27,10 @@
     --color-2: #EBFDFF; 
     --color-3: #B6E9FC;
 
-    /* --color-4: #ffffff; */
+    --color-4: #ffffff;
     --color-4: #172F55;
 }
+*/
 
 body {
     padding: 0;
@@ -430,10 +433,11 @@ body {
     width: 45%;
     text-align: center;
     /* border: 1px solid var(--bordercolor--); */
-    background-color: var(--color-4);
+    /* background-color: var(--color-4); */
+    background-color: transparent;
     color: var(--color-2);
     border-radius: 10px;
-    /* margin: auto; */
+    margin: auto;
     /* margin-top: -60px; */
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
@@ -465,8 +469,8 @@ body {
 .inputStyleForm {
     width: 80%;
     padding: 8px;
-    background-color: var(--color-4);
-    border-bottom: 1px solid var(--bordercolor--);
+    background-color: transparent;
+    border-bottom: 1px solid var(--color-3);
 }
 
 .inputStyleForm:focus {
@@ -483,13 +487,26 @@ body {
 }
 */
 
+.login_signup_bg_image {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
 #close_sign_or_login {
     float: right;
     position: relative;
     font-size: 20px;
-    border: 1px solid var(--bordercolor--);
     border-radius: 50%;
     padding: 8px;
+}
+
+.heading {
+    color: var(--color-3);
+    font-size: 18px;
+    font-weight: 300;
 }
 
 .google_logo {

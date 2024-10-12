@@ -544,7 +544,7 @@ nextBtn.addEventListener('click', function(e) {
     count2++;
 
 
-    if(count > 1) {
+    if(count > 23) {
         student_dashboard.quizdashboard_wrapper.style.display = 'none';
         student_dashboard.quiz_result_wrapper.classList.remove('d_none');
     }
