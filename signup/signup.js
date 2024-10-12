@@ -7,7 +7,7 @@ const user_signup = () => {
     console.log('Signup Function is running!');
     
 
-    if(main_con_form.user_password.value === main_con_form.user_confirmpass.value) {
+    if(main_con_form.user_name.value != '' && main_con_form.user_password.value === main_con_form.user_confirmpass.value) {
         // main_con_form.signup_btn.innerText = 'loading...';
         main_con_form.loader_wrapper_form.classList.remove('d_none');
         main_con_form.loader_wrapper_form.style.zIndex = '1';
@@ -29,6 +29,8 @@ const user_signup = () => {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
+
+            main_con_form.warning.innerText = "input fields is not valid!";
         
             // main_con_form.signup_btn.innerText = 'Signup';
             main_con_form.loader_wrapper_form.classList.add('d_none');
@@ -39,7 +41,7 @@ const user_signup = () => {
         });
     }
     else {
-        main_con_form.warning.innerText = "Confirm password doesn't matched!";
+        main_con_form.warning.innerText = "input fields is not valid!";
     }
 }
 

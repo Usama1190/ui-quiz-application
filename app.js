@@ -21,6 +21,7 @@ const main_con_btns = {
 }
 
 const main_con_form = {
+    user_name: document.getElementById('user_name'),
     user_email: document.getElementById('user_email'),
     user_password: document.getElementById('user_password'),
     remember_forget_wrapper: document.getElementById('remember_forget_wrapper'),
@@ -35,6 +36,7 @@ const main_con_form = {
     warning: document.getElementById('warning'),
     loader_wrapper_form: document.getElementById('loader_wrapper_form'),
     form: document.getElementById('form'),
+    user_name_wrapper: document.getElementById('user_name_wrapper'),
 }
 
 let theme_sun = true
@@ -361,6 +363,7 @@ const signup_content = () => {
     main_con_form.another_way_signup_login.innerHTML = `Already have an account please <a href='#login' onclick='login_content()'>Login</a>`;
     main_con_form.user_confirmpass_wrapper.classList.remove('d_none');
     main_con_form.remember_forget_wrapper.classList.add('d_none');
+    main_con_form.user_name_wrapper.classList.remove('d_none');
     common_login_signup();
 }
 
@@ -371,6 +374,7 @@ const login_content = () => {
     main_con_form.another_way_signup_login.innerHTML = `Don't have an account please <a href='#signup' onclick='signup_content()'>Sign up</a>`;
     main_con_form.remember_forget_wrapper.classList.remove('d_none');
     main_con_form.user_confirmpass_wrapper.classList.add('d_none');
+    main_con_form.user_name_wrapper.classList.add('d_none');
     common_login_signup();
 }
 
