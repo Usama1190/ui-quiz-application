@@ -288,9 +288,67 @@ let percentage = 0;
 let options_wrapper = document.getElementById("options_wrapper");
 let optionsPic = options_wrapper.getElementsByClassName("options");
 
+const date = {
+    day: new Date().getDate(),
+    month: new Date().getMonth(),
+    year: new Date().getFullYear(),
+}
 
+let current_month;
 
+switch (date.month) {
+    case 0:
+        current_month = 'Jan';
+        break;
+    case 1:
+        current_month = 'Feb';
+        break;
+    case 2:
+        current_month = 'Mar';
+        break;
+    case 3:
+        current_month = 'Apr';
+        break;
+    case 4:
+        current_month = 'May';
+        break;
+    case 5:
+        current_month = 'Jun';
+        break;
+    case 6:
+        current_month = 'Jul';
+        break;
+    case 7:
+        current_month = 'Aug';
+        break;
+    case 8:
+        current_month = 'Sep';
+        break;
+    case 9:
+        current_month = 'Oct';
+        break;
+    case 10:
+        current_month = 'Nov';
+        break;
+    case 11:
+        current_month = 'Dec';
+        break;
 
+    default:
+        current_month = 'None';
+}
+
+let status = null;
+let today_date = `${current_month} ${date.day}, ${date.year}`;
+let quiz_name = 'JavaScript';
+
+const student_result = {
+    serial: document.getElementById('serial'),
+    quiz_name: document.getElementById('quiz_name'),
+    date: document.getElementById('date'),
+    status: document.getElementById('status'),
+    score: document.getElementById('score'),
+}
 
 
 
@@ -527,10 +585,24 @@ for (let i = 0; i < optionsPic.length; i++) {
         if(percentage > 70) {
             resultshow.innerHTML = `Congratulations, you passed!`;
             resultshow.style.color = 'rgb(24, 56, 83)';
+
+            student_result.date.innerText = today_date;
+            student_result.quiz_name.innerText = 'JavaScript (Basic)';
+            student_result.serial.innerText = '01';
+            student_result.score.innerText = `${score}%`;
+            student_result.status.innerText = 'Passed';
+            student_result.status.style.color = 'green';
         }
         else {
             resultshow.innerHTML = 'Sorry you failed';
             resultshow.style.color = 'red';
+
+            student_result.date.innerText = today_date;
+            student_result.quiz_name.innerText = 'JavaScript (Basic)';
+            student_result.serial.innerText = '01';
+            student_result.score.innerText = `${score}%`;
+            student_result.status.innerText = 'fail';
+            student_result.status.style.color = 'red';
         }
     });
 }

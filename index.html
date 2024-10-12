@@ -31,9 +31,9 @@
             <div id="topnav_wrapper">
                 <div class="nav_left_wrapper">
                     <div class="logo_wrapper">
-                        <a href="#"><img src="assets/uilogo-removebg-preview.png" alt="logo" class="logo"></a>
-                        <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank" class="logo_name">
-                            <strong>Info Tech</strong>
+                        <a href="/"><img src="assets/uilogo-removebg-preview.png" alt="logo" class="logo"></a>
+                        <a href="/" class="logo_name">
+                            <strong>UI - Quiz App</strong>
                         </a>
                     </div>
                 </div>
@@ -228,7 +228,7 @@
             </div>
 
             <div id="key_wrapper" class="d_none">
-                <h1>TypeScript Quiz</h1>
+                <h1 class="heading1">JavaScript Quiz</h1>
                 <hr style="width: 100%;"><br><br><br>
 
                 <input type="text" placeholder="key" id="user_input_key" class="inputStyleForm border_none">
@@ -247,7 +247,7 @@
             </div>
 
             <div id="quizguide_wrapper" class="d_none">
-                <h1>TypeScript Quiz</h1>
+                <h1 class="heading1">JavaScript Quiz</h1>
                 <hr style="width: 100%;"><br><br><br>
                 <table class="table">
                     <tr>
@@ -290,7 +290,10 @@
             </div>
 
             <div id="quiz_result_wrapper" class="d_none">
-                <h1 class="heading4">JavaScript Quiz</h1>
+                <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/" title="linkedin profile" target="_blank">
+                    <img src="../assets/uilogo-removebg-preview.png" class="form_logo" alt="logo">
+                </a><br><br>
+                <h1 class="heading1">JavaScript Quiz</h1>
                 <h2 id="resultshow"></h2>
                 <p><strong>Total Questions :</strong> <strong id="">25</strong></p>
                 <p>Correct Answer : <strong id="correctAnswer"></strong></p>
@@ -301,7 +304,7 @@
         </div>
 
         <div id="student_result_dashboard_wrapper" class="d_none">
-            <h1>Result</h1>
+            <h1 class="heading1 ml-20">Result</h1>
             <hr style="width: 90%;"><br>
             <table id="results_table">
                 <tr>
@@ -312,25 +315,11 @@
                   <th>Score</th>
                 </tr>
                 <tr>
-                  <td>01</td>
-                  <td>JavaScript</td>
-                  <td>Oct 12, 2024</td>
-                  <td>Pass</td>
-                  <td>90%</td>
-                </tr>
-                <tr>
-                    <td>01</td>
-                    <td>JavaScript</td>
-                    <td>Oct 12, 2024</td>
-                    <td>Pass</td>
-                    <td>90%</td>
-                </tr>
-                <tr>
-                    <td>01</td>
-                    <td>JavaScript</td>
-                    <td>Oct 12, 2024</td>
-                    <td>Pass</td>
-                    <td>90%</td>
+                  <td id="serial">--</td>
+                  <td id="quiz_name">--</td>
+                  <td id="date">-- / -- / ----</td>
+                  <td id="status">--</td>
+                  <td id="score">--</td>
                 </tr>
               </table>
         </div>
