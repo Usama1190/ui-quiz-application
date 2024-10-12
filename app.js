@@ -57,6 +57,7 @@ const student_dashboard_btns = {
     key_submit_btn: document.getElementById('key_submit_btn'),
     start_quiz_btn: document.getElementById('start_quiz_btn'),
     back_to_home: document.getElementById('back_to_home'),
+    back_form_result_btn: document.getElementById('back_form_result_btn'),
 }
 
 const add_course_form = {
@@ -64,7 +65,6 @@ const add_course_form = {
     number_of_subjects: document.getElementById('number_of_subjects'),
     create_course_btn: document.getElementById('create_course_btn'),
 }
-
 
 const about_quiz = {
     questions_wrapper: document.getElementById('questions_wrapper'),
@@ -432,20 +432,27 @@ add_course_form.create_course_btn.addEventListener('click', () => {
 */
 
 student_dashboard_btns.join_typescript_btn.addEventListener('click', () => {
-    student_dashboard.dashboard_header_content.classList.add('d_none');
-    student_dashboard.courses_wrapper.classList.add('d_none');
-    student_dashboard.key_wrapper.classList.remove('d_none');
+    if(percentage === 0) {
+        student_dashboard.dashboard_header_content.classList.add('d_none');
+        student_dashboard.courses_wrapper.classList.add('d_none');
+        student_dashboard.key_wrapper.classList.remove('d_none');
+    }
+    else {
+        student_dashboard.courses_wrapper.classList.add('d_none');
+        student_dashboard.quiz_result_wrapper.classList.add('d_none');
+    }
+    
 });
 
 
 student_dashboard_btns.key_submit_btn.addEventListener('click', () => {
-    // if(about_quiz.user_input_key.value === key) {
+    if(about_quiz.user_input_key.value === key) {
         student_dashboard.key_wrapper.classList.add('d_none');
         student_dashboard.quizguide_wrapper.classList.remove('d_none');
-    // }
-    // else {
+    }
+    else {
         about_quiz.warning_for_key.innerText = 'Invalid key!';
-    // }
+    }
 });
 
 
@@ -500,7 +507,7 @@ nextBtn.addEventListener('click', function(e) {
     count2++;
 
 
-    if(count > 1) {
+    if(count > 23) {
         student_dashboard.quizdashboard_wrapper.style.display = 'none';
         student_dashboard.quiz_result_wrapper.classList.remove('d_none');
     }
@@ -521,6 +528,7 @@ main_con_btns.show_result_btn.addEventListener('click', () => {
     main_con.dashboard_section.classList.add('d_none');
     student_dashboard.dashboard_header_content.classList.add('d_none');
     student_dashboard.courses_wrapper.classList.add('d_none');
+    student_dashboard.key_wrapper.classList.add('d_none');
 })
 
 
@@ -589,7 +597,7 @@ for (let i = 0; i < optionsPic.length; i++) {
             student_result.date.innerText = today_date;
             student_result.quiz_name.innerText = 'JavaScript (Basic)';
             student_result.serial.innerText = '01';
-            student_result.score.innerText = `${score}%`;
+            student_result.score.innerText = `${percentage}%`;
             student_result.status.innerText = 'Passed';
             student_result.status.style.color = 'green';
         }
@@ -600,7 +608,7 @@ for (let i = 0; i < optionsPic.length; i++) {
             student_result.date.innerText = today_date;
             student_result.quiz_name.innerText = 'JavaScript (Basic)';
             student_result.serial.innerText = '01';
-            student_result.score.innerText = `${score}%`;
+            student_result.score.innerText = `${percentage}%`;
             student_result.status.innerText = 'fail';
             student_result.status.style.color = 'red';
         }
@@ -609,13 +617,15 @@ for (let i = 0; i < optionsPic.length; i++) {
 
 percentageDiv.innerHTML = percentage + '%';
 
-
-student_dashboard_btns.back_to_home.addEventListener('click', (e) => {
-    e.preventDefault();
-
+const redirect_home = () => {
     student_dashboard.quiz_result_wrapper.classList.add('d_none');
     main_con.dashboard_section.classList.remove('d_none');
     student_dashboard.dashboard_header_content.classList.remove('d_none');
     student_dashboard.courses_wrapper.classList.remove('d_none');
     main_con.app_navbar.classList.remove('d_none');
-});
+    main_con.student_result_dashboard_wrapper.classList.add('d_none');
+}
+
+
+student_dashboard_btns.back_to_home.addEventListener('click', redirect_home);
+student_dashboard_btns.back_form_result_btn.addEventListener('click', redirect_home);

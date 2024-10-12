@@ -67,7 +67,7 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
         main_con.app_navbar.classList.remove('d_none');
         main_con.home_section.classList.add('d_none');
-        main_con.dashboard_section.classList.remove('d_none');
+        main_con.dashboard_section.style.display = 'block';
         main_con.footer.classList.add('d_none');
         main_con.ls_btns_wrapper.classList.add('d_none');
         main_con.logout_wrapper.classList.remove('d_none');
